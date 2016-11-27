@@ -2,9 +2,9 @@ Mono path[0] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Managed'
 Mono path[1] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono'
 Mono config path = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/PC/Documents/ProjectY4/Build/build_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55472
-Multi-casting "[IP] 192.168.0.103 [Port] 55472 [Flags] 2 [Guid] 3804466271 [EditorId] 2855131984 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
-PlayerConnection already initialized - listening to [192.168.0.103:55472]
+PlayerConnection initialized network socket : 0.0.0.0 55390
+Multi-casting "[IP] 192.168.0.103 [Port] 55390 [Flags] 2 [Guid] 111020655 [EditorId] 13024961 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.103:55390]
 Initialize engine version: 5.4.2f2 (b7e030c65c9b)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -15,48 +15,87 @@ Direct3D:
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.099 seconds
+- Completed reload, in  0.113 seconds
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.875581 ms
-Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:57536}
-Server client disconnect error:1
+UnloadTime: 0.702214 ms
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-UnityEngine.Networking.NetworkServerSimple:HandleDisconnect(Int32, Byte) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:349)
-UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:254)
-UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:705)
-UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:655)
-UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1072)
+UnityEngine.Debug:Log(Object)
+UnityEngine.Networking.Match.NetworkMatch:ListMatches(ListMatchRequest, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:315)
+UnityEngine.Networking.Match.NetworkMatch:ListMatches(Int32, Int32, String, Boolean, Int32, Int32, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:302)
+UnityEngine.Networking.NetworkManagerHUD:OnGUI() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManagerHUD.cs:201)
  
-(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/NetworkServerSimple.cs Line: 349)
+(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 315)
 
-OnDisconnectError error:6
+MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-UnityEngine.Networking.NetworkServerSimple:OnDisconnectError(NetworkConnection, Byte) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:440)
-UnityEngine.Networking.NetworkServerSimple:HandleDisconnect(Int32, Byte) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:351)
-UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:254)
-UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:705)
-UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:655)
-UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1072)
+UnityEngine.Debug:Log(Object)
+UnityEngine.Networking.Match.NetworkMatch:JoinMatch(JoinMatchRequest, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:193)
+UnityEngine.Networking.Match.NetworkMatch:JoinMatch(NetworkID, String, String, String, Int32, Int32, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:180)
+UnityEngine.Networking.NetworkManagerHUD:OnGUI() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManagerHUD.cs:213)
  
-(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/NetworkServerSimple.cs Line: 440)
+(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 193)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.Networking.Match.NetworkMatch:DropConnection(DropConnectionRequest, BasicResponseDelegate) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:276)
+UnityEngine.Networking.Match.NetworkMatch:DropConnection(NetworkID, NodeID, Int32, BasicResponseDelegate) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:263)
+UnityEngine.Networking.NetworkManager:OnClientDisconnectInternal(NetworkMessage) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:951)
+UnityEngine.Networking.NetworkConnection:InvokeHandler(Int16, NetworkReader, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:214)
+UnityEngine.Networking.NetworkConnection:InvokeHandlerNoData(Int16) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:196)
+UnityEngine.Networking.NetworkClient:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkClient.cs:752)
+UnityEngine.Networking.NetworkClient:UpdateClients() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkClient.cs:949)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1073)
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 276)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.Networking.Match.NetworkMatch:DropConnection(DropConnectionRequest, BasicResponseDelegate) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:276)
+UnityEngine.Networking.Match.NetworkMatch:DropConnection(NetworkID, NodeID, Int32, BasicResponseDelegate) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:263)
+UnityEngine.Networking.NetworkManager:StopMatchMaker() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:1173)
+UnityEngine.Networking.NetworkManager:StopClient() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:615)
+UnityEngine.Networking.NetworkManager:OnClientDisconnect(NetworkConnection) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:1118)
+UnityEngine.Networking.NetworkManager:OnClientDisconnectInternal(NetworkMessage) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:954)
+UnityEngine.Networking.NetworkConnection:InvokeHandler(Int16, NetworkReader, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:214)
+UnityEngine.Networking.NetworkConnection:InvokeHandlerNoData(Int16) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:196)
+UnityEngine.Networking.NetworkClient:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkClient.cs:752)
+UnityEngine.Networking.NetworkClient:UpdateClients() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkClient.cs:949)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1073)
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 276)
+
+UnloadTime: 1.518737 ms
+System memory in use before: 22.7 MB.
+System memory in use after: 22.7 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 248.
+Total: 0.223936 ms (FindLiveObjects: 0.015201 ms CreateObjectMapping: 0.008770 ms MarkObjects: 0.195287 ms  DeleteObjects: 0.003508 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1514 -> priority: 1 
-  Thread -> id: 1a8c -> priority: 1 
+  Thread -> id: 20f0 -> priority: 1 
+  Thread -> id: 2d08 -> priority: 1 
