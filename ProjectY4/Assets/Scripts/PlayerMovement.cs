@@ -10,7 +10,7 @@ public class PlayerMovement : NetworkBehaviour
 
     //Animator anim;
 
-    bool isAttacking;
+
 
     public override void OnStartLocalPlayer()
     {
@@ -38,6 +38,7 @@ public class PlayerMovement : NetworkBehaviour
         
 
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
+        //Move depending on direction player clicks
          float movHorizontal = Input.GetAxis("Horizontal");
          float movVertical = Input.GetAxis("Vertical");
 
@@ -45,22 +46,20 @@ public class PlayerMovement : NetworkBehaviour
         Vector2 movement = new Vector2(movHorizontal, movVertical);
         rig.velocity = movement * speed;
 
-      //  isAttacking = Input.GetKeyDown(KeyCode.Space);
+ 
 
 #else
+        //Move where the direction the joystic is pointing
         Vector2 movement = new Vector2(CrossPlatformInputManager.GetAxis("Horizontal"), CrossPlatformInputManager.GetAxis("Vertical"));
         rig.velocity = movement * speed;
 
-        //    isAttacking = CrossPlatformInputManager.GetButton("Attack");
+
 
 
 
 #endif
 
-        //     if (isAttacking)
-        //     {
-        //          anim.SetTrigger("Attack");
-        //    }
+
     }
 
 }
