@@ -11,27 +11,31 @@ public class EnemyHealth : NetworkBehaviour
     public RectTransform healthbar;
     public bool destroyOnDeath;
 
-    public void TakeDamage(int amount)
+    [Command]
+    public void CmdTakeDamage(int amount)
     {
-        if (!isServer)
-        {
-            return;
-        }
+        RpcTakeDamage(amount);
+    }
+
+    [ClientRpc]
+    public void RpcTakeDamage(int amount)
+    {
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
-            if(destroyOnDeath)
+            if (destroyOnDeath)
             {
                 Destroy(gameObject);
             }
 
         }
-
     }
+
     //Sync healthbar to damage by server
     void OnChangeHealth(int health)
     {
         healthbar.sizeDelta = new Vector2(health, healthbar.sizeDelta.y);
     }
+
 
 }

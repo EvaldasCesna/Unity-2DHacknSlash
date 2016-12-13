@@ -54,9 +54,6 @@ public class PlayerMovement : NetworkBehaviour
         rig.velocity = movement * speed;
 
 
-
-
-
 #endif
 
 
