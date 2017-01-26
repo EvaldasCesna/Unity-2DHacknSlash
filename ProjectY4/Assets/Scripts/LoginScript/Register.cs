@@ -9,9 +9,9 @@ public class Register : MonoBehaviour {
     public InputField Password;
     public InputField cPassword;
     public InputField Email;
-    string name;
-    string pass;
-    string email;
+   // string name;
+   // string pass;
+  //  string email;
     public Button Reg;
     private string CreateAccountUrl = "http://188.141.5.218/Register.php";
 

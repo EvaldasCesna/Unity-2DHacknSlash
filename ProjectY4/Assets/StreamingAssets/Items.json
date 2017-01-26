@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "title": "Bronze Sword",
+    "value": 5,
+    "stats": {
+      "attack": 1,
+      "defence": 3,
+      "vitality": 2
+    },
+    "description": "A short sword",
+    "stackable": false,
+    "rarity": 1,
+    "slug": "bronze_sword"
+
+  },
+  {
+    "id": 1,
+    "title": "Gold Sword",
+    "value": 10,
+    "stats": {
+      "attack": 3,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A gold sword",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "gold_sword"
+  }
+]
