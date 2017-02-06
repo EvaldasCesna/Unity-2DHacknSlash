@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 0
   slot: 0
+  location: 
 --- !u!114 &114022023620829334
 MonoBehaviour:
   m_ObjectHideFlags: 1

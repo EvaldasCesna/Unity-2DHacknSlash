@@ -30,7 +30,7 @@ public class ItemsDatabase : MonoBehaviour {
     {
         for (int i = 0; i < itemData.Count; i++)
         {
-            items.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), (int)itemData[i]["value"],
+            items.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), itemData[i]["type"].ToString(), (int)itemData[i]["value"],
                 (int)itemData[i]["stats"]["attack"], (int)itemData[i]["stats"]["defence"], (int)itemData[i]["stats"]["vitality"],
                 itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString()));
 
@@ -44,6 +44,7 @@ public class Item
 {
     public int ID { get; private set; }
     public string Title { get; set; }
+    public string Type { get; set; }
     public int Value { get; set; }
     public int Strength { get; set; }
     public int Defence { get; set; }
@@ -54,10 +55,11 @@ public class Item
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
 
-    public Item(int id, string title, int value, int strength, int defence, int vitality, string description, bool stackable, int rarity, string slug)
+    public Item(int id, string title, string type, int value, int strength, int defence, int vitality, string description, bool stackable, int rarity, string slug)
     {
         this.ID = id;
         this.Title = title;
+        this.Type = type;
         this.Value = value;
         this.Strength = strength;
         this.Defence = defence;

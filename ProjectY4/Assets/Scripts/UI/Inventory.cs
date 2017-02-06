@@ -21,22 +21,27 @@ public class Inventory : MonoBehaviour {
 
         slotAmount = 20;
         invPanel = GameObject.Find("InventoryPanel");
-        slotPanel = invPanel.transform.FindChild("SlotPanel").gameObject;
+        slotPanel = invPanel.transform.FindChild("SlotPanel").gameObject; //The Prefabs are assigned
+      //  invPanel.transform.localScale = new Vector3(Screen.width /2, Screen.height, 0);
         for(int i = 0; i < slotAmount; i++)
         {
             inventory.Add(new Item());
             slots.Add(Instantiate(invSlot));
             slots[i].GetComponent<InventorySlot>().id = i;
+            slots[i].GetComponent<InventorySlot>().location = "Inventory";
             slots[i].transform.SetParent(slotPanel.transform);
         }
+     //  PopulateInv(0, 1, 6);
+  //     AddItem(0);
+  //  AddItem(0);
+    //   AddItem(1);
+ 
 
-        AddItem(0);
-
-        AddItem(1);
+        invPanel.SetActive(false);
     }
 
 
-    public void AddItem(int id)
+    public bool AddItem(int id)
     {
         Item itemToAdd = items.GetItemByID(id);
         //Can be more efficient
@@ -49,7 +54,8 @@ public class Inventory : MonoBehaviour {
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-                    break;
+                
+                    return true;
                 }
 
             }
@@ -60,21 +66,23 @@ public class Inventory : MonoBehaviour {
         {
             for (int i = 0; i < inventory.Count; i++)
             {
-                if (inventory[i].ID == -1)
+                if (inventory[i].ID == -1) // IF Empty
                 {
-                    inventory[i] = itemToAdd;
-                    GameObject itemObj = Instantiate(invItem);
+                    inventory[i] = itemToAdd;  // Adds the item to inventory
+                    GameObject itemObj = Instantiate(invItem); //This shows the item is added visually
                     itemObj.GetComponent<ItemData>().item = itemToAdd;
                     itemObj.GetComponent<ItemData>().amount = 1;
                     itemObj.GetComponent<ItemData>().slot = i;
+                    itemObj.GetComponent<ItemData>().location = "Inventory";
                     itemObj.transform.SetParent(slots[i].transform);
                     itemObj.transform.position = Vector2.zero;
                     itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObj.name = itemToAdd.Title;
-                    break;
+                    return true;
                 }
             }
         }
+        return false;
     }
 
     public void RemoveItem(int id)
@@ -112,6 +120,32 @@ public class Inventory : MonoBehaviour {
                     break;
                 }
     }
+
+    public void PopulateInv(int id, int amount, int slot)
+    {
+        Item itemToAdd = items.GetItemByID(id);
+
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].ID == -1) // IF Empty
+            {
+              //  inventory[i] = itemToAdd;
+                GameObject itemObj = Instantiate(invItem);
+                itemObj.GetComponent<ItemData>().item = itemToAdd;
+                itemObj.GetComponent<ItemData>().amount = amount;
+                itemObj.GetComponent<ItemData>().slot = slot;
+                itemObj.transform.SetParent(slots[slot].transform);
+                itemObj.transform.position = Vector2.zero;
+                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                itemObj.name = itemToAdd.Title;
+                break;
+            }
+        }
+        
+            
+        
+    }
+
 
     bool IsInInventory(Item item)
     {

@@ -10,8 +10,6 @@ public class PlayerMovement : NetworkBehaviour
 
     //Animator anim;
 
-
-
     public override void OnStartLocalPlayer()
     {
         Camera.main.GetComponent<CameraFollow>().setTarget(gameObject.transform);
@@ -25,7 +23,7 @@ public class PlayerMovement : NetworkBehaviour
         rig = GetComponent<Rigidbody2D>();
      //   anim = GetComponent<Animator>();
   
-}
+    }
 
 
     // Update is called once per frame

@@ -12,6 +12,7 @@ public class InventoryTooltip : MonoBehaviour {
     {
         tooltip = GameObject.Find("Tooltip");
         tooltip.SetActive(false);
+      
     }
 
     private void Update()

@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler {
     public Item item;
     public int amount;
     public int slot;
+    public string location;
 
-    private Inventory items;
+    private Equipment equipment;
+    private Inventory inventory;
     private InventoryTooltip tooltip;
     private Vector2 offset;
 
     private void Start()
     {
-        items = GameObject.Find("Inventory").GetComponent<Inventory>();
-        tooltip = items.GetComponent<InventoryTooltip>();
+        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        tooltip = inventory.GetComponent<InventoryTooltip>();
+
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -24,9 +25,10 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (item != null)
         {
             offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y);
-            this.transform.SetParent(this.transform.parent.parent);
+            this.transform.SetParent(this.transform.parent.parent.parent.parent); //Puts it on top when dragging
             this.transform.position = eventData.position;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
+
         }
     }
 
@@ -40,9 +42,19 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        this.transform.SetParent(items.slots[slot].transform);
-        this.transform.position = items.slots[slot].transform.position;
+        //Depending on where you are hovering do action
+        if (location == "Inventory") {
+            this.transform.SetParent(inventory.slots[slot].transform);
+            this.transform.position = inventory.slots[slot].transform.position;
+        }
+        else if (location == "Equipment")
+        {
+            this.transform.SetParent(equipment.slots[slot].transform);
+            this.transform.position = equipment.slots[slot].transform.position;
+        }
+
         GetComponent<CanvasGroup>().blocksRaycasts = true;
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -55,3 +67,4 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         tooltip.Deactivate();
     }
 }
+

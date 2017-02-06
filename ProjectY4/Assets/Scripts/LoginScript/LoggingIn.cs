@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LoggingIn : MonoBehaviour
 {
     private string LoginUrl = "http://188.141.5.218/Login.php";
+
     public InputField Username;
     public InputField Password;
     public Button Login;
@@ -24,7 +25,7 @@ public class LoggingIn : MonoBehaviour
 
     IEnumerator LoginAccount()
     {
-        Debug.Log("Attempting Log in");
+     //   Debug.Log("Attempting Log in");
         WWWForm Form = new WWWForm();
         Form.AddField("Username", Username.text);
         Form.AddField("Password", Password.text);
@@ -37,7 +38,7 @@ public class LoggingIn : MonoBehaviour
         else
         {
             string LogText = LoginAccountWWW.text;
-            Debug.Log(LogText);
+          //  Debug.Log(LogText);
             string[] LogTextSplit = LogText.Split(':');
             if (LogTextSplit[0] == "0")
             {

@@ -15,18 +15,24 @@ namespace UnityEngine.Networking
         [SerializeField] public int offsetX;
         [SerializeField] public int offsetY;
 
+        GameObject uis;
+
         // Runtime variable
         bool m_ShowServer;
 
         void Awake()
         {
             manager = GetComponent<NetworkManager>();
+            uis = GameObject.FindGameObjectWithTag("UIGUI");
+           // uis.SetActive(false);
         }
 
         void Update()
         {
+            uis = GameObject.FindGameObjectWithTag("UIGUI");
             if (!showGUI)
                 return;
+            
 
             if (!manager.IsClientConnected() && !NetworkServer.active && manager.matchMaker == null)
             {
@@ -66,7 +72,7 @@ namespace UnityEngine.Networking
 
             bool noConnection = (manager.client == null || manager.client.connection == null ||
                                  manager.client.connection.connectionId == -1);
-
+            
             if (!manager.IsClientConnected() && !NetworkServer.active && manager.matchMaker == null)
             {
                 if (noConnection)
@@ -75,6 +81,7 @@ namespace UnityEngine.Networking
                     {
                         if (GUI.Button(new Rect(xpos, ypos, 300, 40), "LAN Host(H)"))
                         {
+
                             manager.StartHost();
                         }
                         ypos += spacing;
@@ -82,7 +89,9 @@ namespace UnityEngine.Networking
 
                     if (GUI.Button(new Rect(xpos, ypos, 205, 40), "LAN Client(C)"))
                     {
+                
                         manager.StartClient();
+                 
                     }
 
                     manager.networkAddress = GUI.TextField(new Rect(xpos + 200, ypos, 95, 40), manager.networkAddress);
@@ -111,6 +120,7 @@ namespace UnityEngine.Networking
 
                     if (GUI.Button(new Rect(xpos, ypos, 300, 40), "Cancel Connection Attempt"))
                     {
+             
                         manager.StopClient();
                     }
                 }
@@ -142,6 +152,7 @@ namespace UnityEngine.Networking
 
                     if (ClientScene.localPlayers.Count == 0)
                     {
+                 
                         ClientScene.AddPlayer(0);
                     }
                 }
@@ -152,6 +163,7 @@ namespace UnityEngine.Networking
             {
                 if (GUI.Button(new Rect(xpos - xspace, ypos, 100, 40), "Stop (X)"))
                 {
+              
                     manager.StopHost();
                 }
                 ypos += spacing;
@@ -172,6 +184,7 @@ namespace UnityEngine.Networking
                     if (GUI.Button(new Rect(xpos, ypos, 300, 40), "Enable Match Maker (M)"))
                     {
                         manager.StartMatchMaker();
+
                     }
                     ypos += spacing;
                 }
