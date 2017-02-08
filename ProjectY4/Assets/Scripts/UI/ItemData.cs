@@ -43,7 +43,8 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public void OnEndDrag(PointerEventData eventData)
     {
         //Depending on where you are hovering do action
-        if (location == "Inventory") {
+        if (location == "Inventory")
+        {
             this.transform.SetParent(inventory.slots[slot].transform);
             this.transform.position = inventory.slots[slot].transform.position;
         }

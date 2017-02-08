@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour
+{
     GameObject invPanel;
     GameObject slotPanel;
     ItemsDatabase items;
@@ -22,8 +23,8 @@ public class Inventory : MonoBehaviour {
         slotAmount = 20;
         invPanel = GameObject.Find("InventoryPanel");
         slotPanel = invPanel.transform.FindChild("SlotPanel").gameObject; //The Prefabs are assigned
-      //  invPanel.transform.localScale = new Vector3(Screen.width /2, Screen.height, 0);
-        for(int i = 0; i < slotAmount; i++)
+                                                                    
+        for (int i = 0; i < slotAmount; i++)
         {
             inventory.Add(new Item());
             slots.Add(Instantiate(invSlot));
@@ -31,11 +32,11 @@ public class Inventory : MonoBehaviour {
             slots[i].GetComponent<InventorySlot>().location = "Inventory";
             slots[i].transform.SetParent(slotPanel.transform);
         }
-     //  PopulateInv(0, 1, 6);
-  //     AddItem(0);
-  //  AddItem(0);
-    //   AddItem(1);
- 
+        //  PopulateInv(0, 1, 6);
+        //     AddItem(0);
+        //  AddItem(0);
+        //   AddItem(1);
+
 
         invPanel.SetActive(false);
     }
@@ -44,7 +45,7 @@ public class Inventory : MonoBehaviour {
     public bool AddItem(int id)
     {
         Item itemToAdd = items.GetItemByID(id);
-        //Can be more efficient
+        //Write a more efficient way when more items added
         if (itemToAdd.Stackable && IsInInventory(itemToAdd))
         {
             for (int i = 0; i < inventory.Count; i++)
@@ -54,7 +55,7 @@ public class Inventory : MonoBehaviour {
                     ItemData data = slots[i].transform.GetChild(0).GetComponent<ItemData>();
                     data.amount++;
                     data.transform.GetChild(0).GetComponent<Text>().text = data.amount.ToString();
-                
+
                     return true;
                 }
 
@@ -67,7 +68,8 @@ public class Inventory : MonoBehaviour {
             for (int i = 0; i < inventory.Count; i++)
             {
                 if (inventory[i].ID == -1) // IF Empty
-                {
+                {   
+                    //Make this into a function to clean it up
                     inventory[i] = itemToAdd;  // Adds the item to inventory
                     GameObject itemObj = Instantiate(invItem); //This shows the item is added visually
                     itemObj.GetComponent<ItemData>().item = itemToAdd;
@@ -125,33 +127,47 @@ public class Inventory : MonoBehaviour {
     {
         Item itemToAdd = items.GetItemByID(id);
 
-        for (int i = 0; i < inventory.Count; i++)
-        {
-            if (inventory[i].ID == -1) // IF Empty
-            {
-              //  inventory[i] = itemToAdd;
-                GameObject itemObj = Instantiate(invItem);
-                itemObj.GetComponent<ItemData>().item = itemToAdd;
-                itemObj.GetComponent<ItemData>().amount = amount;
-                itemObj.GetComponent<ItemData>().slot = slot;
-                itemObj.transform.SetParent(slots[slot].transform);
-                itemObj.transform.position = Vector2.zero;
-                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
-                itemObj.name = itemToAdd.Title;
-                break;
-            }
-        }
-        
-            
-        
+
+    //    if (inventory[slot].ID == -1) // IF Empty
+     //   {
+            // Adds to inventory at certain location/amount of
+            inventory[slot] = itemToAdd;
+            GameObject itemObj = Instantiate(invItem);
+            itemObj.GetComponent<ItemData>().item = itemToAdd;
+            itemObj.GetComponent<ItemData>().amount = amount;
+            itemObj.GetComponent<ItemData>().slot = slot;
+            itemObj.GetComponent<ItemData>().location = "Inventory";
+            itemObj.transform.SetParent(slots[slot].transform);
+            itemObj.transform.position = Vector2.zero;
+            itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+            itemObj.name = itemToAdd.Title;
+
+     //   }
     }
 
 
     bool IsInInventory(Item item)
     {
-        for(int i = 0; i< inventory.Count; i++)
+        for (int i = 0; i < inventory.Count; i++)
             if (inventory[i].ID == item.ID)
                 return true;
-            return false;
+        return false;
     }
+
+    public List<ItemData> getAllitems()
+    {
+        List<ItemData> temp = new List<ItemData>();
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            if (inventory[i].ID != -1)
+            {   //Gets all item info in the inventory
+                temp.Add(slots[i].transform.GetChild(0).GetComponent<ItemData>());
+            }
+        }
+
+        return temp;
+    }
+
+
+
 }

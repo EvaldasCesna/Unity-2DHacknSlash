@@ -12,41 +12,39 @@ public class SaveData : MonoBehaviour
 
     private List<SaveItems> save = new List<SaveItems>();
     private JsonData saveData;
-    public GameObject invItem;
+    public Inventory inventory;
     string filename;
     static readonly string SAVE = "Inventory.json";
     private string SaveInventoryUrl = "http://188.141.5.218/Save.php";
- 
+
     // Use this for initialization
     void Start()
     {
-      //  slotPanel = GameObject.Find("SlotPanel").gameObject;
-        slotPanel = GameObject.FindGameObjectWithTag("SlotPanel");
-       // SaveItems();
+        save.Clear();
+        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         InvokeRepeating("SaveItems", 10.0f, 10.0f);
-  
+
     }
 
     void SaveItems()
     {
+        //Get items from inventory
+        List<ItemData> temp = inventory.getAllitems();
+        //Clears data so it doesnt duplicate items
         save.Clear();
-
-        StartCoroutine("SaveItemsTodb");
-
-        for (int i = 0; i < slotPanel.GetComponentsInChildren<ItemData>().Length; i++)
+        for (int i = 0; i < temp.Count; i++)
         {
-          //  Debug.Log("ID: " + slotPanel.GetComponentsInChildren<ItemData>()[i].item.ID + " Amount: " + slotPanel.GetComponentsInChildren<ItemData>()[i].amount + " Slot: " + slotPanel.GetComponentsInChildren<ItemData>()[i].slot);
             //Gathers info from inventory and saves it to json
-            save.Add(new SaveItems(slotPanel.GetComponentsInChildren<ItemData>()[i].item.ID, slotPanel.GetComponentsInChildren<ItemData>()[i].amount, slotPanel.GetComponentsInChildren<ItemData>()[i].slot));
-
+            save.Add(new SaveItems(temp[i].item.ID, temp[i].amount, temp[i].slot));
         }
 
         saveData = JsonMapper.ToJson(save);
         filename = Path.Combine(Application.persistentDataPath, SAVE);
-
+        //Write into json save
         File.WriteAllText(filename, saveData.ToString());
-
-
+        
+        //Start to write into database
+        StartCoroutine("SaveItemsTodb");
     }
 
     IEnumerator SaveItemsTodb()
@@ -54,13 +52,11 @@ public class SaveData : MonoBehaviour
 
         while (true)
         {
-          //  Debug.Log("Success1");
+            //  Debug.Log("Success1");
             WWWForm Form = new WWWForm();
             filename = Path.Combine(Application.persistentDataPath, SAVE);
             Form.AddField("Username", PlayerPrefs.GetString("Player Name"));
             Form.AddField("Inventory", File.ReadAllText(filename));
-
-
 
             WWW SaveWWW = new WWW(SaveInventoryUrl, Form);
 
@@ -72,13 +68,13 @@ public class SaveData : MonoBehaviour
             }
             else
             {
-             //   Debug.Log(SaveWWW.text);
+                //   Debug.Log(SaveWWW.text);
                 string SaveReturn = SaveWWW.text;
 
             }
             yield return new WaitForSeconds(10f);
         }
-        
+
 
     }
 

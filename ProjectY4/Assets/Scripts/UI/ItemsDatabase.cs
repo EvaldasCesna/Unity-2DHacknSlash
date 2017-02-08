@@ -11,8 +11,16 @@ public class ItemsDatabase : MonoBehaviour {
     void Start()
     {
 
+#if UNITY_STANDALONE || UNITY_WEBPLAYER
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
-        ConstructItems();
+         ConstructItems();
+#else
+
+        string jsonPath =  Application.streamingAssetsPath + "/Items.json";
+        StartCoroutine(GetJsonData(jsonPath));
+#endif
+
+       
 
       //  Debug.Log(items[1].Title);
     }
@@ -35,6 +43,17 @@ public class ItemsDatabase : MonoBehaviour {
                 itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString()));
 
         }
+    }
+
+
+    IEnumerator GetJsonData(string jsonUrl)
+    {
+        WWW www = new WWW(jsonUrl);
+
+        yield return www;
+        Debug.Log(www.text);
+        itemData = JsonMapper.ToObject(www.text);
+        ConstructItems();
     }
 
 }
@@ -75,5 +94,4 @@ public class Item
     {
         this.ID = -1;
     }
-
 }

@@ -10,38 +10,27 @@ public class LoadData : MonoBehaviour
 
     private Inventory inventory;
     private JsonData itemData;
-    private string inventoryFromdb;
+
     static readonly string SAVE = "Inventory.json";
     void Start()
     {
-        StartCoroutine("LoadItemsFromdb");
-        string filename = Path.Combine(Application.persistentDataPath, SAVE);
-
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        //itemData = JsonMapper.ToObject(File.ReadAllText(filename));
-     //   itemData = JsonMapper.ToObject(inventoryFromdb);
-      //  ConstructItems();
-       
+        StartCoroutine("LoadItemsFromdb");
     }
-
-
-
 
     void ConstructItems()
     {
         for (int i = 0; i < itemData.Count; i++)
         {
-          //  Debug.Log(i + " id " + (int)itemData[i]["id"]);
-            inventory.AddItem((int)itemData[i]["id"]);
-
-          //  (int)itemData[i]["id"], (int)itemData[i]["amount"], (int)itemData[i]["slot"]));
+            //  Debug.Log(i + " id " + (int)itemData[i]["id"]);
+            inventory.PopulateInv((int)itemData[i]["id"], (int)itemData[i]["amount"], (int)itemData[i]["slot"]);
+          //  inventory.AddItem((int)itemData[i]["id"]);
         }
     }
 
 
     IEnumerator LoadItemsFromdb()
     {
-        //   Debug.Log("Attempting Log in");
         WWWForm Form = new WWWForm();
         Form.AddField("Username", PlayerPrefs.GetString("Player Name"));
 
@@ -49,16 +38,16 @@ public class LoadData : MonoBehaviour
         yield return LoadWWW;
         if (LoadWWW.error != null)
         {
-            Debug.LogError("Cannot Connect to Login");
+            Debug.LogError("Cannot Connect to DB");
             string filename = Path.Combine(Application.persistentDataPath, SAVE);
             itemData = JsonMapper.ToObject(File.ReadAllText(filename));
             ConstructItems();
         }
         else
         {
-            inventoryFromdb = LoadWWW.text;
-             //Debug.Log(inventoryFromdb);
-            itemData = JsonMapper.ToObject(inventoryFromdb);
+   
+             Debug.Log(LoadWWW.text);
+            itemData = JsonMapper.ToObject(LoadWWW.text);
             ConstructItems();
         }
     }

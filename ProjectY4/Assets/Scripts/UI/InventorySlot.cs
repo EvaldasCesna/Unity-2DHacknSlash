@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour, IDropHandler {
+public class InventorySlot : MonoBehaviour, IDropHandler
+{
 
     public int id;
     public string location;
     private Inventory inventory;
     private Equipment equipment;
 
-     void Start()
+    void Start()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
@@ -23,11 +24,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler {
         //Depending on which window it drops on do..
         if (location == "Inventory")
         {
-      
+
             if (inventory.inventory[id].ID == -1)
             {
                 //Clears the slot that the item is taken out of
-                if(droppedItem.location == "Inventory")
+                if (droppedItem.location == "Inventory")
                 {
                     inventory.inventory[droppedItem.slot] = new Item();
                 }
@@ -36,7 +37,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler {
 
                     equipment.equipment[droppedItem.slot] = new Item();
                 }
-               
+
                 inventory.inventory[id] = droppedItem.item;
                 droppedItem.slot = id;
                 droppedItem.location = "Inventory";
@@ -61,12 +62,12 @@ public class InventorySlot : MonoBehaviour, IDropHandler {
 
         else if (location == "Equipment")
         {
-      
+
             if (equipment.equipment[id].ID == -1)
             {
-          
+
                 inventory.inventory[droppedItem.slot] = new Item();
-     
+
 
                 /* need to make it so different types are equipabble to different spots
                 if (droppedItem.item.Type == "Weapon")
@@ -85,20 +86,20 @@ public class InventorySlot : MonoBehaviour, IDropHandler {
 
             }
 
-            else if(droppedItem.slot != id)
+            else if (droppedItem.slot != id)
             {
 
                 Transform item = this.transform.GetChild(0);
-             
-                    item.GetComponent<ItemData>().slot = droppedItem.slot;
-                    item.GetComponent<ItemData>().location = droppedItem.location;
-                    item.transform.SetParent(inventory.slots[droppedItem.slot].transform);
-                    item.transform.position = inventory.slots[droppedItem.slot].transform.position;
-                    inventory.inventory[droppedItem.slot] = droppedItem.item;
-                                    //3 for now while no type check function
-                    equipment.equipment[3] = item.GetComponent<ItemData>().item;
-                    droppedItem.slot = id;
-                    droppedItem.location = location;
+
+                item.GetComponent<ItemData>().slot = droppedItem.slot;
+                item.GetComponent<ItemData>().location = droppedItem.location;
+                item.transform.SetParent(inventory.slots[droppedItem.slot].transform);
+                item.transform.position = inventory.slots[droppedItem.slot].transform.position;
+                inventory.inventory[droppedItem.slot] = droppedItem.item;
+                //3 for now while no type check function
+                equipment.equipment[3] = item.GetComponent<ItemData>().item;
+                droppedItem.slot = id;
+                droppedItem.location = location;
 
             }
         }

@@ -15,7 +15,7 @@ namespace UnityEngine.Networking
         [SerializeField] public int offsetX;
         [SerializeField] public int offsetY;
 
-        GameObject uis;
+
 
         // Runtime variable
         bool m_ShowServer;
@@ -23,13 +23,12 @@ namespace UnityEngine.Networking
         void Awake()
         {
             manager = GetComponent<NetworkManager>();
-            uis = GameObject.FindGameObjectWithTag("UIGUI");
-           // uis.SetActive(false);
+       
         }
 
         void Update()
         {
-            uis = GameObject.FindGameObjectWithTag("UIGUI");
+        
             if (!showGUI)
                 return;
             
