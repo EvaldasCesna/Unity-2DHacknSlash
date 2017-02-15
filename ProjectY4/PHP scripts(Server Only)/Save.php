@@ -1,7 +1,7 @@
 <?php
 $Username = $_REQUEST["Username"];
 $Inventory = $_REQUEST["Inventory"];
-
+$Equipment = $_REQUEST["Equipment"];
 
 $Hostname = "localhost";
 $DBName = "accounts";
@@ -20,7 +20,7 @@ else
     $Result = @mysql_query($SQL) or die("Error");
     $Total = mysql_num_rows($Result);
     if($Total == 1){
-        $insert = "UPDATE `accounts` SET Inventory = '" . $Inventory . "' WHERE Username = '" . $Username ."'";
+        $insert = "UPDATE `accounts` SET Inventory = '" . $Inventory . "', Equipment = '" . $Equipment . "' WHERE Username = '" . $Username ."'";
         $SQL1 = mysql_query($insert);
         echo"Success";
     }

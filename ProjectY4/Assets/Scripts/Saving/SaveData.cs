@@ -12,9 +12,12 @@ public class SaveData : MonoBehaviour
 
     private List<SaveItems> save = new List<SaveItems>();
     private JsonData saveData;
-    public Inventory inventory;
-    string filename;
-    static readonly string SAVE = "Inventory.json";
+    private Inventory inventory;
+    private Equipment equipment;
+    string InvLoc;
+    string EquipLoc;
+    static readonly string SAVEIN = "Inventory.json";
+    static readonly string SAVEEQ = "Equipment.json";
     private string SaveInventoryUrl = "http://188.141.5.218/Save.php";
 
     // Use this for initialization
@@ -22,27 +25,41 @@ public class SaveData : MonoBehaviour
     {
         save.Clear();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
         InvokeRepeating("SaveItems", 10.0f, 10.0f);
 
     }
 
     void SaveItems()
     {
-        //Get items from inventory
-        List<ItemData> temp = inventory.getAllitems();
+        //Get items from inventory/equipment
+        List<ItemData> tempInv = inventory.getAllitems();
+        List<ItemData> tempEquip = equipment.getAllitems();
         //Clears data so it doesnt duplicate items
         save.Clear();
-        for (int i = 0; i < temp.Count; i++)
+        for (int i = 0; i < tempInv.Count; i++)
         {
             //Gathers info from inventory and saves it to json
-            save.Add(new SaveItems(temp[i].item.ID, temp[i].amount, temp[i].slot));
+            save.Add(new SaveItems(tempInv[i].item.ID, tempInv[i].amount, tempInv[i].slot));
         }
 
         saveData = JsonMapper.ToJson(save);
-        filename = Path.Combine(Application.persistentDataPath, SAVE);
+        InvLoc = Path.Combine(Application.persistentDataPath, SAVEIN);
         //Write into json save
-        File.WriteAllText(filename, saveData.ToString());
-        
+        File.WriteAllText(InvLoc, saveData.ToString());
+
+        save.Clear();
+        for (int i = 0; i < tempEquip.Count; i++)
+        {
+            //Gathers info from inventory and saves it to json
+            save.Add(new SaveItems(tempEquip[i].item.ID, tempEquip[i].amount, tempEquip[i].slot));
+        }
+
+        saveData = JsonMapper.ToJson(save);
+        EquipLoc = Path.Combine(Application.persistentDataPath, SAVEEQ);
+        //Write into json save
+        File.WriteAllText(EquipLoc, saveData.ToString());
+
         //Start to write into database
         StartCoroutine("SaveItemsTodb");
     }
@@ -54,9 +71,12 @@ public class SaveData : MonoBehaviour
         {
             //  Debug.Log("Success1");
             WWWForm Form = new WWWForm();
-            filename = Path.Combine(Application.persistentDataPath, SAVE);
+            InvLoc = Path.Combine(Application.persistentDataPath, SAVEIN);
+            EquipLoc = Path.Combine(Application.persistentDataPath, SAVEEQ);
+
             Form.AddField("Username", PlayerPrefs.GetString("Player Name"));
-            Form.AddField("Inventory", File.ReadAllText(filename));
+            Form.AddField("Inventory", File.ReadAllText(InvLoc));
+            Form.AddField("Equipment", File.ReadAllText(EquipLoc));
 
             WWW SaveWWW = new WWW(SaveInventoryUrl, Form);
 
@@ -93,6 +113,4 @@ public class SaveItems
         this.amount = amount;
         this.slot = slot;
     }
-
-
 }

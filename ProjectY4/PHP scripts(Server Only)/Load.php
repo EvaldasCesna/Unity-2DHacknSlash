@@ -22,15 +22,18 @@ else
         $data = @mysql_fetch_array($Result_id);
     
         $SQL2 = "SELECT Inventory FROM accounts WHERE Username = '" . $Username . "'";
+        $SQL3 = "SELECT Equipment FROM accounts WHERE Username = '" . $Username . "'";
         $Result_id2 = @mysql_query($SQL2) or die ("Error");
         while($row = mysql_fetch_array($Result_id2))
         {
             echo $row['Inventory'];
-               // echo":";
-                //echo"Success";
         }
-        
-  
+            echo"*";
+          $Result_id3 = @mysql_query($SQL3) or die ("Error");
+        while($row = mysql_fetch_array($Result_id3))
+        {  
+            echo $row['Equipment'];
+        }
     }
     else
     {

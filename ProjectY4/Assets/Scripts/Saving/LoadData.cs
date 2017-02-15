@@ -9,22 +9,32 @@ public class LoadData : MonoBehaviour
     private string LoadUrl = "http://188.141.5.218/Load.php";
 
     private Inventory inventory;
-    private JsonData itemData;
+    private Equipment equipment;
+    private JsonData invData;
+    private JsonData equipData;
 
-    static readonly string SAVE = "Inventory.json";
+    static readonly string SAVEIN = "Inventory.json";
+    static readonly string SAVEEQ = "Equipment.json";
     void Start()
     {
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
         StartCoroutine("LoadItemsFromdb");
     }
 
     void ConstructItems()
     {
-        for (int i = 0; i < itemData.Count; i++)
+        for (int i = 0; i < invData.Count; i++)
         {
             //  Debug.Log(i + " id " + (int)itemData[i]["id"]);
-            inventory.PopulateInv((int)itemData[i]["id"], (int)itemData[i]["amount"], (int)itemData[i]["slot"]);
+            inventory.PopulateInv((int)invData[i]["id"], (int)invData[i]["amount"], (int)invData[i]["slot"]);
           //  inventory.AddItem((int)itemData[i]["id"]);
+        }
+        for (int i = 0; i < equipData.Count; i++)
+        {
+            //  Debug.Log(i + " id " + (int)itemData[i]["id"]);
+            equipment.PopulateEquip((int)equipData[i]["id"], (int)equipData[i]["amount"], (int)equipData[i]["slot"]);
+            //  inventory.AddItem((int)itemData[i]["id"]);
         }
     }
 
@@ -39,15 +49,20 @@ public class LoadData : MonoBehaviour
         if (LoadWWW.error != null)
         {
             Debug.LogError("Cannot Connect to DB");
-            string filename = Path.Combine(Application.persistentDataPath, SAVE);
-            itemData = JsonMapper.ToObject(File.ReadAllText(filename));
+            string invLoc = Path.Combine(Application.persistentDataPath, SAVEIN);
+            invData = JsonMapper.ToObject(File.ReadAllText(invLoc));
+            string equipLoc = Path.Combine(Application.persistentDataPath, SAVEEQ);
+            equipData = JsonMapper.ToObject(File.ReadAllText(equipLoc));
+
             ConstructItems();
         }
         else
         {
-   
-             Debug.Log(LoadWWW.text);
-            itemData = JsonMapper.ToObject(LoadWWW.text);
+            string LogText = LoadWWW.text;
+            string[] LogTextSplit = LogText.Split('*');
+          //  Debug.Log(LogTextSplit[0]  +" 0  1 " +  LogTextSplit[1]);
+            invData = JsonMapper.ToObject(LogTextSplit[0]);
+            equipData = JsonMapper.ToObject(LogTextSplit[1]);
             ConstructItems();
         }
     }

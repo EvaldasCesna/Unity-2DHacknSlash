@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
-{
-
+{           //possibly enum was better
+    private string []EquipType = { "Top", "Magic", "Mid", "Melee", "Bot", "Ranged" };
     public int id;
     public string location;
     private Inventory inventory;
@@ -48,40 +48,70 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 Debug.Log(this.transform.GetChild(0));
                 //Item pointed at below the dropped item
                 Transform item = this.transform.GetChild(0);
+                if (droppedItem.location == "Inventory")
+                {
+                    //Sets the item below to position where the picked up item is
+                    item.GetComponent<ItemData>().slot = droppedItem.slot;
+                    item.transform.SetParent(inventory.slots[droppedItem.slot].transform);
+                    item.transform.position = inventory.slots[droppedItem.slot].transform.position;
 
-                //Sets the item below to position where the picked up item is
-                item.GetComponent<ItemData>().slot = droppedItem.slot;
-                item.transform.SetParent(inventory.slots[droppedItem.slot].transform);
-                item.transform.position = inventory.slots[droppedItem.slot].transform.position;
+                    inventory.inventory[droppedItem.slot] = item.GetComponent<ItemData>().item;
+                    inventory.inventory[id] = droppedItem.item;
+                    droppedItem.slot = id;
+                }
+                else
+                {
+                 
+                 
+                    // Fix this
+                    for (int i = 0; i < EquipType.Length; i++)
+                    {
+                        if (inventory.inventory[id].Type == EquipType[i])
+                        {
+                            item.GetComponent<ItemData>().slot = droppedItem.slot;
+                            item.GetComponent<ItemData>().location = droppedItem.location;
+                            item.transform.SetParent(equipment.slots[droppedItem.slot].transform);
+                            item.transform.position = equipment.slots[droppedItem.slot].transform.position;
+                            equipment.equipment[i] = droppedItem.item;
+                            equipment.equipment[i] = item.GetComponent<ItemData>().item;
 
-                inventory.inventory[droppedItem.slot] = item.GetComponent<ItemData>().item;
-                inventory.inventory[id] = droppedItem.item;
-                droppedItem.slot = id;
+                            droppedItem.slot = id;
+                            droppedItem.location = location;
+                        }
+
+                    }
+
+
+
+
+                }
+
+
             }
         }
 
         else if (location == "Equipment")
         {
-
+            // Add something here to not fill the same spot
             if (equipment.equipment[id].ID == -1)
             {
 
                 inventory.inventory[droppedItem.slot] = new Item();
-
-
-                /* need to make it so different types are equipabble to different spots
-                if (droppedItem.item.Type == "Weapon")
+                // Make this into check what type of equipment it is 
+                for(int i = 0; i < EquipType.Length; i++)
                 {
+                    if (droppedItem.item.Type == EquipType[i] && equipment.equipment[i].ID == -1)
+                    {
 
-                    equipment.equipment[2] = droppedItem.item;
-                    droppedItem.slot = 2;
-                    droppedItem.location = "Equipment";
+                        equipment.equipment[i] = droppedItem.item;
+                        droppedItem.slot = i;
+                        droppedItem.location = "Equipment";
+                    }
+
                 }
-                */
 
-                equipment.equipment[3] = droppedItem.item;
-                droppedItem.slot = 3;
-                droppedItem.location = "Equipment";
+
+              
 
 
             }
@@ -96,8 +126,19 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 item.transform.SetParent(inventory.slots[droppedItem.slot].transform);
                 item.transform.position = inventory.slots[droppedItem.slot].transform.position;
                 inventory.inventory[droppedItem.slot] = droppedItem.item;
-                //3 for now while no type check function
-                equipment.equipment[3] = item.GetComponent<ItemData>().item;
+
+                for (int i = 0; i < EquipType.Length; i++)
+                {
+                    if (droppedItem.item.Type == EquipType[i])
+                    {
+
+                        equipment.equipment[i] = item.GetComponent<ItemData>().item;
+                    }
+
+                }
+           
+
+
                 droppedItem.slot = id;
                 droppedItem.location = location;
 

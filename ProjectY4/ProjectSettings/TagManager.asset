@@ -9,6 +9,7 @@ TagManager:
   - Slot
   - SlotPanel
   - UIGUI
+  - Stats
   layers:
   - Default
   - TransparentFX
