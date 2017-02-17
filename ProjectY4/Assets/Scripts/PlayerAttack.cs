@@ -9,8 +9,12 @@ public class PlayerAttack : NetworkBehaviour
 {
     GameObject[] target;
     public float attackRange;
-
+    Animator anim;
 	
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 	// Update is called once per frame
 	void FixedUpdate() {
         if (!isLocalPlayer)
@@ -33,16 +37,19 @@ public class PlayerAttack : NetworkBehaviour
     [Command]
     private void CmdAttack()
     {
-
+        anim.SetBool("isAttacking", true);
         target = GameObject.FindGameObjectsWithTag("Enemy");
-       Debug.Log(GameObject.FindGameObjectsWithTag("Enemy"));
+     //  Debug.Log(GameObject.FindGameObjectsWithTag("Enemy"));
         for (int i = 0; i < target.Length; i++)
         {
             if (Vector3.Distance(transform.position, target[i].transform.position) <= attackRange)
             {
                Debug.Log(target[i].ToString() );
                 EnemyHealth hp = target[i].GetComponent<EnemyHealth>();
-               Debug.Log(hp);
+                //  Debug.Log(hp);
+
+              //  anim.SetBool("isAttacking", false);
+
 
                 if (!Network.isServer)
                     hp.CmdTakeDamage(10);
@@ -50,5 +57,6 @@ public class PlayerAttack : NetworkBehaviour
                     hp.RpcTakeDamage(10);
             }
         }
+    
     }
 }

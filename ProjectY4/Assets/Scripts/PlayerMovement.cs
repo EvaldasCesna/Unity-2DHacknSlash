@@ -7,6 +7,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public float speed;
     private Rigidbody2D rig;
+    private Animator anim;
 
     //Animator anim;
 
@@ -18,11 +19,8 @@ public class PlayerMovement : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
-
-
         rig = GetComponent<Rigidbody2D>();
-     //   anim = GetComponent<Animator>();
-  
+        anim = GetComponent<Animator>();
     }
 
 
@@ -37,22 +35,25 @@ public class PlayerMovement : NetworkBehaviour
 
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
         //Move depending on direction player clicks
-         float movHorizontal = Input.GetAxis("Horizontal");
-         float movVertical = Input.GetAxis("Vertical");
-
-
-        Vector2 movement = new Vector2(movHorizontal, movVertical);
-        rig.velocity = movement * speed;
-
- 
-
+        float movHorizontal = Input.GetAxisRaw("Horizontal");
+        float movVertical = Input.GetAxisRaw("Vertical");
 #else
-        //Move where the direction the joystic is pointing
-        Vector2 movement = new Vector2(CrossPlatformInputManager.GetAxis("Horizontal"), CrossPlatformInputManager.GetAxis("Vertical"));
-        rig.velocity = movement * speed;
-
+              //Move where the direction the joystic is pointing
+        float movHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+        float movVertical = CrossPlatformInputManager.GetAxis("Vertical");
 
 #endif
+        bool isWalking = (Mathf.Abs(movHorizontal) + Mathf.Abs(movVertical)) > 0;
+
+        anim.SetBool("isWalking", isWalking);
+        if (isWalking)
+        {
+            anim.SetFloat("x", movHorizontal);
+            anim.SetFloat("y", movVertical);
+
+            Vector2 movement = new Vector2(movHorizontal, movVertical).normalized;
+            rig.velocity = movement * speed;
+        }
 
 
     }
