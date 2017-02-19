@@ -8,19 +8,20 @@ public class PlayerMovement : NetworkBehaviour
     public float speed;
     private Rigidbody2D rig;
     private Animator anim;
-
+    private Vector2 movement;
     //Animator anim;
 
     public override void OnStartLocalPlayer()
     {
         Camera.main.GetComponent<CameraFollow>().setTarget(gameObject.transform);
+        rig = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Use this for initialization
     void Start()
     {
-        rig = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+  
     }
 
 
@@ -50,11 +51,13 @@ public class PlayerMovement : NetworkBehaviour
         {
             anim.SetFloat("x", movHorizontal);
             anim.SetFloat("y", movVertical);
-
-            Vector2 movement = new Vector2(movHorizontal, movVertical).normalized;
+          
+             movement = new Vector2(movHorizontal, movVertical).normalized;
             rig.velocity = movement * speed;
-        }
 
+        }
+        anim.SetFloat("lastx", movement.x);
+        anim.SetFloat("lasty", movement.y);
 
     }
 

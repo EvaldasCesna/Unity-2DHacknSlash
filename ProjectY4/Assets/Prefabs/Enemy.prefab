@@ -255,7 +255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   aggroDistance: 10
-  attackDistance: 2
+  attackDistance: 0
 --- !u!114 &114891550596508918
 MonoBehaviour:
   m_ObjectHideFlags: 1
