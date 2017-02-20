@@ -2,7 +2,7 @@
   {
     "id": 0,
     "title": "Bronze Sword",
-    "type":  "Sword",
+    "type": "Melee",
     "value": 5,
     "stats": {
       "attack": 1,
@@ -18,7 +18,7 @@
   {
     "id": 1,
     "title": "Gold Sword",
-    "type": "Sword",
+    "type": "Melee",
     "value": 10,
     "stats": {
       "attack": 3,
@@ -29,5 +29,80 @@
     "stackable": false,
     "rarity": 4,
     "slug": "gold_sword"
+  },
+  {
+    "id": 2,
+    "title": "Wood Bow",
+    "type": "Ranged",
+    "value": 12,
+    "stats": {
+      "attack": 2,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A wood bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "wood_bow"
+  },
+  {
+    "id": 3,
+    "title": "Simple Staff",
+    "type": "Magic",
+    "value": 16,
+    "stats": {
+      "attack": 8,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "wood_staff"
+  },
+  {
+    "id": 4,
+    "title": "Bronze Helmet",
+    "type": "Top",
+    "value": 44,
+    "stats": {
+      "attack": 1,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A helmet",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "bronze_helmet"
+  },
+  {
+    "id": 5,
+    "title": "Bronze Armor",
+    "type": "Mid",
+    "value": 44,
+    "stats": {
+      "attack": 1,
+      "defence": 4,
+      "vitality": 5
+    },
+    "description": "A armor",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "bronze_armor"
+  },
+  {
+    "id": 6,
+    "title": "Bronze Leggings",
+    "type": "Bot",
+    "value": 33,
+    "stats": {
+      "attack": 1,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A Legging",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "bronze_legging"
   }
 ]

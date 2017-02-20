@@ -160,7 +160,7 @@ namespace Tiled2Unity
                 // Add any object group items
                 AddTmxObjectComponentsTo(child, goXml);
                 AddRectangleObjectComponentsTo(child, goXml);
-                AddCircleObjectComponentsTo(child, goXml);
+               // AddCircleObjectComponentsTo(child, goXml);
                 AddPolygonObjectComponentsTo(child, goXml);
                 AddPolylineObjectComponentsTo(child, goXml);
                 AddTileObjectComponentsTo(child, goXml);
@@ -459,15 +459,15 @@ namespace Tiled2Unity
             }
         }
 
-        private void AddCircleObjectComponentsTo(GameObject gameObject, XElement goXml)
-        {
-            var xml = goXml.Element("CircleObjectComponent");
-            if (xml != null)
-            {
-                CircleObject tmxCircle = gameObject.AddComponent<Tiled2Unity.CircleObject>();
-                FillBaseTmxObjectProperties(tmxCircle, xml);
-            }
-        }
+        //private void AddCircleObjectComponentsTo(GameObject gameObject, XElement goXml)
+        //{
+        //    var xml = goXml.Element("CircleObjectComponent");
+        //    if (xml != null)
+        //    {
+        //        CircleObject tmxCircle = gameObject.AddComponent<Tiled2Unity.CircleObject>();
+        //        FillBaseTmxObjectProperties(tmxCircle, xml);
+        //    }
+        //}
 
         private void AddPolygonObjectComponentsTo(GameObject gameObject, XElement goXml)
         {

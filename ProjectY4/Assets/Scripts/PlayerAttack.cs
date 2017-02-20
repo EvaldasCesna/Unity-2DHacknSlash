@@ -14,22 +14,34 @@ public class PlayerAttack : NetworkBehaviour
 
     public float attackTime;
     private float attackTimeCounter;
-    private bool isAttacking;
+    public bool isAttacking = false;
 
     void Start()
     {
         sword = GetComponentInChildren<Sword>();
         anim = GetComponent<Animator>();
     }
+
+
 	// Update is called once per frame
 	void FixedUpdate() {
         if (!isLocalPlayer)
         {
+            if (attackTimeCounter > 0)
+            {
+                attackTimeCounter -= Time.deltaTime;
+            }
+            if (attackTimeCounter <= 0)
+            {
+                isAttacking = false;
+                anim.SetBool("isAttacking", isAttacking);
+            }
+
             return;
         }
         
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isAttacking == false)
         {
            CmdAttack();
         }
@@ -44,7 +56,7 @@ public class PlayerAttack : NetworkBehaviour
         }
         if (attackTimeCounter <= 0)
         {
-            isAttacking = false;
+                isAttacking = false;
             anim.SetBool("isAttacking", isAttacking);
         }
 
@@ -80,21 +92,39 @@ public class PlayerAttack : NetworkBehaviour
     [Command]
     private void CmdAttack()
     {
-    
-  
-        anim.SetBool("isAttacking", isAttacking);
 
+            isAttacking = true;
+
+        anim.SetBool("isAttacking", isAttacking);
+        attackTimeCounter = attackTime;
+
+
+        //        Debug.Log(sword.getHit().currentHealth);
+        //        EnemyHealth hp = sword.getHit();
+        //        if (sword.getHit() != null)
+        //        {
+        //            if (!Network.isServer)
+        //                hp.CmdTakeDamage(10);
+        //            else
+        //                hp.RpcTakeDamage(10);
+        //        }
+        //sword.hp = null;
+
+
+
+    }
+    [Command]
+    public void CmdDoDamage()
+    {
+        EnemyHealth hp = sword.getHit();
         if (sword.getHit() != null)
         {
-            EnemyHealth hp = sword.getHit();
-
             if (!Network.isServer)
                 hp.CmdTakeDamage(10);
             else
                 hp.RpcTakeDamage(10);
         }
-        attackTimeCounter = attackTime;
-        isAttacking = true;
+        hp = null;
 
     }
 }

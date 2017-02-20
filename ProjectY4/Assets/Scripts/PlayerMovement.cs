@@ -9,13 +9,30 @@ public class PlayerMovement : NetworkBehaviour
     private Rigidbody2D rig;
     private Animator anim;
     private Vector2 movement;
-    //Animator anim;
+    public Vector2 lastMovement;
+
 
     public override void OnStartLocalPlayer()
     {
         Camera.main.GetComponent<CameraFollow>().setTarget(gameObject.transform);
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(0, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(1, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(2, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(4, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(5, true);
+    }
+
+    public override void PreStartClient()
+    {
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(0, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(1, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(2, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(4, true);
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(5, true);
     }
 
     // Use this for initialization
@@ -54,10 +71,12 @@ public class PlayerMovement : NetworkBehaviour
           
              movement = new Vector2(movHorizontal, movVertical).normalized;
             rig.velocity = movement * speed;
+            lastMovement = new Vector2(movHorizontal, movVertical);
 
         }
-        anim.SetFloat("lastx", movement.x);
-        anim.SetFloat("lasty", movement.y);
+
+        anim.SetFloat("lastx", lastMovement.x);
+        anim.SetFloat("lasty", lastMovement.y);
 
     }
 
