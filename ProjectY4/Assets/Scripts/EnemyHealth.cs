@@ -10,6 +10,14 @@ public class EnemyHealth : NetworkBehaviour
     [SyncVar(hook = "OnChangeHealth")] public int currentHealth = maxHealth;
     public RectTransform healthbar;
     public bool destroyOnDeath;
+    public bool isDamaged;
+    public float invincibility;
+    private float invicibilityCounter;
+
+    public void FixedUpdate()
+    {
+        invincibilityCounter();
+    }
 
     [Command]
     public void CmdTakeDamage(int amount)
@@ -20,14 +28,23 @@ public class EnemyHealth : NetworkBehaviour
     [ClientRpc]
     public void RpcTakeDamage(int amount)
     {
-        currentHealth -= amount;
-        if (currentHealth <= 0)
-        {
-            if (destroyOnDeath)
-            {
-                Destroy(gameObject);
-            }
 
+        if (isDamaged == false)
+        {
+         
+            isDamaged = true;
+            invicibilityCounter = invincibility;
+
+            currentHealth -= amount;
+
+            if (currentHealth <= 0)
+            {
+                if (destroyOnDeath)
+                {
+                    Destroy(gameObject);
+                }
+
+            }
         }
     }
 
@@ -35,6 +52,19 @@ public class EnemyHealth : NetworkBehaviour
     void OnChangeHealth(int health)
     {
         healthbar.sizeDelta = new Vector2(health, healthbar.sizeDelta.y);
+    }
+
+    private void invincibilityCounter()
+    {
+        if (invicibilityCounter > 0)
+        {
+            invicibilityCounter -= Time.fixedDeltaTime;
+        }
+        if (invicibilityCounter <= 0)
+        {
+            isDamaged = false;
+    
+        }
     }
 
 

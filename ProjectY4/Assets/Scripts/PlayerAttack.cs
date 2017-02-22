@@ -11,6 +11,7 @@ public class PlayerAttack : NetworkBehaviour
     public float attackRange;
     Animator anim;
     Sword sword;
+    public int damage = 10;
 
     public float attackTime;
     private float attackTimeCounter;
@@ -27,38 +28,12 @@ public class PlayerAttack : NetworkBehaviour
 	void FixedUpdate() {
         if (!isLocalPlayer)
         {
-            if (attackTimeCounter > 0)
-            {
-                attackTimeCounter -= Time.deltaTime;
-            }
-            if (attackTimeCounter <= 0)
-            {
-                isAttacking = false;
-                anim.SetBool("isAttacking", isAttacking);
-            }
-
             return;
         }
-        
-#if UNITY_STANDALONE || UNITY_WEBPLAYER
-        if (Input.GetKeyDown(KeyCode.Space) && isAttacking == false)
-        {
-           CmdAttack();
-        }
-#else
-        if (CrossPlatformInputManager.GetButton("Attack")) {
-            CmdAttack();
-        }
-#endif
-        if(attackTimeCounter > 0)
-        {
-            attackTimeCounter -= Time.deltaTime;
-        }
-        if (attackTimeCounter <= 0)
-        {
-                isAttacking = false;
-            anim.SetBool("isAttacking", isAttacking);
-        }
+
+        userInput();
+
+        attackCounter();
 
     }
     //Old attack
@@ -89,16 +64,46 @@ public class PlayerAttack : NetworkBehaviour
 
     //}
 
+    private void userInput()
+    {
+#if UNITY_STANDALONE || UNITY_WEBPLAYER
+        if (Input.GetKeyDown(KeyCode.Space) && isAttacking == false)
+        {
+            CmdAttack();
+        }
+#else
+        if (CrossPlatformInputManager.GetButton("Attack")) {
+            CmdAttack();
+        }
+#endif
+
+    }
+
+    private void attackCounter()
+    {
+        if (attackTimeCounter > 0)
+        {
+            attackTimeCounter -= Time.fixedDeltaTime;
+        }
+        if (attackTimeCounter <= 0)
+        {
+            isAttacking = false;
+            anim.SetBool("isAttacking", isAttacking);
+        }
+
+    }
+
     [Command]
     private void CmdAttack()
     {
-
+        if (isAttacking == false)
+        {
             isAttacking = true;
 
-        anim.SetBool("isAttacking", isAttacking);
-        attackTimeCounter = attackTime;
+            anim.SetBool("isAttacking", isAttacking);
+            attackTimeCounter = attackTime;
 
-
+        }
         //        Debug.Log(sword.getHit().currentHealth);
         //        EnemyHealth hp = sword.getHit();
         //        if (sword.getHit() != null)
@@ -120,9 +125,9 @@ public class PlayerAttack : NetworkBehaviour
         if (sword.getHit() != null)
         {
             if (!Network.isServer)
-                hp.CmdTakeDamage(10);
+                hp.CmdTakeDamage(damage);
             else
-                hp.RpcTakeDamage(10);
+                hp.RpcTakeDamage(damage);
         }
         hp = null;
 

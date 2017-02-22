@@ -73,11 +73,11 @@ GameObject:
   - component: {fileID: 4486109874720110}
   - component: {fileID: 212555072498136758}
   - component: {fileID: 50675783556085404}
-  - component: {fileID: 61177075147362260}
   - component: {fileID: 114886008727075606}
   - component: {fileID: 114562679211229372}
   - component: {fileID: 114322211837460658}
   - component: {fileID: 114129685855987242}
+  - component: {fileID: 58599964776584982}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -119,8 +119,8 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61177075147362260
-BoxCollider2D:
+--- !u!58 &58599964776584982
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.63, y: 0.64}
+  m_Radius: 0.15
 --- !u!114 &114129685855987242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,6 +147,8 @@ MonoBehaviour:
   currentHealth: 100
   healthbar: {fileID: 224679798440874234}
   destroyOnDeath: 1
+  isDamaged: 0
+  invincibility: 0.2
 --- !u!114 &114322141696069414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +258,8 @@ MonoBehaviour:
   speed: 1
   aggroDistance: 10
   attackDistance: 0
+  timeBetweenMoves: 2
+  timeToMove: 1
 --- !u!114 &114891550596508918
 MonoBehaviour:
   m_ObjectHideFlags: 1

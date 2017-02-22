@@ -10,7 +10,8 @@ public class PlayerMovement : NetworkBehaviour
     private Animator anim;
     private Vector2 movement;
     public Vector2 lastMovement;
-
+    private float movHorizontal;
+    private float movVertical;
 
     public override void OnStartLocalPlayer()
     {
@@ -49,29 +50,42 @@ public class PlayerMovement : NetworkBehaviour
         {
             return;
         }
-        
 
+     updateMovement();
+
+     moving(movHorizontal , movVertical);
+    }
+
+    private void updateMovement()
+    {
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
-        //Move depending on direction player clicks
-        float movHorizontal = Input.GetAxisRaw("Horizontal");
-        float movVertical = Input.GetAxisRaw("Vertical");
+         //Move depending on direction player clicks
+         movHorizontal = Input.GetAxisRaw("Horizontal");
+         movVertical = Input.GetAxisRaw("Vertical");
 #else
-              //Move where the direction the joystic is pointing
-        float movHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
-        float movVertical = CrossPlatformInputManager.GetAxis("Vertical");
+         //Move where the direction the joystic is pointing
+         movHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
+         movVertical = CrossPlatformInputManager.GetAxis("Vertical");
 
 #endif
-        bool isWalking = (Mathf.Abs(movHorizontal) + Mathf.Abs(movVertical)) > 0;
+
+    }
+
+    public void moving(float x, float y)
+    {
+
+        bool isWalking = (Mathf.Abs(x) + Mathf.Abs(y)) > 0;
 
         anim.SetBool("isWalking", isWalking);
         if (isWalking)
         {
-            anim.SetFloat("x", movHorizontal);
-            anim.SetFloat("y", movVertical);
-          
-             movement = new Vector2(movHorizontal, movVertical).normalized;
+            anim.SetFloat("x", x);
+            anim.SetFloat("y", y);
+
+            movement = new Vector2(x, y).normalized;
             rig.velocity = movement * speed;
-            lastMovement = new Vector2(movHorizontal, movVertical);
+
+            lastMovement = new Vector2(x, y);
 
         }
 
