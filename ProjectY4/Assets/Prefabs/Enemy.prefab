@@ -149,6 +149,7 @@ MonoBehaviour:
   destroyOnDeath: 1
   isDamaged: 0
   invincibility: 0.2
+  expToGive: 25
 --- !u!114 &114322141696069414
 MonoBehaviour:
   m_ObjectHideFlags: 1

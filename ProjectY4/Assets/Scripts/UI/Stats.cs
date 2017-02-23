@@ -8,12 +8,14 @@ public class Stats : MonoBehaviour
     private Equipment equipment; 
     private GameObject stats;
     private string data;
-
+    public int currentLevel;
+    public int currentXp;
+    public int[] levels;
     // Use this for initialization
     void Start()
     {
         stats = GameObject.FindGameObjectWithTag("Stats");
-        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
+       
 
     }
 
@@ -21,11 +23,13 @@ public class Stats : MonoBehaviour
     {
         //Later only update if something changes but works for now
         UpdateStats();
+        levelUp();
     }
 
 
     public void UpdateStats()
     {
+        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
         int def = 0, str = 0, vit = 0;
 
         for (int i = 0; i < equipment.equipment.Count; i++)
@@ -39,4 +43,18 @@ public class Stats : MonoBehaviour
         stats.GetComponent<Text>().text = data;
 
     }
+
+    public void levelUp()
+    {
+        if(currentXp >= levels[currentLevel])
+        {
+            currentLevel++;
+        }
+    }
+
+    public void addXp(int xp)
+    {
+        currentXp += xp;
+    }
+
 }

@@ -13,6 +13,13 @@ public class EnemyHealth : NetworkBehaviour
     public bool isDamaged;
     public float invincibility;
     private float invicibilityCounter;
+    private Stats playerStats;
+    public int expToGive;
+
+    private void Start()
+    {
+        playerStats = FindObjectOfType<Stats>();
+    }
 
     public void FixedUpdate()
     {
@@ -39,6 +46,7 @@ public class EnemyHealth : NetworkBehaviour
 
             if (currentHealth <= 0)
             {
+                playerStats.addXp(expToGive);
                 if (destroyOnDeath)
                 {
                     Destroy(gameObject);

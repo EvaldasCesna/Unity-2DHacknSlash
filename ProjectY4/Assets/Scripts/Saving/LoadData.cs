@@ -54,7 +54,7 @@ public class LoadData : MonoBehaviour
             string equipLoc = Path.Combine(Application.persistentDataPath, SAVEEQ);
             equipData = JsonMapper.ToObject(File.ReadAllText(equipLoc));
 
-            ConstructItems();
+            //ConstructItems();
         }
         else
         {

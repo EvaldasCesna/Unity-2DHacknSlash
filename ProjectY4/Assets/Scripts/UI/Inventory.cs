@@ -34,9 +34,10 @@ public class Inventory : MonoBehaviour
         }
         //  PopulateInv(0, 1, 6);
         //     AddItem(0);
-        //  AddItem(0);
-        //   AddItem(1);
-
+         AddItem(0);
+          AddItem(1);
+        AddItem(2);
+        AddItem(3);
 
         invPanel.SetActive(false);
     }

@@ -7,20 +7,36 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerAttack : NetworkBehaviour
 {
-    GameObject[] target;
-    public float attackRange;
+   // GameObject[] target;
+    //public float attackRange;
     Animator anim;
-    Sword sword;
+
     public int damage = 10;
 
     public float attackTime;
     private float attackTimeCounter;
     public bool isAttacking = false;
 
+    public GameObject Melee;
+    public GameObject Ranged;
+    public GameObject Magic;
+    Sword sword;
+    Bow bow;
+    Staff staff;
+
+    private PlayerMovement playerPos;
+
     void Start()
     {
-        sword = GetComponentInChildren<Sword>();
+        playerPos = GetComponentInParent<PlayerMovement>();
+        staff = Magic.GetComponentInChildren<Staff>();
+        bow = Ranged.GetComponentInChildren<Bow>();
+        sword = Melee.GetComponentInChildren<Sword>();
         anim = GetComponent<Animator>();
+
+        Ranged.SetActive(false);
+        Magic.SetActive(false);
+        Melee.SetActive(false);
     }
 
 
@@ -63,14 +79,27 @@ public class PlayerAttack : NetworkBehaviour
     //    }
 
     //}
+    public Vector2 lastMovement()
+    {
+        return playerPos.lastMovement;
+    }
 
     private void userInput()
     {
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
         if (Input.GetKeyDown(KeyCode.Space) && isAttacking == false)
         {
-            CmdAttack();
+            CmdMelee();
         }
+        if (Input.GetKeyDown(KeyCode.F) && isAttacking == false)
+        {
+            CmdRanged();
+        }
+        if (Input.GetKeyDown(KeyCode.G) && isAttacking == false)
+        {
+            CmdMagic();
+        }
+
 #else
         if (CrossPlatformInputManager.GetButton("Attack")) {
             CmdAttack();
@@ -94,8 +123,32 @@ public class PlayerAttack : NetworkBehaviour
     }
 
     [Command]
-    private void CmdAttack()
+    private void CmdRanged()
     {
+        Ranged.SetActive(true);
+        Magic.SetActive(false);
+        Melee.SetActive(false);
+        if (isAttacking == false)
+        {
+            attackTimeCounter = attackTime;
+            bow.Shoot();
+        }
+    }
+    [Command]
+    private void CmdMagic()
+    {
+        Ranged.SetActive(false);
+        Magic.SetActive(true);
+        Melee.SetActive(false);
+    }
+
+    [Command]
+    private void CmdMelee()
+    {
+        Melee.SetActive(true);
+        Ranged.SetActive(false);
+        Magic.SetActive(false);
+
         if (isAttacking == false)
         {
             isAttacking = true;

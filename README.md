@@ -11,6 +11,7 @@ Making the game fun(TODO)
 Player:
 Animations (Basic Working (Might switch to another spritesheet later))
 Inventory (Working)
+Leveling Up (TODO)
 Skills (TODO)
 Attacking (In Proggress)
 
