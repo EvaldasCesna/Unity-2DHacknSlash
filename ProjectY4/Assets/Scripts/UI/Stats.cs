@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class Stats : MonoBehaviour
+public class Stats : NetworkBehaviour
 {
     private Equipment equipment; 
     private GameObject stats;
@@ -11,6 +12,12 @@ public class Stats : MonoBehaviour
     public int currentLevel;
     public int currentXp;
     public int[] levels;
+    [SyncVar]
+    Item melee;
+    [SyncVar]
+    Item ranged;
+    [SyncVar]
+    Item magic;
     // Use this for initialization
     void Start()
     {
@@ -56,5 +63,24 @@ public class Stats : MonoBehaviour
     {
         currentXp += xp;
     }
+
+    public Item getMelee()
+    {
+        melee = equipment.equipment[3];
+        return melee;
+    }
+
+    public Item getMagic()
+    {
+        magic = equipment.equipment[1];
+        return magic;
+    }
+
+    public Item getRanged()
+    {
+        ranged = equipment.equipment[5];
+        return ranged;
+    }
+    //pa.setSprites(equipment[1].Sprite, equipment[3].Sprite, equipment[5].Sprite);
 
 }

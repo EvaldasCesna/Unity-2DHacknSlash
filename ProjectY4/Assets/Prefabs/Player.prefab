@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114244354900231018}
   - component: {fileID: 95514526124079640}
   - component: {fileID: 114296450721828954}
+  - component: {fileID: 114975460172486946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -469,6 +470,7 @@ MonoBehaviour:
   Melee: {fileID: 1816129001632522}
   Ranged: {fileID: 1572243727643154}
   Magic: {fileID: 1729477888331592}
+  hp: {fileID: 0}
 --- !u!114 &114259929988830018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -628,6 +630,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114975460172486946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010518039958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bab7865cf274c74b80c4c7a5fa35b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 0}
 --- !u!212 &212000012006612680
 SpriteRenderer:
   m_ObjectHideFlags: 1

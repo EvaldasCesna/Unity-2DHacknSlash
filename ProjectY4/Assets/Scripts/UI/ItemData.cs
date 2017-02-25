@@ -7,6 +7,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public int slot;
     public string location;
 
+
     private Equipment equipment;
     private Inventory inventory;
     private InventoryTooltip tooltip;
@@ -14,6 +15,7 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     private void Start()
     {
+
         equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
         inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         tooltip = inventory.GetComponent<InventoryTooltip>();
@@ -34,10 +36,14 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
+
+      
         if (item != null)
         {
             this.transform.position = eventData.position - offset;
         }
+
+
     }
 
     public void OnEndDrag(PointerEventData eventData)

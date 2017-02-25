@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Equipment : MonoBehaviour {
     GameObject charPanel;
     GameObject slotPanel;
    ItemsDatabase items;
     public GameObject equipSlot;
     public GameObject equipItem;
-    
 
     int slotAmount;
     public List<Item> equipment = new List<Item>();
@@ -19,7 +19,7 @@ public class Equipment : MonoBehaviour {
     void Start ()
     {
         //Grabs the item List
-        
+      
         items = GetComponent<ItemsDatabase>();
 
         slotAmount = 6;
@@ -33,6 +33,8 @@ public class Equipment : MonoBehaviour {
             slots[i].GetComponent<InventorySlot>().location = "Equipment";
             slots[i].transform.SetParent(slotPanel.transform);
         }
+    
+
         charPanel.SetActive(false);
     }
 
@@ -68,6 +70,6 @@ public class Equipment : MonoBehaviour {
         }
 
         return temp;
-    }
+    }    
 
 }

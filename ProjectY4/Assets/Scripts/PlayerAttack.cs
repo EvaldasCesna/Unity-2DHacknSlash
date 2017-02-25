@@ -15,6 +15,7 @@ public class PlayerAttack : NetworkBehaviour
 
     public float attackTime;
     private float attackTimeCounter;
+    [SyncVar]
     public bool isAttacking = false;
 
     public GameObject Melee;
@@ -23,11 +24,13 @@ public class PlayerAttack : NetworkBehaviour
     Sword sword;
     Bow bow;
     Staff staff;
-
+    public EnemyHealth hp;
     private PlayerMovement playerPos;
+  
 
     void Start()
     {
+
         playerPos = GetComponentInParent<PlayerMovement>();
         staff = Magic.GetComponentInChildren<Staff>();
         bow = Ranged.GetComponentInChildren<Bow>();
@@ -46,7 +49,7 @@ public class PlayerAttack : NetworkBehaviour
         {
             return;
         }
-
+ 
         userInput();
 
         attackCounter();
@@ -108,6 +111,13 @@ public class PlayerAttack : NetworkBehaviour
 
     }
 
+    public void setSprites(Sprite inSword, Sprite inBow, Sprite inStaff)
+    {
+        sword.GetComponent<SpriteRenderer>().sprite = inSword;
+        bow.GetComponent<SpriteRenderer>().sprite = inBow;
+        staff.GetComponent<SpriteRenderer>().sprite = inStaff;
+    }
+
     private void attackCounter()
     {
         if (attackTimeCounter > 0)
@@ -125,25 +135,46 @@ public class PlayerAttack : NetworkBehaviour
     [Command]
     private void CmdRanged()
     {
+        RpcRanged();
+    }
+
+    [Command]
+    private void CmdMagic()
+    {
+        RpcMagic();
+    }
+
+    [Command]
+    private void CmdMelee()
+    {
+        RpcMelee();
+    }
+
+    [ClientRpc]
+    private void RpcRanged()
+    {
         Ranged.SetActive(true);
         Magic.SetActive(false);
         Melee.SetActive(false);
         if (isAttacking == false)
         {
+            isAttacking = true;
+
             attackTimeCounter = attackTime;
             bow.Shoot();
         }
     }
-    [Command]
-    private void CmdMagic()
+    [ClientRpc]
+    private void RpcMagic()
     {
         Ranged.SetActive(false);
         Magic.SetActive(true);
         Melee.SetActive(false);
     }
 
-    [Command]
-    private void CmdMelee()
+
+    [ClientRpc]
+    private void RpcMelee()
     {
         Melee.SetActive(true);
         Ranged.SetActive(false);
@@ -174,8 +205,7 @@ public class PlayerAttack : NetworkBehaviour
     [Command]
     public void CmdDoDamage()
     {
-        EnemyHealth hp = sword.getHit();
-        if (sword.getHit() != null)
+        if (hp != null)
         {
             if (!Network.isServer)
                 hp.CmdTakeDamage(damage);

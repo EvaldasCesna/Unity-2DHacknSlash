@@ -20,6 +20,7 @@ public class Sword : MonoBehaviour
             if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false)
             {
                 objectColided.GetComponent<Rigidbody2D>().AddForce(pa.lastMovement() * 10000f);
+                pa.hp = hp;
                 pa.CmdDoDamage();
 
                 Instantiate(damageParticle, objectColided.transform.position, objectColided.transform.rotation);

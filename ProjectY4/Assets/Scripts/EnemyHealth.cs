@@ -18,7 +18,8 @@ public class EnemyHealth : NetworkBehaviour
 
     private void Start()
     {
-        playerStats = FindObjectOfType<Stats>();
+  
+        playerStats = GameObject.FindGameObjectWithTag("UIGUI").GetComponentInChildren<Stats>();
     }
 
     public void FixedUpdate()
@@ -46,7 +47,7 @@ public class EnemyHealth : NetworkBehaviour
 
             if (currentHealth <= 0)
             {
-                playerStats.addXp(expToGive);
+               playerStats.addXp(expToGive);
                 if (destroyOnDeath)
                 {
                     Destroy(gameObject);
