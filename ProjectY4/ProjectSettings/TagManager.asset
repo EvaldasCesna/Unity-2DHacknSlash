@@ -10,6 +10,7 @@ TagManager:
   - SlotPanel
   - UIGUI
   - Stats
+  - Inventory
   layers:
   - Default
   - TransparentFX

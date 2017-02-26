@@ -12,31 +12,42 @@ public class Stats : NetworkBehaviour
     public int currentLevel;
     public int currentXp;
     public int[] levels;
-    [SyncVar]
+
     Item melee;
-    [SyncVar]
+
     Item ranged;
-    [SyncVar]
+
     Item magic;
     // Use this for initialization
     void Start()
     {
         stats = GameObject.FindGameObjectWithTag("Stats");
-       
+        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
 
     }
 
     private void Update()
     {
+
+        //if (!Network.isServer)
+        //    CmdUpdateStats();
+        //else
+        //    RpcUpdateStats();
         //Later only update if something changes but works for now
-        UpdateStats();
-        levelUp();
+          UpdateStats();
+        //   levelUp();
     }
 
+    //[Command]
+    //public void CmdUpdateStats()
+    //{
+    //    RpcUpdateStats();
+    //}
 
+  //  [ClientRpc]
     public void UpdateStats()
     {
-        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
+        
         int def = 0, str = 0, vit = 0;
 
         for (int i = 0; i < equipment.equipment.Count; i++)

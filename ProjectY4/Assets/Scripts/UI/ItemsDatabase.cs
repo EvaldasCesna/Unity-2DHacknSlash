@@ -58,7 +58,6 @@ public class ItemsDatabase : MonoBehaviour {
 
 }
 
-
 public class Item
 {
     public int ID { get; private set; }
@@ -73,7 +72,7 @@ public class Item
     public int Rarity { get; set; }
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
-
+  
     public Item(int id, string title, string type, int value, int strength, int defence, int vitality, string description, bool stackable, int rarity, string slug)
     {
         this.ID = id;

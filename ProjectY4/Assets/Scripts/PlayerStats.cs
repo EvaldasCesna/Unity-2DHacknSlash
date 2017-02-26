@@ -9,10 +9,10 @@ public class PlayerStats : NetworkBehaviour {
     public GameObject UI;
     // Use this for initialization
     void Start () {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
+        //if (!isLocalPlayer)
+        //{
+        //    return;
+        //}
 
         pa = GetComponent<PlayerAttack>();
 
@@ -27,6 +27,14 @@ public class PlayerStats : NetworkBehaviour {
         {
             return;
         }
-        pa.setSprites(stats.getMelee().Sprite,stats.getRanged().Sprite, stats.getMagic().Sprite);
+
+        if (!Network.isServer)
+                pa.CmdSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
+        else
+            pa.RpcSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
+
+
+
+    
 	}
 }

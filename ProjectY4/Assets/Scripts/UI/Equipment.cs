@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
+using System;
 
-
-public class Equipment : MonoBehaviour {
+public class Equipment : NetworkBehaviour {
     GameObject charPanel;
     GameObject slotPanel;
    ItemsDatabase items;
@@ -15,6 +16,19 @@ public class Equipment : MonoBehaviour {
     public List<Item> equipment = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
 
+    //public class SyncListGameObject : SyncList<GameObject>
+    //{
+    //    protected override GameObject DeserializeItem(NetworkReader reader)
+    //    {
+    //        return reader.ReadGameObject();
+    //    }
+
+    //    protected override void SerializeItem(NetworkWriter writer, GameObject item)
+    //    {
+    //        writer.Write(item);
+    //    }
+    //}
+    //public SyncListGameObject syncslots = new SyncListGameObject();
 
     void Start ()
     {
@@ -37,6 +51,10 @@ public class Equipment : MonoBehaviour {
 
         charPanel.SetActive(false);
     }
+    //private void Update()
+    //{
+    //    syncslots.Equals(slots);
+    //}
 
     public void PopulateEquip(int id, int amount, int slot)
     {

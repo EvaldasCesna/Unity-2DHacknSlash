@@ -15,7 +15,6 @@ public class PlayerAttack : NetworkBehaviour
 
     public float attackTime;
     private float attackTimeCounter;
-    [SyncVar]
     public bool isAttacking = false;
 
     public GameObject Melee;
@@ -26,11 +25,11 @@ public class PlayerAttack : NetworkBehaviour
     Staff staff;
     public EnemyHealth hp;
     private PlayerMovement playerPos;
-  
+    private ItemsDatabase item;
 
     void Start()
     {
-
+       // item = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<ItemsDatabase>();
         playerPos = GetComponentInParent<PlayerMovement>();
         staff = Magic.GetComponentInChildren<Staff>();
         bow = Ranged.GetComponentInChildren<Bow>();
@@ -49,7 +48,7 @@ public class PlayerAttack : NetworkBehaviour
         {
             return;
         }
- 
+      
         userInput();
 
         attackCounter();
@@ -110,12 +109,34 @@ public class PlayerAttack : NetworkBehaviour
 #endif
 
     }
-
-    public void setSprites(Sprite inSword, Sprite inBow, Sprite inStaff)
+    [Command]
+    public void CmdSetSprites(int inSword, int inBow, int inStaff)
     {
-        sword.GetComponent<SpriteRenderer>().sprite = inSword;
-        bow.GetComponent<SpriteRenderer>().sprite = inBow;
-        staff.GetComponent<SpriteRenderer>().sprite = inStaff;
+     
+        RpcSetSprites(inSword, inBow, inStaff);
+    }
+
+
+    [ClientRpc]
+    public void RpcSetSprites(int inSword, int inBow, int inStaff)
+    {
+        item = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<ItemsDatabase>();
+        damage = 10;
+
+        if (inSword != -1)
+        { 
+            sword.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inSword).Sprite;
+            damage = item.GetItemByID(inSword).Strength + damage;
+        }
+        if (inBow != -1)
+        {
+            bow.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inBow).Sprite;
+            damage = item.GetItemByID(inBow).Strength + damage;
+        }
+        if (inStaff != -1)
+        {
+            staff.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inStaff).Sprite;
+        }
     }
 
     private void attackCounter()
@@ -202,7 +223,7 @@ public class PlayerAttack : NetworkBehaviour
 
 
     }
-    [Command]
+    [Command]   //Need to rewrite sync issues
     public void CmdDoDamage()
     {
         if (hp != null)
@@ -215,4 +236,7 @@ public class PlayerAttack : NetworkBehaviour
         hp = null;
 
     }
+
+
+
 }
