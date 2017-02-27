@@ -7,29 +7,28 @@ public class Sword : MonoBehaviour
 
     public EnemyHealth hp;
     public PlayerAttack pa;
-    public GameObject damageParticle;
-    public GameObject damageNumber;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         pa = GetComponentInParent<PlayerAttack>();
         if (pa.isAttacking == true)
         {
+    
             GameObject objectColided = collision.gameObject;
             hp = collision.GetComponent<EnemyHealth>();
-            if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false)
+            if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false && pa.isAttacking == true)
             {
-                objectColided.GetComponent<Rigidbody2D>().AddForce(pa.lastMovement() * 10000f);
-                pa.hp = hp;
-                pa.CmdDoDamage();
+             //   Debug.Log(pa.isAttacking);
+             //   Debug.Log("its attacking");
+                Vector3 direction = collision.transform.position - transform.position;
+                direction = direction.normalized;
 
-                Instantiate(damageParticle, objectColided.transform.position, objectColided.transform.rotation);
-                //Creates a clone and sets the damage numbers to what the damage is
-                var clone = (GameObject)Instantiate(damageNumber, objectColided.transform.position, Quaternion.Euler(Vector3.zero));
-                clone.GetComponent<FloatingNumbers>().damageNum = pa.damage;
+                hp.TakeDamage(10, direction);
 
-             
-                
+
+
+
             }
         }
     }

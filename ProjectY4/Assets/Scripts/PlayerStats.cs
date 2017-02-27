@@ -29,7 +29,7 @@ public class PlayerStats : NetworkBehaviour {
         }
 
         if (!Network.isServer)
-                pa.CmdSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
+            pa.CmdSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
         else
             pa.RpcSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
 

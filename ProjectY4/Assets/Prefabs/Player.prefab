@@ -467,6 +467,9 @@ MonoBehaviour:
   damage: 10
   attackTime: 0.5
   isAttacking: 0
+  speed: 15
+  arrowPrefab: {fileID: 1781550350758654, guid: dad444b62eca0344bb2ea476116d18bc,
+    type: 2}
   Melee: {fileID: 1816129001632522}
   Ranged: {fileID: 1572243727643154}
   Magic: {fileID: 1729477888331592}
@@ -582,7 +585,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400900620735734}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7687448438728f4ca05f474923f6a1c, type: 3}
   m_Name: 
@@ -641,6 +644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab7865cf274c74b80c4c7a5fa35b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  pa: {fileID: 0}
   UI: {fileID: 0}
 --- !u!212 &212000012006612680
 SpriteRenderer:

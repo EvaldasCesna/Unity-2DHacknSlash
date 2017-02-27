@@ -10,11 +10,15 @@ public class EnemyHealth : NetworkBehaviour
     [SyncVar(hook = "OnChangeHealth")] public int currentHealth = maxHealth;
     public RectTransform healthbar;
     public bool destroyOnDeath;
+    [SyncVar]
     public bool isDamaged;
+    public GameObject dmgPrefab;
+    public GameObject dmgNumPrefab;
     public float invincibility;
     private float invicibilityCounter;
     private Stats playerStats;
     public int expToGive;
+
 
     private void Start()
     {
@@ -28,33 +32,55 @@ public class EnemyHealth : NetworkBehaviour
     }
 
     [Command]
-    public void CmdTakeDamage(int amount)
+    public void CmdTakeDamage(int amount, Vector3 dir)
     {
-        RpcTakeDamage(amount);
+        TakeDamage(amount, dir);
     }
 
     [ClientRpc]
-    public void RpcTakeDamage(int amount)
+    public void RpcTakeDamage(int amount, Vector3 dir)
     {
-
         if (isDamaged == false)
         {
-         
+          //  Debug.Log("its attacked");
             isDamaged = true;
             invicibilityCounter = invincibility;
-
+            GetComponent<Rigidbody2D>().AddForce(dir * 5000);
             currentHealth -= amount;
 
-            if (currentHealth <= 0)
+           
+            if (isServer)
             {
-               playerStats.addXp(expToGive);
-                if (destroyOnDeath)
-                {
-                    Destroy(gameObject);
-                }
+                GameObject dmgNum = (GameObject)Instantiate(dmgNumPrefab, transform.position, Quaternion.Euler(Vector3.zero));
+                dmgNum.GetComponent<FloatingNumbers>().damageNum = amount;
+                GameObject hurt = (GameObject)Instantiate(dmgPrefab, transform.position, transform.rotation);
 
+                NetworkServer.Spawn(hurt);
+                NetworkServer.Spawn(dmgNum);
+
+                if (currentHealth <= 0)
+                {
+                    playerStats.addXp(expToGive);
+                    if (destroyOnDeath)
+                    {
+                        Destroy(gameObject);
+                    }
+
+                }
             }
+           
         }
+    }
+
+
+    public void TakeDamage(int amount, Vector3 dir)
+    {
+        if (!isServer)
+            if (!isLocalPlayer) return;
+        else
+        CmdTakeDamage(amount,dir);
+        else
+           RpcTakeDamage(amount,dir);
     }
 
     //Sync healthbar to damage by server

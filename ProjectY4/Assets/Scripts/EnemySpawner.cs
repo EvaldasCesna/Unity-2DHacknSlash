@@ -12,17 +12,18 @@ public class EnemySpawner : NetworkBehaviour {
     {
         if (GameObject.FindGameObjectsWithTag("Enemy").Length < 2)
         {
-            spawner();
+            CmdSpawn();
         }
     }
 
     public override void OnStartServer()
     {
-        spawner();
+      //  CmdSpawn();
     }
 
     //Spawns enemies in locations
-    private void spawner()
+    [Command]
+    private void CmdSpawn()
     {
         for (int i = 0; i < numberOfEnemies; i++)
         {
@@ -30,8 +31,10 @@ public class EnemySpawner : NetworkBehaviour {
             Quaternion spawnRotation = Quaternion.Euler(0.0f, 0.0f, 0);
 
 
-            GameObject enemy = Instantiate(enemyPrefab, spawnPosition, spawnRotation) as GameObject;
+            GameObject enemy = (GameObject)Instantiate(enemyPrefab, spawnPosition, spawnRotation);
             NetworkServer.Spawn(enemy);
+
+
         }
     }
 }

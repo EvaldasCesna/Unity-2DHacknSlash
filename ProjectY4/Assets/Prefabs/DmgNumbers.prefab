@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114599388216988024}
   - component: {fileID: 114308307354970428}
   - component: {fileID: 114367646029123122}
+  - component: {fileID: 114099715979411864}
   m_Layer: 5
   m_Name: DmgNumbers
   m_TagString: Untagged
@@ -48,6 +49,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114099715979411864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1278622242651352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 248
+    i1: 218
+    i2: 250
+    i3: 139
+    i4: 196
+    i5: 204
+    i6: 234
+    i7: 228
+    i8: 217
+    i9: 9
+    i10: 68
+    i11: 19
+    i12: 255
+    i13: 139
+    i14: 34
+    i15: 133
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114308307354970428
 MonoBehaviour:
   m_ObjectHideFlags: 1

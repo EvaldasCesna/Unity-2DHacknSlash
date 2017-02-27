@@ -7,8 +7,6 @@ public class Arrow : MonoBehaviour {
     public EnemyHealth hp;
     public float speed;
     public PlayerAttack pa;
-    public GameObject damageParticle;
-    public GameObject damageNumber;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,14 +18,11 @@ public class Arrow : MonoBehaviour {
             hp = collision.GetComponent<EnemyHealth>();
             if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false)
             {
-                objectColided.GetComponent<Rigidbody2D>().AddForce(pa.lastMovement() * 10000f);
-                pa.hp = hp;
-                pa.CmdDoDamage();
+      
+                Vector3 direction = collision.transform.position - transform.position;
+                direction = direction.normalized;
 
-                Instantiate(damageParticle, objectColided.transform.position, objectColided.transform.rotation);
-                //Creates a clone and sets the damage numbers to what the damage is
-                var clone = (GameObject)Instantiate(damageNumber, objectColided.transform.position, Quaternion.Euler(Vector3.zero));
-                clone.GetComponent<FloatingNumbers>().damageNum = pa.damage;
+                hp.TakeDamage(10, direction);
 
                 Destroy(gameObject);
 

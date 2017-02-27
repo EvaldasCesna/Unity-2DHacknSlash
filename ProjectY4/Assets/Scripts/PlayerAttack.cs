@@ -13,17 +13,22 @@ public class PlayerAttack : NetworkBehaviour
 
     public int damage = 10;
 
+    [SyncVar]
     public float attackTime;
+    [SyncVar]
     private float attackTimeCounter;
+    [SyncVar]
     public bool isAttacking = false;
 
+    public float speed;
+    public GameObject arrowPrefab;
     public GameObject Melee;
     public GameObject Ranged;
     public GameObject Magic;
     Sword sword;
     Bow bow;
     Staff staff;
-    public EnemyHealth hp;
+  //  public EnemyHealth hp;
     private PlayerMovement playerPos;
     private ItemsDatabase item;
 
@@ -157,6 +162,19 @@ public class PlayerAttack : NetworkBehaviour
     private void CmdRanged()
     {
         RpcRanged();
+        if (isAttacking == false)
+        {
+            isAttacking = true;
+
+            float angle = (Mathf.Atan2(lastMovement().y, lastMovement().x) * Mathf.Rad2Deg) - 90;
+            GameObject arrow = (GameObject)Instantiate(arrowPrefab, transform.position, Quaternion.Euler(new Vector3(lastMovement().y, lastMovement().x, angle)));
+            arrow.GetComponent<Arrow>().pa = this;
+            arrow.GetComponent<Rigidbody2D>().velocity = lastMovement().normalized * speed;
+            NetworkServer.Spawn(arrowPrefab);
+            attackTimeCounter = attackTime;
+            //  bow.Shoot();
+        }
+ 
     }
 
     [Command]
@@ -177,13 +195,7 @@ public class PlayerAttack : NetworkBehaviour
         Ranged.SetActive(true);
         Magic.SetActive(false);
         Melee.SetActive(false);
-        if (isAttacking == false)
-        {
-            isAttacking = true;
-
-            attackTimeCounter = attackTime;
-            bow.Shoot();
-        }
+     
     }
     [ClientRpc]
     private void RpcMagic()
@@ -209,7 +221,7 @@ public class PlayerAttack : NetworkBehaviour
             attackTimeCounter = attackTime;
 
         }
-        //        Debug.Log(sword.getHit().currentHealth);
+        //        Debug.Log(sword.getHit().currentHealth); Old
         //        EnemyHealth hp = sword.getHit();
         //        if (sword.getHit() != null)
         //        {
@@ -223,19 +235,20 @@ public class PlayerAttack : NetworkBehaviour
 
 
     }
-    [Command]   //Need to rewrite sync issues
-    public void CmdDoDamage()
-    {
-        if (hp != null)
-        {
-            if (!Network.isServer)
-                hp.CmdTakeDamage(damage);
-            else
-                hp.RpcTakeDamage(damage);
-        }
-        hp = null;
+    //[Command]   //Old
+    //public void CmdDoDamage()
+    //{
+    //    if (hp != null)
+    //    {
+    //        if (!Network.isServer)
+    //            hp.CmdTakeDamage(damage);
+    //        else
+    //            hp.RpcTakeDamage(damage);
+    //    }
+    //    hp = null;
 
-    }
+    //}
+
 
 
 
