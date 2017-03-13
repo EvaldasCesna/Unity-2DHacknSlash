@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Arrow : MonoBehaviour {
+public class Arrow : NetworkBehaviour {
 
     public EnemyHealth hp;
     public float speed;
@@ -12,8 +13,8 @@ public class Arrow : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (pa.isAttacking == true)
-        {
+      //  if (pa.isAttacking == true)
+     //   {
             GameObject objectColided = collision.gameObject;
             hp = collision.GetComponent<EnemyHealth>();
             if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false)
@@ -27,7 +28,7 @@ public class Arrow : MonoBehaviour {
                 Destroy(gameObject);
 
             }
-        }
+     //   }
     }
 
     private void OnBecameInvisible()

@@ -22,6 +22,7 @@ public class PlayerAttack : NetworkBehaviour
 
     public float speed;
     public GameObject arrowPrefab;
+    public GameObject fireAoe;
     public GameObject Melee;
     public GameObject Ranged;
     public GameObject Magic;
@@ -108,8 +109,17 @@ public class PlayerAttack : NetworkBehaviour
         }
 
 #else
-        if (CrossPlatformInputManager.GetButton("Attack")) {
-            CmdAttack();
+        if (CrossPlatformInputManager.GetButton("Melee"))
+        {
+            CmdMelee();
+        }
+        if (CrossPlatformInputManager.GetButton("Ranged"))
+        {
+            CmdRanged();
+        }
+        if (CrossPlatformInputManager.GetButton("Magic"))
+        {
+            CmdMagic();
         }
 #endif
 
@@ -170,7 +180,7 @@ public class PlayerAttack : NetworkBehaviour
             GameObject arrow = (GameObject)Instantiate(arrowPrefab, transform.position, Quaternion.Euler(new Vector3(lastMovement().y, lastMovement().x, angle)));
             arrow.GetComponent<Arrow>().pa = this;
             arrow.GetComponent<Rigidbody2D>().velocity = lastMovement().normalized * speed;
-            NetworkServer.Spawn(arrowPrefab);
+            //NetworkServer.Spawn(arrowPrefab);
             attackTimeCounter = attackTime;
             //  bow.Shoot();
         }
@@ -181,6 +191,30 @@ public class PlayerAttack : NetworkBehaviour
     private void CmdMagic()
     {
         RpcMagic();
+        if (isAttacking == false)
+        {
+            isAttacking = true;
+
+            Instantiate(fireAoe, transform.position, transform.rotation);
+            attackTimeCounter = attackTime;
+            anim.SetBool("isAttacking", true);
+            GameObject[] target = GameObject.FindGameObjectsWithTag("Enemy");
+            //  Debug.Log(GameObject.FindGameObjectsWithTag("Enemy"));
+            for (int i = 0; i < target.Length; i++)
+            {
+                if (Vector3.Distance(transform.position, target[i].transform.position) <= 2.5f)
+                {
+                    //  Debug.Log(target[i].ToString() );
+                    EnemyHealth hp = target[i].GetComponent<EnemyHealth>();
+
+                   // EnemyHealth hp = staff.getHit();
+                    //  anim.SetBool("isAttacking", false);
+                   // anim.SetBool("isAttacking", false);
+                    hp.TakeDamage(5);
+                }
+            }
+
+        }
     }
 
     [Command]

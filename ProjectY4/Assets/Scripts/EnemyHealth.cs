@@ -20,6 +20,7 @@ public class EnemyHealth : NetworkBehaviour
     public int expToGive;
 
 
+
     private void Start()
     {
   
@@ -48,15 +49,15 @@ public class EnemyHealth : NetworkBehaviour
             GetComponent<Rigidbody2D>().AddForce(dir * 5000);
             currentHealth -= amount;
 
-           
-            if (isServer)
-            {
-                GameObject dmgNum = (GameObject)Instantiate(dmgNumPrefab, transform.position, Quaternion.Euler(Vector3.zero));
-                dmgNum.GetComponent<FloatingNumbers>().damageNum = amount;
-                GameObject hurt = (GameObject)Instantiate(dmgPrefab, transform.position, transform.rotation);
 
-                NetworkServer.Spawn(hurt);
+            dmgNumPrefab.GetComponent<FloatingNumbers>().damageNum = amount;
+            if (isServer)
+            {     
+                GameObject dmgNum = (GameObject)Instantiate(dmgNumPrefab, transform.position, Quaternion.Euler(Vector3.zero));
                 NetworkServer.Spawn(dmgNum);
+                
+                GameObject hurt = (GameObject)Instantiate(dmgPrefab, transform.position, transform.rotation);
+                NetworkServer.Spawn(hurt);
 
                 if (currentHealth <= 0)
                 {
@@ -81,6 +82,16 @@ public class EnemyHealth : NetworkBehaviour
         CmdTakeDamage(amount,dir);
         else
            RpcTakeDamage(amount,dir);
+    }
+
+    public void TakeDamage(int amount)
+    {
+        if (!isServer)
+            if (!isLocalPlayer) return;
+            else
+                CmdTakeDamage(amount, Vector3.zero);
+        else
+            RpcTakeDamage(amount, Vector3.zero);
     }
 
     //Sync healthbar to damage by server
