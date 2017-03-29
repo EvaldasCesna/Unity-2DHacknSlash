@@ -24,6 +24,7 @@ public class LoadData : MonoBehaviour
 
     void ConstructItems()
     {
+
         for (int i = 0; i < invData.Count; i++)
         {
             //  Debug.Log(i + " id " + (int)itemData[i]["id"]);

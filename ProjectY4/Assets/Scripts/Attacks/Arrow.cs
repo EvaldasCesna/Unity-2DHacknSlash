@@ -9,12 +9,16 @@ public class Arrow : NetworkBehaviour {
     public float speed;
     public PlayerAttack pa;
 
+    private void Start()
+    {
+      //  pa = transform.parent.gameObject.GetComponent<PlayerAttack>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-      //  if (pa.isAttacking == true)
-     //   {
+        //  if (pa.isAttacking == true)
+        //   {
             GameObject objectColided = collision.gameObject;
             hp = collision.GetComponent<EnemyHealth>();
             if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false)
@@ -23,7 +27,7 @@ public class Arrow : NetworkBehaviour {
                 Vector3 direction = collision.transform.position - transform.position;
                 direction = direction.normalized;
 
-                hp.TakeDamage(10, direction);
+                hp.TakeDamage(pa.rangedDamage, direction);
 
                 Destroy(gameObject);
 

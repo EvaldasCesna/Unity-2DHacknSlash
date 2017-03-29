@@ -12,15 +12,27 @@ public class Stats : NetworkBehaviour
     public int currentLevel;
     public int currentXp;
     public int[] levels;
+    private Slider hpBar;
+    private Text hpText;
+    private Slider xpBar;
+    private Text xpText;
+    private Text level;
+    public Text gold;
+    PlayerStats ps;
 
     Item melee;
-
     Item ranged;
-
     Item magic;
+
     // Use this for initialization
     void Start()
     {
+        gold = GameObject.Find("Gold").GetComponent<Text>();
+        level = GameObject.Find("Level").GetComponent<Text>();
+        hpBar = GameObject.Find("HealthBar").GetComponent<Slider>();
+        hpText = hpBar.GetComponentInChildren<Text>();
+        xpBar = GameObject.Find("XpBar").GetComponent<Slider>();
+        xpText = xpBar.GetComponentInChildren<Text>();
         stats = GameObject.FindGameObjectWithTag("Stats");
         equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
 
@@ -28,16 +40,37 @@ public class Stats : NetworkBehaviour
 
     private void Update()
     {
-
+        //  UpdateHealthbar();
         //if (!Network.isServer)
         //    CmdUpdateStats();
         //else
         //    RpcUpdateStats();
         //Later only update if something changes but works for now
-          UpdateStats();
-        //   levelUp();
+        UpdateXpBar();
+        UpdateStats();
+        levelUp();
+       // UpdateGold();
     }
 
+    public void UpdateXpBar()
+    {
+        xpBar.maxValue = levels[currentLevel + 1];
+        xpBar.value = currentXp;
+        xpText.text = currentXp + "/" + levels[currentLevel + 1];
+        level.text = "Level: " + currentLevel;
+    }  
+
+    public void UpdateHealthbar(int max, int health)
+    {
+        hpBar.maxValue = max;
+        hpBar.value = health;
+        hpText.text = health + "/" + max;
+    } 
+
+    public void UpdateGold(int goldIn)
+    {
+        gold.text = goldIn.ToString();
+    }
     //[Command]
     //public void CmdUpdateStats()
     //{
@@ -45,16 +78,16 @@ public class Stats : NetworkBehaviour
     //}
 
   //  [ClientRpc]
+  //Call this when something in equipment changes
     public void UpdateStats()
     {
-        
         int def = 0, str = 0, vit = 0;
-
+        
         for (int i = 0; i < equipment.equipment.Count; i++)
         {
             def += equipment.equipment[i].Defence;
-            str += equipment.equipment[i].Strength;
-            vit += equipment.equipment[i].Vitality;
+            str += equipment.equipment[i].Strength + currentLevel;
+            vit += equipment.equipment[i].Vitality + currentLevel;
         }
 
         data = "  Strenght: " + str + "\n\n  Defence: " + def + "\n\n  Vitality: " + vit;
@@ -62,6 +95,24 @@ public class Stats : NetworkBehaviour
 
     }
 
+    public int getBonusHealth()
+    {
+        int vit = 0;
+        for (int i = 0; i < equipment.equipment.Count; i++)
+        {
+            vit += equipment.equipment[i].Vitality;
+        }
+        return vit;
+    }
+    public int getBonusArmor()
+    {
+        int def = 0;
+        for (int i = 0; i < equipment.equipment.Count; i++)
+        {
+            def += equipment.equipment[i].Defence;
+        }
+        return def;
+    }
     public void levelUp()
     {
         if(currentXp >= levels[currentLevel])

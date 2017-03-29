@@ -14,9 +14,12 @@ public class EnemyScript : MonoBehaviour {
     private float timeBetweenMovesCount;
     public float timeToMove;
     private float timeToMoveCount;
+    public GameObject attackParticle;
 
-
+    public float attackTime;
     private Vector3 moveDirection;
+    private float attackTimeCounter;
+    private bool isAttacking;
 
     private void Start()
     {
@@ -52,7 +55,7 @@ public class EnemyScript : MonoBehaviour {
             }
         }
 
-    
+        attackCounter();
 
         player = GameObject.FindGameObjectsWithTag("Player");
         for (int i = 0; i< player.Length; i++)
@@ -62,15 +65,34 @@ public class EnemyScript : MonoBehaviour {
             {
                 transform.position = Vector2.MoveTowards(transform.position, player[i].transform.position, speed * Time.deltaTime);
             }
-            //Temp Attack
+            // Attack
             if (Vector3.Distance(transform.position, player[i].transform.position) <= attackDistance)
             {
 
                 PlayerHealth hp = player[i].GetComponent<PlayerHealth>();
-                hp.TakeDamage(1);
+                if (isAttacking == false)
+                {
+                    Instantiate(attackParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z -1f), transform.rotation);
+                    isAttacking = true;
+                    attackTimeCounter = attackTime;
+                    hp.TakeDamage(1);
+                }
             }
 
         }
+    }
+
+    private void attackCounter()
+    {
+        if (attackTimeCounter > 0)
+        {
+            attackTimeCounter -= Time.fixedDeltaTime;
+        }
+        if (attackTimeCounter <= 0)
+        {
+            isAttacking = false;
+        }
+
     }
 
 

@@ -2,10 +2,10 @@ Mono path[0] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Managed'
 Mono path[1] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono'
 Mono config path = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/PC/Documents/ProjectY4/Build/build_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55082
-Multi-casting "[IP] 192.168.0.44 [Port] 55082 [Flags] 2 [Guid] 1382806202 [EditorId] 3773061037 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55082]
-PlayerConnection already initialized - listening to [0.0.0.0:55082]
+PlayerConnection initialized network socket : 0.0.0.0 55456
+Multi-casting "[IP] 192.168.0.44 [Port] 55456 [Flags] 2 [Guid] 1451476424 [EditorId] 1649425807 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55456]
+PlayerConnection already initialized - listening to [0.0.0.0:55456]
 Initialize engine version: 5.5.0f3 (38b4efef76f0)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -13,7 +13,7 @@ Direct3D:
     Renderer: NVIDIA GeForce GTX 980 (ID=0x13c0)
     Vendor:   NVIDIA
     VRAM:     3072 MB
-    Driver:   21.21.13.7872
+    Driver:   21.21.13.7892
 Begin MonoManager ReloadAssembly
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -29,432 +29,30 @@ Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Unit
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.136 seconds
+- Completed reload, in  0.020 seconds
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.915624 ms
-Cannot Connect to DB
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<LoadItemsFromdb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\LoadData.cs:51)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/LoadData.cs Line: 51)
+UnloadTime: 1.512292 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.519123 ms
+System memory in use before: 19.0 MB.
+System memory in use after: 19.1 MB.
 
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 999.
+Total: 0.375076 ms (FindLiveObjects: 0.020756 ms CreateObjectMapping: 0.024264 ms MarkObjects: 0.323039 ms  DeleteObjects: 0.006431 ms)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.276378 ms
-System memory in use before: 24.9 MB.
-System memory in use after: 24.9 MB.
+UnloadTime: 1.151540 ms
+System memory in use before: 21.4 MB.
+System memory in use after: 21.5 MB.
 
-Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 824.
-Total: 1.100679 ms (FindLiveObjects: 0.019879 ms CreateObjectMapping: 0.336489 ms MarkObjects: 0.729985 ms  DeleteObjects: 0.013740 ms)
+Unloading 11 unused Assets to reduce memory usage. Loaded Objects now: 1041.
+Total: 1.182236 ms (FindLiveObjects: 0.057006 ms CreateObjectMapping: 0.063730 ms MarkObjects: 1.033726 ms  DeleteObjects: 0.026895 ms)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 27b4 -> priority: 1 
-  Thread -> id: 20c4 -> priority: 1 
+  Thread -> id: 2f0c -> priority: 1 
+  Thread -> id: 249c -> priority: 1 

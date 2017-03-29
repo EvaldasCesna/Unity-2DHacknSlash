@@ -24,7 +24,7 @@ public class Sword : MonoBehaviour
                 Vector3 direction = collision.transform.position - transform.position;
                 direction = direction.normalized;
 
-                hp.TakeDamage(10, direction);
+                hp.TakeDamage(pa.meleeDamage, direction);
 
 
 

@@ -11,6 +11,8 @@ TagManager:
   - UIGUI
   - Stats
   - Inventory
+  - Gold
+  - HealthBar
   layers:
   - Default
   - TransparentFX

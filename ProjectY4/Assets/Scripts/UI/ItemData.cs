@@ -27,7 +27,14 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if (item != null)
         {
             offset = eventData.position - new Vector2(this.transform.position.x, this.transform.position.y);
-            this.transform.SetParent(this.transform.parent.parent.parent.parent); //Puts it on top when dragging
+            if (location == "Inventory")
+            {
+                this.transform.SetParent(this.transform.parent.parent.parent.parent.parent.parent); //Puts it on top when dragging
+            }
+            else if (location == "Equipment")
+            {
+                this.transform.SetParent(this.transform.parent.parent.parent.parent); //Puts it on top when dragging
+            }
             this.transform.position = eventData.position;
             GetComponent<CanvasGroup>().blocksRaycasts = false;
 

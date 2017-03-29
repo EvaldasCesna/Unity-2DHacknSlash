@@ -14,17 +14,16 @@ public class EnemyHealth : NetworkBehaviour
     public bool isDamaged;
     public GameObject dmgPrefab;
     public GameObject dmgNumPrefab;
+    public GameObject goldPrefab;
     public float invincibility;
     private float invicibilityCounter;
     private Stats playerStats;
     public int expToGive;
-
-
+    public int dropRate;
 
     private void Start()
     {
-  
-        playerStats = GameObject.FindGameObjectWithTag("UIGUI").GetComponentInChildren<Stats>();
+        playerStats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
     }
 
     public void FixedUpdate()
@@ -61,6 +60,11 @@ public class EnemyHealth : NetworkBehaviour
 
                 if (currentHealth <= 0)
                 {
+                    int rate = Random.Range(0, dropRate);
+                    if (rate == 1)
+                    {
+                        Instantiate(goldPrefab, transform.position, transform.rotation);
+                    }
                     playerStats.addXp(expToGive);
                     if (destroyOnDeath)
                     {

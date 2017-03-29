@@ -47,8 +47,8 @@ public class Equipment : NetworkBehaviour {
             slots[i].GetComponent<InventorySlot>().location = "Equipment";
             slots[i].transform.SetParent(slotPanel.transform);
         }
-    
 
+        //PopulateEquip(0, 1, 3);
         charPanel.SetActive(false);
     }
     //private void Update()
@@ -70,7 +70,7 @@ public class Equipment : NetworkBehaviour {
         itemObj.GetComponent<ItemData>().slot = slot;
         itemObj.GetComponent<ItemData>().location = "Equipment";
         itemObj.transform.SetParent(slots[slot].transform);
-        itemObj.transform.position = Vector2.zero;
+        itemObj.transform.position = slots[slot].transform.position;
         itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
         itemObj.name = itemToAdd.Title;
 

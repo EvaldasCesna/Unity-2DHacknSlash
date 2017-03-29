@@ -10,9 +10,10 @@ public class PlayerAttack : NetworkBehaviour
    // GameObject[] target;
     //public float attackRange;
     Animator anim;
-
-    public int damage = 10;
-
+    Stats stats;
+    public int meleeDamage;
+    public int rangedDamage;
+    public int magicDamage;
     [SyncVar]
     public float attackTime;
     [SyncVar]
@@ -35,16 +36,18 @@ public class PlayerAttack : NetworkBehaviour
 
     void Start()
     {
-       // item = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<ItemsDatabase>();
+        // item = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<ItemsDatabase>();
         playerPos = GetComponentInParent<PlayerMovement>();
         staff = Magic.GetComponentInChildren<Staff>();
         bow = Ranged.GetComponentInChildren<Bow>();
         sword = Melee.GetComponentInChildren<Sword>();
         anim = GetComponent<Animator>();
 
+        stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
         Ranged.SetActive(false);
         Magic.SetActive(false);
         Melee.SetActive(false);
+
     }
 
 
@@ -136,21 +139,24 @@ public class PlayerAttack : NetworkBehaviour
     public void RpcSetSprites(int inSword, int inBow, int inStaff)
     {
         item = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<ItemsDatabase>();
-        damage = 10;
 
         if (inSword != -1)
-        { 
+        {
+            meleeDamage = 10;
             sword.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inSword).Sprite;
-            damage = item.GetItemByID(inSword).Strength + damage;
+            meleeDamage = item.GetItemByID(inSword).Strength + meleeDamage + stats.currentLevel;
         }
         if (inBow != -1)
         {
+            rangedDamage = 10;
             bow.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inBow).Sprite;
-            damage = item.GetItemByID(inBow).Strength + damage;
+            rangedDamage = item.GetItemByID(inBow).Strength + rangedDamage + stats.currentLevel;
         }
         if (inStaff != -1)
         {
+            magicDamage = 5;
             staff.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inStaff).Sprite;
+            magicDamage = item.GetItemByID(inBow).Strength + magicDamage + stats.currentLevel;
         }
     }
 
@@ -210,7 +216,7 @@ public class PlayerAttack : NetworkBehaviour
                    // EnemyHealth hp = staff.getHit();
                     //  anim.SetBool("isAttacking", false);
                    // anim.SetBool("isAttacking", false);
-                    hp.TakeDamage(5);
+                    hp.TakeDamage(magicDamage);
                 }
             }
 

@@ -22,10 +22,10 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         ItemData droppedItem = eventData.pointerDrag.GetComponent<ItemData>();
         //Depending on which window it drops on do..
-        if (location == "Inventory")
+        if (location == "Inventory" && droppedItem != null)
         {
 
-            if (inventory.inventory[id].ID == -1)
+            if (inventory.inventory[id].ID == -1 )
             {
                 //Clears the slot that the item is taken out of
                 if (droppedItem.location == "Inventory")
@@ -34,7 +34,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 }
                 else
                 {
-
                     equipment.equipment[droppedItem.slot] = new Item();
                 }
 
@@ -45,7 +44,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
             else if (droppedItem.slot != id)
             {
-                Debug.Log(this.transform.GetChild(0));
+              //  Debug.Log(this.transform.GetChild(0));
                 //Item pointed at below the dropped item
                 Transform item = this.transform.GetChild(0);
                 if (droppedItem.location == "Inventory")
@@ -61,8 +60,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 }
                 else
                 {
-                 
-                 
                     // Fix this
                     for (int i = 0; i < EquipType.Length; i++)
                     {
@@ -80,13 +77,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         }
 
                     }
-
-
-
-
                 }
-
-
             }
         }
 

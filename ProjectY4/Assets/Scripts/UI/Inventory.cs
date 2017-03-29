@@ -19,10 +19,10 @@ public class Inventory : MonoBehaviour
     {
         //Grabs the item List
         items = GetComponent<ItemsDatabase>();
-
-        slotAmount = 20;
+        
+        slotAmount = 100;
         invPanel = GameObject.Find("InventoryPanel");
-        slotPanel = invPanel.transform.FindChild("SlotPanel").gameObject; //The Prefabs are assigned
+        slotPanel = GameObject.FindGameObjectWithTag("SlotPanel").gameObject; //The Prefabs are assigned
                                                                     
         for (int i = 0; i < slotAmount; i++)
         {
@@ -34,10 +34,10 @@ public class Inventory : MonoBehaviour
         }
         //  PopulateInv(0, 1, 6);
         //     AddItem(0);
-         AddItem(0);
-          AddItem(1);
-        AddItem(2);
-        AddItem(3);
+      // PopulateInv(0,1, 0);
+      //   AddItem(1);
+      //AddItem(2);
+      // AddItem(3);
 
         invPanel.SetActive(false);
     }
@@ -78,7 +78,7 @@ public class Inventory : MonoBehaviour
                     itemObj.GetComponent<ItemData>().slot = i;
                     itemObj.GetComponent<ItemData>().location = "Inventory";
                     itemObj.transform.SetParent(slots[i].transform);
-                    itemObj.transform.position = Vector2.zero;
+                    itemObj.transform.position = slots[i].transform.position;
                     itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                     itemObj.name = itemToAdd.Title;
                     return true;
@@ -139,7 +139,7 @@ public class Inventory : MonoBehaviour
             itemObj.GetComponent<ItemData>().slot = slot;
             itemObj.GetComponent<ItemData>().location = "Inventory";
             itemObj.transform.SetParent(slots[slot].transform);
-            itemObj.transform.position = Vector2.zero;
+            itemObj.transform.position = slots[slot].transform.position;
             itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
             itemObj.name = itemToAdd.Title;
 
