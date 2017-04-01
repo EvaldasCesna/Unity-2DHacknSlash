@@ -8,7 +8,7 @@ using System;
 public class Equipment : NetworkBehaviour {
     GameObject charPanel;
     GameObject slotPanel;
-   ItemsDatabase items;
+    ItemsDatabase items;
     public GameObject equipSlot;
     public GameObject equipItem;
 

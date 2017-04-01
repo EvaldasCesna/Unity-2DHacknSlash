@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198082258456960546}
   - component: {fileID: 199548781372609186}
   - component: {fileID: 114034499734108424}
+  - component: {fileID: 114888167217389220}
   m_Layer: 0
   m_Name: enemyAttack
   m_TagString: Untagged
@@ -54,6 +55,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 1
+--- !u!114 &114888167217389220
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028572181833818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 85
+    i1: 142
+    i2: 85
+    i3: 65
+    i4: 94
+    i5: 188
+    i6: 119
+    i7: 196
+    i8: 154
+    i9: 137
+    i10: 75
+    i11: 112
+    i12: 55
+    i13: 62
+    i14: 219
+    i15: 243
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!198 &198082258456960546
 ParticleSystem:
   m_ObjectHideFlags: 1

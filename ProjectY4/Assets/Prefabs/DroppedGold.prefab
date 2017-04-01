@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212662382191052874}
   - component: {fileID: 61346040926414118}
   - component: {fileID: 114308970547482462}
+  - component: {fileID: 114730747355906312}
   m_Layer: 0
   m_Name: DroppedGold
   m_TagString: Gold
@@ -74,6 +75,38 @@ MonoBehaviour:
   - {fileID: 21300004, guid: 6250f4d88cb3c9c4194cd8d991f2d8cd, type: 3}
   - {fileID: 21300006, guid: 6250f4d88cb3c9c4194cd8d991f2d8cd, type: 3}
   - {fileID: 21300008, guid: 6250f4d88cb3c9c4194cd8d991f2d8cd, type: 3}
+--- !u!114 &114730747355906312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1279873191871126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 76
+    i1: 250
+    i2: 59
+    i3: 19
+    i4: 215
+    i5: 0
+    i6: 31
+    i7: 68
+    i8: 168
+    i9: 81
+    i10: 1
+    i11: 0
+    i12: 162
+    i13: 252
+    i14: 212
+    i15: 191
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!212 &212662382191052874
 SpriteRenderer:
   m_ObjectHideFlags: 1

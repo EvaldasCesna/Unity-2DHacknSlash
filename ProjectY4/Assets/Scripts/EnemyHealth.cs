@@ -15,6 +15,7 @@ public class EnemyHealth : NetworkBehaviour
     public GameObject dmgPrefab;
     public GameObject dmgNumPrefab;
     public GameObject goldPrefab;
+    public GameObject itemPrefab;
     public float invincibility;
     private float invicibilityCounter;
     private Stats playerStats;
@@ -34,7 +35,7 @@ public class EnemyHealth : NetworkBehaviour
     [Command]
     public void CmdTakeDamage(int amount, Vector3 dir)
     {
-        TakeDamage(amount, dir);
+        RpcTakeDamage(amount, dir);
     }
 
     [ClientRpc]
@@ -61,9 +62,15 @@ public class EnemyHealth : NetworkBehaviour
                 if (currentHealth <= 0)
                 {
                     int rate = Random.Range(0, dropRate);
+                    if (rate == 0 || rate > dropRate/2)
+                    {
+                        GameObject clone = Instantiate(goldPrefab, transform.position, transform.rotation);
+                        NetworkServer.Spawn(clone);
+                    }
                     if (rate == 1)
                     {
-                        Instantiate(goldPrefab, transform.position, transform.rotation);
+                        GameObject clone = Instantiate(itemPrefab, transform.position, transform.rotation);
+                        NetworkServer.Spawn(clone);
                     }
                     playerStats.addXp(expToGive);
                     if (destroyOnDeath)
@@ -81,21 +88,25 @@ public class EnemyHealth : NetworkBehaviour
     public void TakeDamage(int amount, Vector3 dir)
     {
         if (!isServer)
-            if (!isLocalPlayer) return;
-        else
+        {
+            return;
+        }
+  
         CmdTakeDamage(amount,dir);
-        else
-           RpcTakeDamage(amount,dir);
+    
+    //       RpcTakeDamage(amount,dir);
     }
 
     public void TakeDamage(int amount)
     {
-        if (!isServer)
-            if (!isLocalPlayer) return;
-            else
+       if (!isServer)
+        {
+            return;
+        }
+  
                 CmdTakeDamage(amount, Vector3.zero);
-        else
-            RpcTakeDamage(amount, Vector3.zero);
+
+         //   RpcTakeDamage(amount, Vector3.zero);
     }
 
     //Sync healthbar to damage by server

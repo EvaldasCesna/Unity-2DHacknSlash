@@ -145,10 +145,6 @@ MonoBehaviour:
   hp: {fileID: 0}
   speed: 0
   pa: {fileID: 0}
-  damageParticle: {fileID: 1623874012818694, guid: 4658a29851d925f448973203acec6216,
-    type: 2}
-  damageNumber: {fileID: 1278622242651352, guid: f8dafa8bc4cceae4d9094413ff8b2285,
-    type: 2}
 --- !u!212 &212844596069520448
 SpriteRenderer:
   m_ObjectHideFlags: 1

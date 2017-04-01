@@ -20,9 +20,7 @@ public class ItemsDatabase : MonoBehaviour {
         StartCoroutine(GetJsonData(jsonPath));
 #endif
 
-       
-
-      //  Debug.Log(items[1].Title);
+      
     }
 
     //Could use binary search

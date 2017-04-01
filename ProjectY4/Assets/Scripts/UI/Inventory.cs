@@ -19,7 +19,6 @@ public class Inventory : MonoBehaviour
     {
         //Grabs the item List
         items = GetComponent<ItemsDatabase>();
-        
         slotAmount = 100;
         invPanel = GameObject.Find("InventoryPanel");
         slotPanel = GameObject.FindGameObjectWithTag("SlotPanel").gameObject; //The Prefabs are assigned

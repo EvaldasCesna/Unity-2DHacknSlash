@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198516068418252768}
   - component: {fileID: 199155663437198668}
   - component: {fileID: 114320369012903028}
+  - component: {fileID: 114793437822533318}
   m_Layer: 0
   m_Name: AoeFire
   m_TagString: Untagged
@@ -54,6 +55,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToDestroy: 1.5
+--- !u!114 &114793437822533318
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958439885341068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 227
+    i1: 5
+    i2: 141
+    i3: 123
+    i4: 224
+    i5: 169
+    i6: 132
+    i7: 148
+    i8: 185
+    i9: 59
+    i10: 172
+    i11: 4
+    i12: 112
+    i13: 190
+    i14: 23
+    i15: 112
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!198 &198516068418252768
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -53,10 +53,10 @@ public class PlayerAttack : NetworkBehaviour
 
 	// Update is called once per frame
 	void FixedUpdate() {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
+        //if (!isLocalPlayer)
+        //{
+        //    return;
+        //}
       
         userInput();
 
@@ -104,7 +104,7 @@ public class PlayerAttack : NetworkBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F) && isAttacking == false)
         {
-            CmdRanged();
+            ranged();
         }
         if (Input.GetKeyDown(KeyCode.G) && isAttacking == false)
         {
@@ -156,7 +156,7 @@ public class PlayerAttack : NetworkBehaviour
         {
             magicDamage = 5;
             staff.GetComponent<SpriteRenderer>().sprite = item.GetItemByID(inStaff).Sprite;
-            magicDamage = item.GetItemByID(inBow).Strength + magicDamage + stats.currentLevel;
+            magicDamage = item.GetItemByID(inStaff).Strength + magicDamage + stats.currentLevel;
         }
     }
 
@@ -173,6 +173,15 @@ public class PlayerAttack : NetworkBehaviour
         }
 
     }
+    private void ranged()
+    {
+        if (!isServer)
+        {
+            return;
+        }
+        CmdRanged();
+    }
+
 
     [Command]
     private void CmdRanged()
@@ -186,8 +195,8 @@ public class PlayerAttack : NetworkBehaviour
             GameObject arrow = (GameObject)Instantiate(arrowPrefab, transform.position, Quaternion.Euler(new Vector3(lastMovement().y, lastMovement().x, angle)));
             arrow.GetComponent<Arrow>().pa = this;
             arrow.GetComponent<Rigidbody2D>().velocity = lastMovement().normalized * speed;
-            //NetworkServer.Spawn(arrowPrefab);
             attackTimeCounter = attackTime;
+            NetworkServer.Spawn(arrow);
             //  bow.Shoot();
         }
  
@@ -201,7 +210,8 @@ public class PlayerAttack : NetworkBehaviour
         {
             isAttacking = true;
 
-            Instantiate(fireAoe, transform.position, transform.rotation);
+            GameObject clone = Instantiate(fireAoe, transform.position, transform.rotation);
+            NetworkServer.Spawn(clone);
             attackTimeCounter = attackTime;
             anim.SetBool("isAttacking", true);
             GameObject[] target = GameObject.FindGameObjectsWithTag("Enemy");

@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Bow : MonoBehaviour
+public class Bow : NetworkBehaviour
 {
     public float speed;
     public GameObject arrow;
@@ -19,15 +20,15 @@ public class Bow : MonoBehaviour
     {
 
     }
-
-    public void Shoot()
+    [Command]
+    public void CmdShoot()
     {
         pa = GetComponentInParent<PlayerAttack>();
         float angle = Mathf.Atan2(pa.lastMovement().y, pa.lastMovement().x) * Mathf.Rad2Deg;
         var clone = (GameObject)Instantiate(arrow, transform.position, Quaternion.Euler(new Vector3(pa.lastMovement().y, pa.lastMovement().x,(angle-90))));
         clone.GetComponent<Arrow>().pa = pa;
         clone.GetComponent<Rigidbody2D>().velocity = pa.lastMovement().normalized * speed;
-  
+        NetworkServer.Spawn(clone);
     }
 
 }

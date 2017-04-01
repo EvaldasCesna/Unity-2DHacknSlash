@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DroppedItem : MonoBehaviour {
-    ItemsDatabase items;
+
     public int Id;
     SpriteRenderer sprite;
+    ItemsDatabase items;
     // Use this for initialization
     void Start () {
+        items = GameObject.Find("Inventory").GetComponent<ItemsDatabase>();
         sprite = GetComponent<SpriteRenderer>();
-        items = GetComponentInChildren<ItemsDatabase>();
-        Id = Random.Range(0, 1);
+
+        Id = Random.Range(0, 4);
         //  items.GetItemByID(Id);
-      //  Debug.Log(items.GetItemByID(Id).ID);
-      sprite.sprite = items.GetItemByID(Id).Sprite;
+        //  Debug.Log(items.GetItemByID(Id).ID);
+        sprite.sprite = items.GetItemByID(Id).Sprite;
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+    
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

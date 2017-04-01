@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class EnemyScript : MonoBehaviour {
+public class EnemyScript : NetworkBehaviour {
     public float speed;
    //public Transform player;
     GameObject[] player;
@@ -54,11 +55,17 @@ public class EnemyScript : MonoBehaviour {
                 moveDirection = new Vector3(Random.Range(-1f,1f) * speed, Random.Range(-1f, 1f) * speed, 0);
             }
         }
+        attack();
 
+
+    }
+
+    void attack()
+    {
         attackCounter();
 
         player = GameObject.FindGameObjectsWithTag("Player");
-        for (int i = 0; i< player.Length; i++)
+        for (int i = 0; i < player.Length; i++)
         {
             //If player comes near they will go after
             if (Vector3.Distance(transform.position, player[i].transform.position) <= aggroDistance)
@@ -72,7 +79,8 @@ public class EnemyScript : MonoBehaviour {
                 PlayerHealth hp = player[i].GetComponent<PlayerHealth>();
                 if (isAttacking == false)
                 {
-                    Instantiate(attackParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z -1f), transform.rotation);
+                   Instantiate(attackParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1f), transform.rotation);
+                   //NetworkServer.Spawn(clone);
                     isAttacking = true;
                     attackTimeCounter = attackTime;
                     hp.TakeDamage(1);
@@ -81,6 +89,7 @@ public class EnemyScript : MonoBehaviour {
 
         }
     }
+
 
     private void attackCounter()
     {
