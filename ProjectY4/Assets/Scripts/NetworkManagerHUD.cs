@@ -25,7 +25,14 @@ namespace UnityEngine.Networking
             manager = GetComponent<NetworkManager>();
        
         }
-
+        private void OnNetworkInstantiate(NetworkMessageInfo info)
+        {
+            NetworkView nView = GetComponent<NetworkView>();
+            if (nView.isMine)
+                Debug.Log("New object instanted by " + nView.owner);
+            else
+                Debug.Log("New object instantiated by " + info.sender);
+        }
         void Update()
         {
         

@@ -7,8 +7,8 @@ public class Arrow : NetworkBehaviour {
 
     public EnemyHealth hp;
     public float speed;
-    public PlayerAttack pa;
-
+  //  public PlayerAttack pa;
+    public int damage;
     private void Start()
     {
       //  pa = transform.parent.gameObject.GetComponent<PlayerAttack>();
@@ -27,7 +27,7 @@ public class Arrow : NetworkBehaviour {
                 Vector3 direction = collision.transform.position - transform.position;
                 direction = direction.normalized;
 
-                hp.TakeDamage(pa.rangedDamage, direction);
+                hp.TakeDamage(damage, direction);
 
                 Destroy(gameObject);
 

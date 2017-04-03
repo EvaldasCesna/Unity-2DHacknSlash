@@ -31,7 +31,7 @@ public class PlayerStats : NetworkBehaviour {
             pa.CmdSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
         else
             pa.RpcSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
-	}
+    }
 
     void updateGold()
     {

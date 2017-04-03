@@ -12,8 +12,8 @@ public class Sword : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         pa = GetComponentInParent<PlayerAttack>();
-        if (pa.isAttacking == true)
-        {
+      //  if (pa.isAttacking == true)
+    //    {
     
             GameObject objectColided = collision.gameObject;
             hp = collision.GetComponent<EnemyHealth>();
@@ -29,7 +29,7 @@ public class Sword : MonoBehaviour
 
 
 
-            }
+     //       }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

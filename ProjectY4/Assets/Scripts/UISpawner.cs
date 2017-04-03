@@ -6,17 +6,26 @@ using UnityEngine.Networking;
 public class UISpawner : NetworkBehaviour {
     public GameObject UIprefab;
 
-
-    public override void OnStartServer()
+    private void OnPlayerConnected(NetworkPlayer player)
     {
-        spawner();
+
+
+        
+
+        Cmdspawner();
+    }
+
+    public void Start()
+    {
+      
     }
 
     //Spawns enemies in locations
-    private void spawner()
+    [Command]
+    private void Cmdspawner()
     {
 
-            GameObject ui = Instantiate(UIprefab, transform.position, transform.rotation) as GameObject;
+            GameObject ui = (GameObject)Instantiate(UIprefab, transform.position, transform.rotation);
             NetworkServer.Spawn(ui);
     }
 }

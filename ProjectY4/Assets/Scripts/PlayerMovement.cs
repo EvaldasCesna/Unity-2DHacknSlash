@@ -39,7 +39,7 @@ public class PlayerMovement : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
-  
+        lastMovement = new Vector2(1, 0);
     }
 
 

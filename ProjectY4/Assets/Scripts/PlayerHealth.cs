@@ -5,51 +5,87 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class PlayerHealth : NetworkBehaviour {
-    public const int maxHealth = 100;
-    public int maxHp = maxHealth;
+     int maxHealth = 100;
     // [SyncVar (hook = "OnChangeHealth")] public int currentHealth = maxHealth;
-    public int currentHealth = maxHealth;
+    [SyncVar(hook = "OnHealthChanged")] int currentHealth;
     public RectTransform healthbar;
-    private Stats stats;
-    private int lvl;
+  //  private Stats stats;
+ //   private int lvl;
     private void Start()
     {
-        stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
-        if (isLocalPlayer)
-        {
-            GameObject.Find("Healthbar Canvas").SetActive(false);
-        }
-        lvl = stats.currentLevel;
-        currentHealth = currentHealth + stats.getBonusHealth() + stats.currentLevel;
-        updateHealthbar();
+    //    stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
+
+   //     lvl = stats.currentLevel;
+        currentHealth = currentHealth + maxHealth;
+      //  OnHealthChange();
     }
     private void Update()
     {
-        updateHealthbar(); 
+        //   OnHealthChange(); 
     }
-    public void TakeDamage(int amount)
+
+    [Server]
+    public void ChangeMaxHealth(int amount)
     {
-        if (!isServer)
+        maxHealth = 100;
+        if (currentHealth > maxHealth)
         {
-            return;
+            currentHealth = maxHealth;
         }
+
+        maxHealth += amount;
+    }
+
+    [Server]
+    public bool TakeDamage(int amount)
+    {
+        bool died = false;
+
         currentHealth -= amount;
         if (currentHealth <= 0)
         {
+            died = true;
             currentHealth = maxHealth;
-            RpcRespawn();
+            RpcRespawn(died);
+            return died;
+        }
+
+        return died;
+    }
+
+    [ClientRpc]
+    void RpcTakeDamage(int amount, bool died)
+    {
+
+        if (died)
+            RpcRespawn(died);
+    }
+
+    void OnHealthChanged(int amount)
+    {
+        currentHealth = amount;
+        if (isLocalPlayer)
+        {
+            updateMaxHealth();
+            Stats.pStats.UpdateHealthbar(maxHealth, currentHealth);
+       //     if (lvl != stats.currentLevel)
+       //     {
+      //          lvl = stats.currentLevel;
+              
+       //         currentHealth = maxHealth ;
+          //  }
         }
     }
 
-    void updateHealthbar()
+
+    void updateMaxHealth()
     {
-        stats.UpdateHealthbar(maxHealth + stats.getBonusHealth() + stats.currentLevel, currentHealth);
-        if(lvl != stats.currentLevel)
+        if (isLocalPlayer)
         {
-            lvl = stats.currentLevel;
-            currentHealth = maxHealth + stats.getBonusHealth() + stats.currentLevel;
+            Stats.pStats.UpdateHealthbar(maxHealth, currentHealth);
         }
     }
+
 
 
 
@@ -61,11 +97,11 @@ public class PlayerHealth : NetworkBehaviour {
     //}
 
     [ClientRpc]
-    void RpcRespawn()
+    void RpcRespawn(bool died)
     {
-        if(isLocalPlayer)
+        if(isLocalPlayer && died)
         {
-            stats.UpdateHealthbar(maxHealth, currentHealth);
+            Stats.pStats.UpdateHealthbar(maxHealth, currentHealth);
             transform.position = Vector3.zero;
         }
     }

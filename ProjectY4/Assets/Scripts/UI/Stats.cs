@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
+//using UnityEngine.Networking;
 
-public class Stats : NetworkBehaviour
+public class Stats : MonoBehaviour
 {
+    public static Stats pStats;
+
     private Equipment equipment; 
     private GameObject stats;
     private string data;
@@ -18,7 +20,6 @@ public class Stats : NetworkBehaviour
     private Text xpText;
     private Text level;
     public Text gold;
-    PlayerStats ps;
 
     Item melee;
     Item ranged;
@@ -50,6 +51,14 @@ public class Stats : NetworkBehaviour
         UpdateStats();
         levelUp();
        // UpdateGold();
+    }
+
+    private void Awake()
+    {
+        if (pStats == null)
+            pStats = this;
+        else if (pStats != this)
+            Destroy(gameObject);
     }
 
     public void UpdateXpBar()
