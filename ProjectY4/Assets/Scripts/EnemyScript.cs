@@ -55,12 +55,18 @@ public class EnemyScript : NetworkBehaviour {
                 moveDirection = new Vector3(Random.Range(-1f,1f) * speed, Random.Range(-1f, 1f) * speed, 0);
             }
         }
-        attack();
+
+        if (!isServer)
+        {
+            return;
+        }
+
+        Cmdattack();
 
 
     }
-
-    void attack()
+    [Command]
+    void Cmdattack()
     {
         attackCounter();
 

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Stats : MonoBehaviour
 {
     public static Stats pStats;
-
+    CanvasGroup canvasGroup;
     private Equipment equipment; 
     private GameObject stats;
     private string data;
@@ -28,6 +28,9 @@ public class Stats : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
+     
+
         gold = GameObject.Find("Gold").GetComponent<Text>();
         level = GameObject.Find("Level").GetComponent<Text>();
         hpBar = GameObject.Find("HealthBar").GetComponent<Slider>();
@@ -36,7 +39,7 @@ public class Stats : MonoBehaviour
         xpText = xpBar.GetComponentInChildren<Text>();
         stats = GameObject.FindGameObjectWithTag("Stats");
         equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
-
+        Hide();
     }
 
     private void Update()
@@ -154,4 +157,15 @@ public class Stats : MonoBehaviour
     }
     //pa.setSprites(equipment[1].Sprite, equipment[3].Sprite, equipment[5].Sprite);
 
+    public void Hide()
+    {
+        canvasGroup.alpha = 0f; //this makes everything transparent
+        canvasGroup.blocksRaycasts = false; //this prevents the UI element to receive input events
+    }
+
+    public void Show()
+    {
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+    }
 }

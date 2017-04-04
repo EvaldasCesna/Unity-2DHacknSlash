@@ -18,13 +18,13 @@ public class EnemyHealth : NetworkBehaviour
     public GameObject itemPrefab;
     public float invincibility;
     private float invicibilityCounter;
-    private Stats playerStats;
+
     public int expToGive;
     public int dropRate;
 
     private void Start()
     {
-        playerStats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
+
     }
 
     public void FixedUpdate()
@@ -35,7 +35,9 @@ public class EnemyHealth : NetworkBehaviour
     [Command]
     public void CmdTakeDamage(int amount, Vector3 dir)
     {
+
         RpcTakeDamage(amount, dir);
+  
     }
 
     [ClientRpc]
@@ -72,7 +74,7 @@ public class EnemyHealth : NetworkBehaviour
                         GameObject clone = Instantiate(itemPrefab, transform.position, transform.rotation);
                         NetworkServer.Spawn(clone);
                     }
-                    playerStats.addXp(expToGive);
+                    //Stats.pStats.addXp(expToGive);
                     if (destroyOnDeath)
                     {
                         Destroy(gameObject);
@@ -87,11 +89,13 @@ public class EnemyHealth : NetworkBehaviour
 
     public void TakeDamage(int amount, Vector3 dir)
     {
+   
+
         if (!isServer)
         {
             return;
         }
-  
+        CmdGiveXp(expToGive, amount);
         CmdTakeDamage(amount,dir);
     
     //       RpcTakeDamage(amount,dir);
@@ -99,16 +103,28 @@ public class EnemyHealth : NetworkBehaviour
 
     public void TakeDamage(int amount)
     {
-       if (!isServer)
-        {
-            return;
-        }
-  
-                CmdTakeDamage(amount, Vector3.zero);
+        TakeDamage(amount, Vector3.zero);
 
          //   RpcTakeDamage(amount, Vector3.zero);
     }
 
+    [Command]
+    public void CmdGiveXp(int xp, int amount)
+    {
+
+        if (currentHealth - amount <= 0)
+        {
+            RpcGiveXp(xp);
+        }
+    }
+
+    [ClientRpc]
+    public void RpcGiveXp(int xp)
+    {
+
+            Stats.pStats.addXp(xp);
+ 
+    }
     //Sync healthbar to damage by server
     void OnChangeHealth(int health)
     {

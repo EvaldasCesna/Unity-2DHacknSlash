@@ -13,10 +13,11 @@ public class PlayerHealth : NetworkBehaviour {
  //   private int lvl;
     private void Start()
     {
+        Stats.pStats.Show();
     //    stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
 
-   //     lvl = stats.currentLevel;
-        currentHealth = currentHealth + maxHealth;
+    //     lvl = stats.currentLevel;
+    currentHealth = currentHealth + maxHealth;
       //  OnHealthChange();
     }
     private void Update()
@@ -35,7 +36,7 @@ public class PlayerHealth : NetworkBehaviour {
 
         maxHealth += amount;
     }
-
+    //Only the server should be responsivle for the player health
     [Server]
     public bool TakeDamage(int amount)
     {

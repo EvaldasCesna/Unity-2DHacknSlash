@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 114585568532948654}
   - component: {fileID: 114388911496256910}
   - component: {fileID: 114760223739768646}
-  - component: {fileID: 114134330292803920}
+  - component: {fileID: 225464217957059394}
   m_Layer: 5
   m_Name: UI 1
   m_TagString: UIGUI
@@ -819,38 +819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: 7
   row: 6
---- !u!114 &114134330292803920
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1716413461221198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 183
-    i1: 243
-    i2: 209
-    i3: 240
-    i4: 193
-    i5: 115
-    i6: 125
-    i7: 68
-    i8: 73
-    i9: 241
-    i10: 12
-    i11: 161
-    i12: 133
-    i13: 182
-    i14: 125
-    i15: 32
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
 --- !u!114 &114140640013136308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1455,7 +1423,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224854122492399048}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.23241377
+  m_Size: 0.21482943
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1940,7 +1908,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224733956222297810}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2762,7 +2730,7 @@ Canvas:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716413461221198}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -2771,6 +2739,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2781,7 +2750,7 @@ Canvas:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238642446152584}
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
@@ -2790,6 +2759,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3590,6 +3560,17 @@ RectTransform:
   m_AnchoredPosition: {x: -135, y: -32}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225464217957059394
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1716413461221198}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!225 &225494877624129512
 CanvasGroup:
   m_ObjectHideFlags: 1
