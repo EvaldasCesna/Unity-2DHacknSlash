@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Networking;
-using System;
 
-public class Equipment : NetworkBehaviour {
+
+public class Equipment : MonoBehaviour {
+    public static Equipment pEquipment;
     GameObject charPanel;
     GameObject slotPanel;
     ItemsDatabase items;
@@ -30,6 +30,14 @@ public class Equipment : NetworkBehaviour {
     //}
     //public SyncListGameObject syncslots = new SyncListGameObject();
 
+    private void Awake()
+    {
+        if (pEquipment == null)
+            pEquipment = this;
+        else if (pEquipment != this)
+            Destroy(gameObject);
+    }
+
     void Start ()
     {
         //Grabs the item List
@@ -46,6 +54,7 @@ public class Equipment : NetworkBehaviour {
             slots[i].GetComponent<InventorySlot>().id = i;
             slots[i].GetComponent<InventorySlot>().location = "Equipment";
             slots[i].transform.SetParent(slotPanel.transform);
+            slots[i].GetComponent<RectTransform>().localScale = Vector3.one;
         }
 
         //PopulateEquip(0, 1, 3);

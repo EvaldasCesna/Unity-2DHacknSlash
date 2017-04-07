@@ -13,7 +13,7 @@ public class PlayerHealth : NetworkBehaviour {
  //   private int lvl;
     private void Start()
     {
-        Stats.pStats.Show();
+
     //    stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
 
     //     lvl = stats.currentLevel;
@@ -25,7 +25,6 @@ public class PlayerHealth : NetworkBehaviour {
         //   OnHealthChange(); 
     }
 
-    [Server]
     public void ChangeMaxHealth(int amount)
     {
         maxHealth = 100;
@@ -78,8 +77,7 @@ public class PlayerHealth : NetworkBehaviour {
         }
     }
 
-
-    void updateMaxHealth()
+    public void updateMaxHealth()
     {
         if (isLocalPlayer)
         {

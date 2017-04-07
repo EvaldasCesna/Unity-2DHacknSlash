@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    public static Inventory pInventory;
     GameObject invPanel;
     GameObject slotPanel;
     ItemsDatabase items;
@@ -14,6 +15,14 @@ public class Inventory : MonoBehaviour
     int slotAmount;
     public List<Item> inventory = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
+
+    private void Awake()
+    {
+        if (pInventory == null)
+            pInventory = this;
+        else if (pInventory != this)
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -30,13 +39,14 @@ public class Inventory : MonoBehaviour
             slots[i].GetComponent<InventorySlot>().id = i;
             slots[i].GetComponent<InventorySlot>().location = "Inventory";
             slots[i].transform.SetParent(slotPanel.transform);
+            slots[i].GetComponent<RectTransform>().localScale = Vector3.one;
         }
         //  PopulateInv(0, 1, 6);
-        //     AddItem(0);
+             AddItem(0);
       // PopulateInv(0,1, 0);
-      //   AddItem(1);
-      //AddItem(2);
-      // AddItem(3);
+         AddItem(1);
+      AddItem(2);
+      AddItem(3);
 
         invPanel.SetActive(false);
     }

@@ -41,7 +41,7 @@ public class PlayerAttack : NetworkBehaviour
         sword = Melee.GetComponentInChildren<Sword>();
         anim = GetComponent<Animator>();
 
-        stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
+        stats = Stats.pStats;
         Ranged.SetActive(false);
         Magic.SetActive(false);
         Melee.SetActive(false);
@@ -139,8 +139,7 @@ public class PlayerAttack : NetworkBehaviour
     [Command]
     public void CmdSetSprites(int inSword, int inBow, int inStaff)
     {
-     
-        RpcSetSprites(inSword, inBow, inStaff);
+            RpcSetSprites(inSword, inBow, inStaff);  
     }
 
 

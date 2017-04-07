@@ -26,10 +26,10 @@ public class DroppedItem : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
-        {
-            GameObject.Find("Inventory").GetComponent<Inventory>().AddItem(Id);
-            Destroy(gameObject);
-        }
+        //if(collision.tag == "Player")
+        //{
+        //    GameObject.Find("Inventory").GetComponent<Inventory>().AddItem(Id);
+        //    Destroy(gameObject);
+        //}
     }
 }

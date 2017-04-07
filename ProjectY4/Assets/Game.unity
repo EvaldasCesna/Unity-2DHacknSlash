@@ -3638,6 +3638,7 @@ MonoBehaviour:
   currentXp: 0
   levels: 00000000190000003200000064000000fa0000000d020000e8030000e2040000dc050000d0070000
   gold: {fileID: 0}
+  leveledUp: 0
 --- !u!114 &204
 MonoBehaviour:
   m_ObjectHideFlags: 0

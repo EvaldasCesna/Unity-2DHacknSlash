@@ -14,8 +14,8 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     void Start()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
+        inventory = Inventory.pInventory;
+        equipment = Equipment.pEquipment;
     }
 
     public void OnDrop(PointerEventData eventData)

@@ -20,7 +20,7 @@ public class Stats : MonoBehaviour
     private Text xpText;
     private Text level;
     public Text gold;
-
+    public bool leveledUp;
     Item melee;
     Item ranged;
     Item magic;
@@ -38,7 +38,7 @@ public class Stats : MonoBehaviour
         xpBar = GameObject.Find("XpBar").GetComponent<Slider>();
         xpText = xpBar.GetComponentInChildren<Text>();
         stats = GameObject.FindGameObjectWithTag("Stats");
-        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
+        equipment = Equipment.pEquipment;
         Hide();
     }
 
@@ -127,9 +127,11 @@ public class Stats : MonoBehaviour
     }
     public void levelUp()
     {
-        if(currentXp >= levels[currentLevel])
+        leveledUp = false;
+        if (currentXp >= levels[currentLevel])
         {
             currentLevel++;
+            leveledUp = true;
         }
     }
 

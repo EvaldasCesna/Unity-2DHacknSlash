@@ -13,6 +13,7 @@ TagManager:
   - Inventory
   - Gold
   - HealthBar
+  - DroppedItem
   layers:
   - Default
   - TransparentFX

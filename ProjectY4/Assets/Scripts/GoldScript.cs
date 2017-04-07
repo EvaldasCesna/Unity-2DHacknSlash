@@ -1,14 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class GoldScript : MonoBehaviour {
-
+using UnityEngine.Networking;
+public class GoldScript : NetworkBehaviour
+{
+    [SyncVar(hook = "syncGold")]
     public int value;
     public Sprite[] gold;
-	// Use this for initialization
-	void Start () {
-        value = Random.Range(1, 20);
+    // Use this for initialization
+    void Start()
+    {
+
+        if (isServer)
+        {
+            value = Random.Range(1, 20);
+        }
+
         if (value == 1)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = gold[0];
@@ -30,9 +37,11 @@ public class GoldScript : MonoBehaviour {
             gameObject.GetComponent<SpriteRenderer>().sprite = gold[4];
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
 
+    void syncGold(int gold)
+    {
+        if (isServer) return;
+        value = gold;
     }
+
 }

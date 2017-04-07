@@ -4,9 +4,9 @@ using UnityEngine.Networking;
 using UnityEngine;
 
 public class PlayerStats : NetworkBehaviour {
-    public Stats stats;
-    public PlayerAttack pa;
-
+    private Stats stats;
+    private PlayerAttack pa;
+    private PlayerHealth pHp;
     public int Gold;
     // Use this for initialization
     void Start () {
@@ -14,23 +14,19 @@ public class PlayerStats : NetworkBehaviour {
         //{
         //    return;
         //}
-
+        stats = Stats.pStats;
+        stats.Show();
         pa = GetComponent<PlayerAttack>();
-        stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
+        pHp = GetComponent<PlayerHealth>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        levelUpdate();
 
-        if (!isLocalPlayer)
-        {
-            return;
-        }
+        updateSprites();
 
-        if (!Network.isServer)
-            pa.CmdSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
-        else
-            pa.RpcSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
+
     }
 
     void updateGold()
@@ -38,13 +34,52 @@ public class PlayerStats : NetworkBehaviour {
         stats.UpdateGold(Gold);
     }
 
+    void levelUpdate()
+    {
+        if (isLocalPlayer)
+        {
+
+            if (stats.leveledUp)
+            {
+                pHp.ChangeMaxHealth(stats.getBonusHealth() + stats.currentLevel);
+                pHp.updateMaxHealth();
+            }
+        }
+    }
+
+    public void updateSprites()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
+        if (!Network.isServer)
+        {
+
+            pa.CmdSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
+        }
+        else
+        {
+
+            pa.RpcSetSprites(stats.getMelee().ID, stats.getRanged().ID, stats.getMagic().ID);
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Gold")
         {
             Gold += collision.GetComponent<GoldScript>().value;
             updateGold();
-            collision.gameObject.SetActive(false);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "DroppedItem")
+        {
+            Inventory.pInventory.AddItem(collision.GetComponent<DroppedItem>().Id);
+            Destroy(collision.gameObject);
         }
     }
 
