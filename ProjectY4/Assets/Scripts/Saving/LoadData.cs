@@ -17,14 +17,13 @@ public class LoadData : MonoBehaviour
     static readonly string SAVEEQ = "Equipment.json";
     void Start()
     {
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
+        inventory = Inventory.pInventory;
+        equipment = Equipment.pEquipment;
         StartCoroutine("LoadItemsFromdb");
     }
 
     void ConstructItems()
     {
-
         for (int i = 0; i < invData.Count; i++)
         {
             //  Debug.Log(i + " id " + (int)itemData[i]["id"]);

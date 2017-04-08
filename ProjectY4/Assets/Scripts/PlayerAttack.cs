@@ -7,7 +7,7 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerAttack : NetworkBehaviour
 {
-   // GameObject[] target;
+    // GameObject[] target;
     //public float attackRange;
     Animator anim;
     Stats stats;
@@ -16,7 +16,8 @@ public class PlayerAttack : NetworkBehaviour
     public int magicDamage;
     public float attackTime;
     private float attackTimeCounter;
-    public bool isAttacking = false;
+
+    public bool isAttacking;
 
     public float speed;
     public GameObject arrowPrefab;
@@ -28,7 +29,7 @@ public class PlayerAttack : NetworkBehaviour
     Bow bow;
     Staff staff;
     bool canAttack;
-  //  public EnemyHealth hp;
+    //  public EnemyHealth hp;
     private PlayerMovement playerPos;
     private ItemsDatabase item;
 
@@ -39,8 +40,9 @@ public class PlayerAttack : NetworkBehaviour
         staff = Magic.GetComponentInChildren<Staff>();
         bow = Ranged.GetComponentInChildren<Bow>();
         sword = Melee.GetComponentInChildren<Sword>();
+        sword.GetComponent<Collider2D>().enabled = isAttacking;
         anim = GetComponent<Animator>();
-
+        item = Inventory.pInventory.GetComponentInChildren<ItemsDatabase>();
         stats = Stats.pStats;
         Ranged.SetActive(false);
         Magic.SetActive(false);
@@ -52,17 +54,17 @@ public class PlayerAttack : NetworkBehaviour
     }
 
 
-	// Update is called once per frame
-	void FixedUpdate() {
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        attackCounter();
+
         if (!canAttack)
             return;
 
-        attackCounter();
+
 
         userInput();
-
-   
-
     }
     //Old attack
     //[Command]
@@ -114,7 +116,6 @@ public class PlayerAttack : NetworkBehaviour
         }
         if (Input.GetKeyDown(KeyCode.G) && isAttacking == false)
         {
-
             isAttacking = true;
             attackTimeCounter = attackTime;
             CmdMagic();
@@ -137,17 +138,15 @@ public class PlayerAttack : NetworkBehaviour
 
     }
     [Command]
-    public void CmdSetSprites(int inSword, int inBow, int inStaff)
+    public void CmdSetEquipment(int inSword, int inBow, int inStaff)
     {
-            RpcSetSprites(inSword, inBow, inStaff);  
+        RpcSetEquipment(inSword, inBow, inStaff);
     }
 
 
     [ClientRpc]
-    public void RpcSetSprites(int inSword, int inBow, int inStaff)
+    public void RpcSetEquipment(int inSword, int inBow, int inStaff)
     {
-        item = GameObject.FindGameObjectWithTag("Inventory").GetComponentInChildren<ItemsDatabase>();
-
         if (inSword != -1)
         {
             meleeDamage = 10;
@@ -172,37 +171,32 @@ public class PlayerAttack : NetworkBehaviour
     {
         if (attackTimeCounter > 0)
         {
-          //  Debug.Log(isAttacking.ToString());
+            //  Debug.Log(isAttacking.ToString());
             attackTimeCounter -= Time.fixedDeltaTime;
         }
         if (attackTimeCounter <= 0)
         {
-
+ 
             isAttacking = false;
-          //  Debug.Log(isAttacking.ToString());
+            sword.GetComponent<Collider2D>().enabled = isAttacking;
+            //  Debug.Log(isAttacking.ToString());
             anim.SetBool("isAttacking", isAttacking);
         }
-
     }
 
     [Command]
     private void CmdRanged(Vector3 position, Vector3 rotation, Vector2 direction)
     {
         RpcRanged();
-      
-   
 
+        GameObject arrow = (GameObject)Instantiate(arrowPrefab, position, Quaternion.Euler(rotation));
+        //arrow.GetComponent<Arrow>().pa = this;
+        arrow.GetComponent<Arrow>().damage = rangedDamage;
+        arrow.GetComponent<Rigidbody2D>().velocity = direction;
 
-            GameObject arrow = (GameObject)Instantiate(arrowPrefab, position, Quaternion.Euler(rotation));
-            //arrow.GetComponent<Arrow>().pa = this;
-            arrow.GetComponent<Arrow>().damage = rangedDamage;
-            arrow.GetComponent<Rigidbody2D>().velocity = direction;
-
-            NetworkServer.Spawn(arrow);
-         //   Debug.Log("Shooting");
-            //  bow.Shoot();
-        
-
+        NetworkServer.Spawn(arrow);
+        //   Debug.Log("Shooting");
+        //  bow.Shoot();
     }
 
     [Command]
@@ -210,34 +204,32 @@ public class PlayerAttack : NetworkBehaviour
     {
         RpcMagic();
 
+        GameObject clone = Instantiate(fireAoe, transform.position, transform.rotation);
+        NetworkServer.Spawn(clone);
 
-            GameObject clone = Instantiate(fireAoe, transform.position, transform.rotation);
-            NetworkServer.Spawn(clone);
-  
-            anim.SetBool("isAttacking", true);
-            GameObject[] target = GameObject.FindGameObjectsWithTag("Enemy");
-            //  Debug.Log(GameObject.FindGameObjectsWithTag("Enemy"));
-            for (int i = 0; i < target.Length; i++)
+        anim.SetBool("isAttacking", true);
+        GameObject[] target = GameObject.FindGameObjectsWithTag("Enemy");
+        //  Debug.Log(GameObject.FindGameObjectsWithTag("Enemy"));
+        for (int i = 0; i < target.Length; i++)
+        {
+            if (Vector3.Distance(transform.position, target[i].transform.position) <= 2.5f)
             {
-                if (Vector3.Distance(transform.position, target[i].transform.position) <= 2.5f)
-                {
-                    //  Debug.Log(target[i].ToString() );
-                    EnemyHealth hp = target[i].GetComponent<EnemyHealth>();
+                //  Debug.Log(target[i].ToString() );
+                EnemyHealth hp = target[i].GetComponent<EnemyHealth>();
 
-                   // EnemyHealth hp = staff.getHit();
-                    //  anim.SetBool("isAttacking", false);
-                   // anim.SetBool("isAttacking", false);
-                    hp.TakeDamage(magicDamage);
-                }
+                // EnemyHealth hp = staff.getHit();
+                //  anim.SetBool("isAttacking", false);
+                // anim.SetBool("isAttacking", false);
+                hp.TakeDamage(magicDamage);
             }
-
-        
+        }
     }
 
     [Command]
     private void CmdMelee(bool attacking)
     {
-        isAttacking = true;
+    //    Debug.Log(attacking);
+        sword.GetComponent<Collider2D>().enabled = true;
         RpcMelee(attacking);
         anim.SetBool("isAttacking", attacking);
     }
@@ -248,7 +240,7 @@ public class PlayerAttack : NetworkBehaviour
         Ranged.SetActive(true);
         Magic.SetActive(false);
         Melee.SetActive(false);
-     
+
     }
     [ClientRpc]
     private void RpcMagic()
@@ -258,13 +250,21 @@ public class PlayerAttack : NetworkBehaviour
         Melee.SetActive(false);
     }
 
+    [Command]
+    public void CmdMeleeDmg(GameObject enemy, Vector3 dir)
+    {
+        EnemyHealth hp = enemy.GetComponent<EnemyHealth>();
+        hp.TakeDamage(meleeDamage, dir);
+    }
 
     [ClientRpc]
     private void RpcMelee(bool attacking)
     {
+     //   Debug.Log(attacking);
         Melee.SetActive(true);
         Ranged.SetActive(false);
         Magic.SetActive(false);
+        sword.GetComponent<Collider2D>().enabled = true;
         anim.SetBool("isAttacking", attacking);
         //        Debug.Log(sword.getHit().currentHealth); Old
         //        EnemyHealth hp = sword.getHit();
@@ -276,9 +276,6 @@ public class PlayerAttack : NetworkBehaviour
         //                hp.RpcTakeDamage(10);
         //        }
         //sword.hp = null;
-
-
-
     }
     //[Command]   //Old
     //public void CmdDoDamage()
@@ -293,8 +290,4 @@ public class PlayerAttack : NetworkBehaviour
     //    hp = null;
 
     //}
-
-
-
-
 }

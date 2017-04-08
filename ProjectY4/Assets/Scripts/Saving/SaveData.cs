@@ -24,13 +24,13 @@ public class SaveData : MonoBehaviour
     void Start()
     {
         save.Clear();
-        inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        equipment = GameObject.Find("Inventory").GetComponent<Equipment>();
-        InvokeRepeating("SaveItems", 10.0f, 10.0f);
+        inventory = Inventory.pInventory;
+        equipment = Equipment.pEquipment;
+     //   InvokeRepeating("SaveItems", 10.0f, 10.0f);
 
     }
 
-    void SaveItems()
+    public void SaveItems()
     {
         //Get items from inventory/equipment
         List<ItemData> tempInv = inventory.getAllitems();

@@ -645,8 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394b291503ae15d4b8e3be88063d39c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
-  currentHealth: 100
   healthbar: {fileID: 224940043313131352}
 --- !u!114 &114957597996231504
 MonoBehaviour:
@@ -686,8 +684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab7865cf274c74b80c4c7a5fa35b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
-  pa: {fileID: 0}
   Gold: 0
 --- !u!212 &212000012006612680
 SpriteRenderer:

@@ -2,10 +2,10 @@ Mono path[0] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Managed'
 Mono path[1] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono'
 Mono config path = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/PC/Documents/ProjectY4/Build/build_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55484
-Multi-casting "[IP] 192.168.0.44 [Port] 55484 [Flags] 2 [Guid] 4284765483 [EditorId] 4060550358 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55484]
-PlayerConnection already initialized - listening to [0.0.0.0:55484]
+PlayerConnection initialized network socket : 0.0.0.0 55455
+Multi-casting "[IP] 192.168.0.44 [Port] 55455 [Flags] 2 [Guid] 2616453150 [EditorId] 3617639705 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55455]
+PlayerConnection already initialized - listening to [0.0.0.0:55455]
 Player data archive not found at `C:/Users/PC/Documents/ProjectY4/Build/build_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -27,124 +27,244 @@ Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Unit
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.085 seconds
+- Completed reload, in  0.081 seconds
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.913868 ms
+UnloadTime: 0.906862 ms
 Cannot Connect to DB
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:LogError(Object)
-<LoadItemsFromdb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\LoadData.cs:52)
+<LoadItemsFromdb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\LoadData.cs:51)
 UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
  
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/LoadData.cs Line: 52)
+(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/LoadData.cs Line: 51)
 
-Cannot Connect to db
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+reactor filed to acomplish request with code {1234}, bytesReceived {0}
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:58342}
+Attempt to send to not connected connection {1}
+UnityEngine.Networking.NetworkTransport:SendWrapper(Int32, Int32, Int32, Byte[], Int32, Byte&)
+UnityEngine.Networking.NetworkTransport:Send(Int32, Int32, Int32, Byte[], Int32, Byte&) (at C:\buildslave\unity\build\artifacts\generated\common\modules\UNET\UNETworkingBindings.gen.cs:702)
+UnityEngine.Networking.NetworkConnection:TransportSend(Byte[], Int32, Int32, Byte&) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:587)
+UnityEngine.Networking.ChannelPacket:SendToTransport(NetworkConnection, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelPacket.cs:43)
+UnityEngine.Networking.ChannelBuffer:SendInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:405)
+UnityEngine.Networking.ChannelBuffer:CheckInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:169)
+UnityEngine.Networking.NetworkConnection:FlushChannels() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:316)
+UnityEngine.Networking.NetworkServerSimple:UpdateConnections() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:197)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:267)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
+
+[C:/buildslave/unity/build/Runtime/Networking/UNETVirtualUserHost.cpp line 359] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/modules/UNET/UNETworkingBindings.gen.cs Line: 702)
+
+Failed to send internal buffer channel:0 bytesToSend:25
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+UnityEngine.Networking.ChannelPacket:SendToTransport(NetworkConnection, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelPacket.cs:51)
+UnityEngine.Networking.ChannelBuffer:SendInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:405)
+UnityEngine.Networking.ChannelBuffer:CheckInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:169)
+UnityEngine.Networking.NetworkConnection:FlushChannels() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:316)
+UnityEngine.Networking.NetworkServerSimple:UpdateConnections() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:197)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:267)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
  
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
+(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/ChannelPacket.cs Line: 51)
 
-Cannot Connect to db
+Send Error: WrongConnection channel:0 bytesToSend:25
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+UnityEngine.Networking.ChannelPacket:SendToTransport(NetworkConnection, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelPacket.cs:69)
+UnityEngine.Networking.ChannelBuffer:SendInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:405)
+UnityEngine.Networking.ChannelBuffer:CheckInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:169)
+UnityEngine.Networking.NetworkConnection:FlushChannels() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:316)
+UnityEngine.Networking.NetworkServerSimple:UpdateConnections() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:197)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:267)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
  
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
+(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/ChannelPacket.cs Line: 69)
 
-Cannot Connect to db
+Attempt to send to not connected connection {1}
+UnityEngine.Networking.NetworkTransport:SendWrapper(Int32, Int32, Int32, Byte[], Int32, Byte&)
+UnityEngine.Networking.NetworkTransport:Send(Int32, Int32, Int32, Byte[], Int32, Byte&) (at C:\buildslave\unity\build\artifacts\generated\common\modules\UNET\UNETworkingBindings.gen.cs:702)
+UnityEngine.Networking.NetworkConnection:TransportSend(Byte[], Int32, Int32, Byte&) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:587)
+UnityEngine.Networking.ChannelPacket:SendToTransport(NetworkConnection, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelPacket.cs:43)
+UnityEngine.Networking.ChannelBuffer:SendInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:405)
+UnityEngine.Networking.ChannelBuffer:CheckInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:169)
+UnityEngine.Networking.NetworkConnection:FlushChannels() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:316)
+UnityEngine.Networking.NetworkServerSimple:UpdateConnections() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:197)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:267)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
+
+[C:/buildslave/unity/build/Runtime/Networking/UNETVirtualUserHost.cpp line 359] 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/modules/UNET/UNETworkingBindings.gen.cs Line: 702)
+
+Failed to send internal buffer channel:1 bytesToSend:27
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+UnityEngine.Networking.ChannelPacket:SendToTransport(NetworkConnection, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelPacket.cs:51)
+UnityEngine.Networking.ChannelBuffer:SendInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:405)
+UnityEngine.Networking.ChannelBuffer:CheckInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:169)
+UnityEngine.Networking.NetworkConnection:FlushChannels() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:316)
+UnityEngine.Networking.NetworkServerSimple:UpdateConnections() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:197)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:267)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
  
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
+(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/ChannelPacket.cs Line: 51)
 
-Cannot Connect to db
+Send Error: WrongConnection channel:1 bytesToSend:27
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+UnityEngine.Networking.ChannelPacket:SendToTransport(NetworkConnection, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelPacket.cs:69)
+UnityEngine.Networking.ChannelBuffer:SendInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:405)
+UnityEngine.Networking.ChannelBuffer:CheckInternalBuffer() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\ChannelBuffer.cs:169)
+UnityEngine.Networking.NetworkConnection:FlushChannels() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:316)
+UnityEngine.Networking.NetworkServerSimple:UpdateConnections() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:197)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:267)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
  
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
+(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/ChannelPacket.cs Line: 69)
 
-Cannot Connect to db
+ServerDisconnected due to error: Timeout
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
 UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
 UnityEngine.Logger:Log(LogType, Object)
 UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
+UnityEngine.Networking.NetworkManager:OnServerDisconnect(NetworkConnection) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:1002)
+UnityEngine.Networking.NetworkManager:OnServerDisconnectInternal(NetworkMessage) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkManager.cs:850)
+UnityEngine.Networking.NetworkConnection:InvokeHandler(Int16, NetworkReader, Int32) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:220)
+UnityEngine.Networking.NetworkConnection:InvokeHandlerNoData(Int16) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkConnection.cs:202)
+UnityEngine.Networking.NetworkServer:OnDisconnected(NetworkConnection) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:715)
+UnityEngine.Networking.ServerSimpleWrapper:OnDisconnected(NetworkConnection) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:1861)
+UnityEngine.Networking.NetworkServerSimple:HandleDisconnect(Int32, Byte) (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:364)
+UnityEngine.Networking.NetworkServerSimple:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServerSimple.cs:253)
+UnityEngine.Networking.NetworkServer:InternalUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:691)
+UnityEngine.Networking.NetworkServer:Update() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkServer.cs:642)
+UnityEngine.Networking.NetworkIdentity:UNetStaticUpdate() (at C:\buildslave\unity\build\Extensions\Networking\Runtime\NetworkIdentity.cs:1090)
  
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
-
-Cannot Connect to db
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<SaveItemsTodb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\SaveData.cs:87)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/SaveData.cs Line: 87)
+(Filename: C:/buildslave/unity/build/Extensions/Networking/Runtime/NetworkManager.cs Line: 1002)
 
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.361264 ms
-System memory in use before: 28.5 MB.
+UnloadTime: 4.840400 ms
+System memory in use before: 27.8 MB.
 System memory in use after: 27.9 MB.
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1645.
-Total: 1.138680 ms (FindLiveObjects: 0.059053 ms CreateObjectMapping: 0.033619 ms MarkObjects: 1.034898 ms  DeleteObjects: 0.010524 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1639.
+Total: 2.127121 ms (FindLiveObjects: 0.132141 ms CreateObjectMapping: 0.130971 ms MarkObjects: 1.850560 ms  DeleteObjects: 0.011986 ms)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 34ac -> priority: 1 
-  Thread -> id: 37ac -> priority: 1 
-  Thread -> id: 1240 -> priority: 1 
-  Thread -> id: 2ef0 -> priority: 1 
+  Thread -> id: 2578 -> priority: 1 
+  Thread -> id: 2adc -> priority: 1 
+  Thread -> id: 1f1c -> priority: 1 
+  Thread -> id: 3068 -> priority: 1 

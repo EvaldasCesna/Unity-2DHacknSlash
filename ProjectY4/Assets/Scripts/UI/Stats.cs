@@ -29,8 +29,6 @@ public class Stats : MonoBehaviour
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-     
-
         gold = GameObject.Find("Gold").GetComponent<Text>();
         level = GameObject.Find("Level").GetComponent<Text>();
         hpBar = GameObject.Find("HealthBar").GetComponent<Slider>();
@@ -39,6 +37,7 @@ public class Stats : MonoBehaviour
         xpText = xpBar.GetComponentInChildren<Text>();
         stats = GameObject.FindGameObjectWithTag("Stats");
         equipment = Equipment.pEquipment;
+        UpdateStats();
         Hide();
     }
 
@@ -51,7 +50,6 @@ public class Stats : MonoBehaviour
         //    RpcUpdateStats();
         //Later only update if something changes but works for now
         UpdateXpBar();
-        UpdateStats();
         levelUp();
        // UpdateGold();
     }
@@ -66,9 +64,9 @@ public class Stats : MonoBehaviour
 
     public void UpdateXpBar()
     {
-        xpBar.maxValue = levels[currentLevel + 1];
+        xpBar.maxValue = levels[currentLevel];
         xpBar.value = currentXp;
-        xpText.text = currentXp + "/" + levels[currentLevel + 1];
+        xpText.text = currentXp + "/" + levels[currentLevel];
         level.text = "Level: " + currentLevel;
     }  
 
@@ -98,10 +96,9 @@ public class Stats : MonoBehaviour
         for (int i = 0; i < equipment.equipment.Count; i++)
         {
             def += equipment.equipment[i].Defence;
-            str += equipment.equipment[i].Strength + currentLevel;
-            vit += equipment.equipment[i].Vitality + currentLevel;
+            str += equipment.equipment[i].Strength;
+            vit += equipment.equipment[i].Vitality;
         }
-
         data = "  Strenght: " + str + "\n\n  Defence: " + def + "\n\n  Vitality: " + vit;
         stats.GetComponent<Text>().text = data;
 
@@ -130,6 +127,7 @@ public class Stats : MonoBehaviour
         leveledUp = false;
         if (currentXp >= levels[currentLevel])
         {
+            currentXp = 0;
             currentLevel++;
             leveledUp = true;
         }

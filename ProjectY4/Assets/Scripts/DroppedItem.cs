@@ -9,7 +9,7 @@ public class DroppedItem : MonoBehaviour {
     ItemsDatabase items;
     // Use this for initialization
     void Start () {
-        items = GameObject.Find("Inventory").GetComponent<ItemsDatabase>();
+        items = Inventory.pInventory.GetComponent<ItemsDatabase>();
         sprite = GetComponent<SpriteRenderer>();
 
         Id = Random.Range(0, 4);

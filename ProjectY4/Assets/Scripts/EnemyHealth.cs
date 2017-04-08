@@ -35,6 +35,10 @@ public class EnemyHealth : NetworkBehaviour
     [Command]
     public void CmdTakeDamage(int amount, Vector3 dir)
     {
+        if (currentHealth - amount <= 0)
+        {
+            CmdGiveXp(expToGive, amount);
+        }
 
         RpcTakeDamage(amount, dir);
   
@@ -63,6 +67,7 @@ public class EnemyHealth : NetworkBehaviour
 
                 if (currentHealth <= 0)
                 {
+           
                     int rate = Random.Range(0, dropRate);
                     if (rate == 0 || rate > dropRate/2)
                     {
@@ -95,7 +100,7 @@ public class EnemyHealth : NetworkBehaviour
         {
             return;
         }
-        CmdGiveXp(expToGive, amount);
+      
         CmdTakeDamage(amount,dir);
     
     //       RpcTakeDamage(amount,dir);
@@ -112,18 +117,16 @@ public class EnemyHealth : NetworkBehaviour
     public void CmdGiveXp(int xp, int amount)
     {
 
-        if (currentHealth - amount <= 0)
-        {
+     //   if (currentHealth - amount <= 0)
+   //     {
             RpcGiveXp(xp);
-        }
+    //    }
     }
 
     [ClientRpc]
     public void RpcGiveXp(int xp)
     {
-
             Stats.pStats.addXp(xp);
- 
     }
     //Sync healthbar to damage by server
     void OnChangeHealth(int health)
