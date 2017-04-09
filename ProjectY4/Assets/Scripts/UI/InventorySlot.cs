@@ -15,8 +15,9 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     void Start()
     {
-        save = GetComponent<SaveData>();
+
         inventory = Inventory.pInventory;
+        save = inventory.GetComponent<SaveData>();
         equipment = Equipment.pEquipment;
     }
 
@@ -44,7 +45,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                 droppedItem.slot = id;
                 droppedItem.location = "Inventory";
                 Stats.pStats.UpdateStats();
-                save.SaveItems();
             }
 
             else if (droppedItem.slot != id)
@@ -103,7 +103,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         droppedItem.slot = i;
                         droppedItem.location = "Equipment";
                         Stats.pStats.UpdateStats();
-                        save.SaveItems();
                     }
 
                 }
@@ -143,6 +142,13 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             }
         }
 
+        Invoke("Isave", 0.1f);
+
+    }
+
+    void Isave()
+    {
+        save.SaveItems();
     }
 
 }
