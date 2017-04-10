@@ -16,9 +16,9 @@ public class EnemySpawner : NetworkBehaviour {
         }
     }
 
-    public override void OnStartServer()
+    public void Start()
     {
-      //  CmdSpawn();
+        CmdSpawn();
     }
 
     //Spawns enemies in locations

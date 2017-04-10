@@ -18,6 +18,7 @@ public class PlayerStats : NetworkBehaviour {
         stats.Show();
         pa = GetComponent<PlayerAttack>();
         pHp = GetComponent<PlayerHealth>();
+        DontDestroyOnLoad(transform.gameObject);
     }
 	
 	// Update is called once per frame
@@ -25,8 +26,6 @@ public class PlayerStats : NetworkBehaviour {
         levelUpdate();
 
         updateSprites();
-
-
     }
 
     void updateGold()

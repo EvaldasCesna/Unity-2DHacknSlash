@@ -25,6 +25,7 @@ public class CameraFollow : MonoBehaviour
 
         halfHeight = mycam.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
+        DontDestroyOnLoad(transform.gameObject);
 
     } 
 

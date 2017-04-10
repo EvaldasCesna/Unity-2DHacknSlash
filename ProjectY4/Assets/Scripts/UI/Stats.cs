@@ -39,6 +39,7 @@ public class Stats : MonoBehaviour
         equipment = Equipment.pEquipment;
         UpdateStats();
         Hide();
+        DontDestroyOnLoad(transform.gameObject);
     }
 
     private void Update()
