@@ -15,6 +15,8 @@ public class CameraFollow : MonoBehaviour
     private float halfHeight;
     private float halfWidth;
 
+    private static bool cameraExists;
+
     // Update is called once per frame
     private void Start()
     {
@@ -23,9 +25,19 @@ public class CameraFollow : MonoBehaviour
         minBounds = camBounds.bounds.min;
         maxBounds = camBounds.bounds.max;
 
+        if(!cameraExists)
+        {
+            cameraExists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         halfHeight = mycam.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
-        DontDestroyOnLoad(transform.gameObject);
+      
 
     } 
 
@@ -37,6 +49,7 @@ public class CameraFollow : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, playerTransform.position, 0.1f) + new Vector3(x, y, depth);
            // transform.position = playerTransform.position + new Vector3(x, y, depth);
         }
+
 
         float clampedX = Mathf.Clamp(transform.position.x, minBounds.x + halfWidth, maxBounds.x - halfWidth);
         float clampedY = Mathf.Clamp(transform.position.y, minBounds.y + halfHeight, maxBounds.y - halfHeight);

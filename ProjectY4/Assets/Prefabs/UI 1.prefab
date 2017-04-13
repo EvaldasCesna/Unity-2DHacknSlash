@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224854122492399048}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.21482943
+  m_Size: 0.21745697
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224733956222297810}
   m_Direction: 0
   m_Value: 1
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2206,6 +2206,7 @@ MonoBehaviour:
   currentXp: 0
   levels: 00000000190000003200000064000000fa0000000d020000e8030000e2040000dc050000d0070000
   gold: {fileID: 0}
+  leveledUp: 0
 --- !u!114 &114765850542811250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2739,7 +2740,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

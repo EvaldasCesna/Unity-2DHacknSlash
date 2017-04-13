@@ -9,11 +9,11 @@ EditorBuildSettings:
     path: Assets/Login.unity
     guid: 761734f02710ed248937d702d53169a6
   - enabled: 1
+    path: Assets/Loading Screen.unity
+    guid: a1d39751215ac9b4ebff6fa2002b3ff1
+  - enabled: 1
     path: Assets/Game.unity
     guid: 995b4c9e50169e74e80993ab016e7a0e
   - enabled: 1
     path: Assets/Grasslands.unity
     guid: 35c1caaf56e5dd744ab367bd6b2a57da
-  - enabled: 1
-    path: Assets/Loading Screen.unity
-    guid: a1d39751215ac9b4ebff6fa2002b3ff1

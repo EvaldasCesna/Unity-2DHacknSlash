@@ -32,11 +32,11 @@ public class LoadingScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(5);
 
-        //AsyncOperation async = SceneManager.LoadSceneAsync(scene);
+        AsyncOperation async = SceneManager.LoadSceneAsync(scene);
 
-     //   while(!async.isDone)
-     //   {
-     //       yield return null;
-     //   }
+        while (!async.isDone)
+        {
+            yield return null;
+        }
     }
 }

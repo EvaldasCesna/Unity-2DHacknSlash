@@ -9,8 +9,9 @@ public class PlayerHealth : NetworkBehaviour {
     // [SyncVar (hook = "OnChangeHealth")] public int currentHealth = maxHealth;
     [SyncVar(hook = "OnHealthChanged")] int currentHealth;
     public RectTransform healthbar;
-  //  private Stats stats;
- //   private int lvl;
+    public bool died = false;
+    //  private Stats stats;
+    //   private int lvl;
     private void Start()
     {
 
@@ -39,8 +40,7 @@ public class PlayerHealth : NetworkBehaviour {
     [Server]
     public bool TakeDamage(int amount)
     {
-        bool died = false;
-
+  
         currentHealth -= amount;
         if (currentHealth <= 0)
         {

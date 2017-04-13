@@ -2,10 +2,10 @@ Mono path[0] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Managed'
 Mono path[1] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono'
 Mono config path = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/PC/Documents/ProjectY4/Build/build_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55375
-Multi-casting "[IP] 192.168.0.44 [Port] 55375 [Flags] 2 [Guid] 3915892988 [EditorId] 2170858842 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55375]
-PlayerConnection already initialized - listening to [0.0.0.0:55375]
+PlayerConnection initialized network socket : 0.0.0.0 55178
+Multi-casting "[IP] 192.168.0.44 [Port] 55178 [Flags] 2 [Guid] 1357516828 [EditorId] 2759324677 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55178]
+PlayerConnection already initialized - listening to [0.0.0.0:55178]
 Player data archive not found at `C:/Users/PC/Documents/ProjectY4/Build/build_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -27,29 +27,21 @@ Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Unit
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.158 seconds
+- Completed reload, in  0.033 seconds
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.008301 ms
+UnloadTime: 1.740632 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.417000 ms
-System memory in use before: 32.9 MB.
-System memory in use after: 28.3 MB.
+UnloadTime: 7.284697 ms
+System memory in use before: 22.4 MB.
+System memory in use after: 22.5 MB.
 
-Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 1467.
-Total: 1.365840 ms (FindLiveObjects: 0.074548 ms CreateObjectMapping: 0.034789 ms MarkObjects: 1.143657 ms  DeleteObjects: 0.112553 ms)
-
-Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.594046 ms
-System memory in use before: 29.7 MB.
-System memory in use after: 29.8 MB.
-
-Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1517.
-Total: 0.721802 ms (FindLiveObjects: 0.038882 ms CreateObjectMapping: 0.031865 ms MarkObjects: 0.643161 ms  DeleteObjects: 0.007600 ms)
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1728.
+Total: 0.873824 ms (FindLiveObjects: 0.066655 ms CreateObjectMapping: 0.031865 ms MarkObjects: 0.766533 ms  DeleteObjects: 0.008185 ms)
 
 Cannot Connect to DB
 UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
@@ -61,8 +53,32 @@ UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave
  
 (Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/LoadData.cs Line: 51)
 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.215870 ms
+System memory in use before: 33.1 MB.
+System memory in use after: 28.5 MB.
+
+Unloading 33 unused Assets to reduce memory usage. Loaded Objects now: 1479.
+Total: 1.040754 ms (FindLiveObjects: 0.063146 ms CreateObjectMapping: 0.033619 ms MarkObjects: 0.808631 ms  DeleteObjects: 0.134771 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.262527 ms
+System memory in use before: 29.9 MB.
+System memory in use after: 30.0 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 1533.
+Total: 0.701339 ms (FindLiveObjects: 0.038589 ms CreateObjectMapping: 0.031573 ms MarkObjects: 0.624745 ms  DeleteObjects: 0.006139 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.254049 ms
+System memory in use before: 29.9 MB.
+System memory in use after: 30.0 MB.
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1533.
+Total: 0.704263 ms (FindLiveObjects: 0.036835 ms CreateObjectMapping: 0.032742 ms MarkObjects: 0.626791 ms  DeleteObjects: 0.007601 ms)
+
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 300c -> priority: 1 
-  Thread -> id: 3334 -> priority: 1 
-  Thread -> id: 1dc8 -> priority: 1 
-  Thread -> id: 2fb8 -> priority: 1 
+  Thread -> id: acc -> priority: 1 
+  Thread -> id: 2388 -> priority: 1 
+  Thread -> id: 2200 -> priority: 1 
+  Thread -> id: 3224 -> priority: 1 

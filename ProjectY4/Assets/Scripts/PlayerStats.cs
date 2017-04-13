@@ -7,6 +7,8 @@ public class PlayerStats : NetworkBehaviour {
     private Stats stats;
     private PlayerAttack pa;
     private PlayerHealth pHp;
+    public string startPoint;
+    public GameObject spawn;
     public int Gold;
     // Use this for initialization
     void Start () {
@@ -14,6 +16,7 @@ public class PlayerStats : NetworkBehaviour {
         //{
         //    return;
         //}
+        spawn = GameObject.Find("StartPoint");
         stats = Stats.pStats;
         stats.Show();
         pa = GetComponent<PlayerAttack>();
@@ -63,6 +66,14 @@ public class PlayerStats : NetworkBehaviour {
         }
     }
 
+    private void respawn()
+    {
+        if (pHp.died)
+        {
+            transform.position = spawn.transform.position;
+        }
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
