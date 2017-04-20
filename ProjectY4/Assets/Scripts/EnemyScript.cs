@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class EnemyScript : NetworkBehaviour {
-    public float speed;
-   //public Transform player;
-    GameObject[] player;
     private Rigidbody2D rig;
-    public float aggroDistance;
-    public float attackDistance;
     private bool moving;
-    public float timeBetweenMoves;
     private float timeBetweenMovesCount;
-    public float timeToMove;
     private float timeToMoveCount;
-    public GameObject attackParticle;
-
-    public float attackTime;
     private Vector3 moveDirection;
     private float attackTimeCounter;
     private bool isAttacking;
+
+    public bool canShoot;
+    public bool canMelee;
+    public float speed;
+    public float projectileSpeed;
+    public int damage;
+    public float timeBetweenMoves;
+    public float timeToMove;
+    public GameObject attackPrefab;
+    public GameObject projectilePrefab;
+    public float attackTime;
+ 
 
     private void Start()
     {
@@ -28,9 +31,8 @@ public class EnemyScript : NetworkBehaviour {
 
         timeBetweenMovesCount = Random.Range(timeBetweenMoves * 0.75f, timeBetweenMoves * 1.25f);
         timeToMoveCount = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
-    } 
 
-    // Update is called once per frame
+    } 
 
     void FixedUpdate () {
 
@@ -56,46 +58,71 @@ public class EnemyScript : NetworkBehaviour {
             }
         }
 
+    }
+
+    public void enemyAttack(GameObject player)
+    {
+    if (!isServer)
+    {
+        return;
+    }
+
+    CmdenemyAttack(player);
+    }
+
+    public void enemyProjectile(GameObject player)
+    {
         if (!isServer)
         {
             return;
         }
 
-        Cmdattack();
+        CmdenemyProjectile(player);
+    }
 
+    [Command]
+    public void CmdenemyAttack(GameObject player)
+    {
+        attackCounter();
+        PlayerHealth hp = player.GetComponent<PlayerHealth>();
+
+        if (isAttacking == false)
+        {
+            if (canMelee)
+            {
+                Instantiate(attackPrefab, new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z - 1f), transform.rotation);
+                //NetworkServer.Spawn(clone);
+                isAttacking = true;
+                attackTimeCounter = attackTime;
+                hp.TakeDamage(damage);
+            }
+        }
 
     }
+
+
     [Command]
-    void Cmdattack()
+    public void CmdenemyProjectile(GameObject player)
     {
         attackCounter();
 
-        player = GameObject.FindGameObjectsWithTag("Player");
-        for (int i = 0; i < player.Length; i++)
+        if (isAttacking == false)
         {
-            //If player comes near they will go after
-            if (Vector3.Distance(transform.position, player[i].transform.position) <= aggroDistance)
+            if (canShoot)
             {
-                transform.position = Vector2.MoveTowards(transform.position, player[i].transform.position, speed * Time.deltaTime);
-            }
-            // Attack
-            if (Vector3.Distance(transform.position, player[i].transform.position) <= attackDistance)
-            {
+                GameObject projectile = (GameObject)Instantiate(projectilePrefab, transform.position, transform.rotation);
+                isAttacking = true;
+                attackTimeCounter = attackTime;
+                projectile.GetComponent<Rigidbody2D>().velocity = (player.transform.position - transform.position).normalized * projectileSpeed;
+                projectile.GetComponent<EnemyProjectile>().damage = damage;
+                Destroy(projectile.gameObject, 5);
+                NetworkServer.Spawn(projectile);
 
-                PlayerHealth hp = player[i].GetComponent<PlayerHealth>();
-                if (isAttacking == false)
-                {
-                   Instantiate(attackParticle, new Vector3(transform.position.x, transform.position.y, transform.position.z - 1f), transform.rotation);
-                   //NetworkServer.Spawn(clone);
-                    isAttacking = true;
-                    attackTimeCounter = attackTime;
-                    hp.TakeDamage(1);
-                }
             }
 
         }
-    }
 
+    }
 
     private void attackCounter()
     {

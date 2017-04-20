@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 4198547015323912}
   - component: {fileID: 212848590285066102}
   - component: {fileID: 114607102902697438}
+  - component: {fileID: 58085056713265746}
   m_Layer: 0
   m_Name: Staff
   m_TagString: Untagged
@@ -190,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 1036831124899744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 4691132033006220}
   m_RootOrder: 0
@@ -203,7 +204,7 @@ Transform:
   m_GameObject: {fileID: 1400900620735734}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 4190107520741950}
   m_RootOrder: 0
@@ -302,6 +303,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!58 &58085056713265746
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1036831124899744}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.15}
+  serializedVersion: 2
+  m_Radius: 7.5
 --- !u!61 &61000012967637462
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -454,9 +470,6 @@ MonoBehaviour:
   magicDamage: 5
   attackTime: 0.5
   isAttacking: 0
-  speed: 15
-  arrowPrefab: {fileID: 1781550350758654, guid: dad444b62eca0344bb2ea476116d18bc,
-    type: 2}
   Melee: {fileID: 1816129001632522}
   Ranged: {fileID: 1572243727643154}
   Magic: {fileID: 1729477888331592}
@@ -472,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 95514526124079640}
-  m_ParameterSendBits: 0
+  m_ParameterSendBits: 63
   param0: 
   param1: 
   param2: 
@@ -497,14 +510,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400900620735734}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7687448438728f4ca05f474923f6a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  arrow: {fileID: 1781550350758654, guid: dad444b62eca0344bb2ea476116d18bc, type: 2}
-  pa: {fileID: 0}
+  arrowPrefab: {fileID: 1781550350758654, guid: dad444b62eca0344bb2ea476116d18bc,
+    type: 2}
+  arrowSpeed: 15
 --- !u!114 &114948219321834286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -517,6 +530,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 0}
+  died: 0
+  def: 0
 --- !u!114 &114975460172486946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -528,6 +543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bab7865cf274c74b80c4c7a5fa35b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPoint: 
   Gold: 0
 --- !u!212 &212000012006612680
 SpriteRenderer:

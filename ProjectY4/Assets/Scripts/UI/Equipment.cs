@@ -5,30 +5,16 @@ using UnityEngine.UI;
 
 
 public class Equipment : MonoBehaviour {
+    private GameObject charPanel;
+    private GameObject slotPanel;
+    private ItemsDatabase items;
+    private int slotAmount;
+
     public static Equipment pEquipment;
-    GameObject charPanel;
-    GameObject slotPanel;
-    ItemsDatabase items;
     public GameObject equipSlot;
     public GameObject equipItem;
-
-    int slotAmount;
     public List<Item> equipment = new List<Item>();
     public List<GameObject> slots = new List<GameObject>();
-
-    //public class SyncListGameObject : SyncList<GameObject>
-    //{
-    //    protected override GameObject DeserializeItem(NetworkReader reader)
-    //    {
-    //        return reader.ReadGameObject();
-    //    }
-
-    //    protected override void SerializeItem(NetworkWriter writer, GameObject item)
-    //    {
-    //        writer.Write(item);
-    //    }
-    //}
-    //public SyncListGameObject syncslots = new SyncListGameObject();
 
     private void Awake()
     {
@@ -60,16 +46,11 @@ public class Equipment : MonoBehaviour {
         //PopulateEquip(0, 1, 3);
         charPanel.SetActive(false);
     }
-    //private void Update()
-    //{
-    //    syncslots.Equals(slots);
-    //}
 
     public void PopulateEquip(int id, int amount, int slot)
     {
        
         Item itemToAdd = items.GetItemByID(id);
-
 
         // Adds to equip at certain location/amount of
         equipment[slot] = itemToAdd;

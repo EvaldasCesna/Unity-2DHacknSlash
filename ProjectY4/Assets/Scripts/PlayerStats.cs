@@ -7,28 +7,25 @@ public class PlayerStats : NetworkBehaviour {
     private Stats stats;
     private PlayerAttack pa;
     private PlayerHealth pHp;
+
     public string startPoint;
-    public GameObject spawn;
     public int Gold;
-    // Use this for initialization
+
     void Start () {
-        //if (!isLocalPlayer)
-        //{
-        //    return;
-        //}
-        spawn = GameObject.Find("StartPoint");
+
         stats = Stats.pStats;
         stats.Show();
         pa = GetComponent<PlayerAttack>();
         pHp = GetComponent<PlayerHealth>();
         DontDestroyOnLoad(transform.gameObject);
+
+
     }
 	
-	// Update is called once per frame
 	void Update () {
-        levelUpdate();
 
         updateSprites();
+        updateHealth();
     }
 
     void updateGold()
@@ -36,17 +33,21 @@ public class PlayerStats : NetworkBehaviour {
         stats.UpdateGold(Gold);
     }
 
-    void levelUpdate()
+    void updateHealth()
     {
-        if (isLocalPlayer)
+
+        if (!isLocalPlayer)
         {
+            return;
+
+        }
+            pHp.CmdChangeMaxHealth(stats.getBonusHealth() + stats.currentLevel);
 
             if (stats.leveledUp)
             {
-                pHp.ChangeMaxHealth(stats.getBonusHealth() + stats.currentLevel);
-                pHp.updateMaxHealth();
+                pHp.HealPlayer(pHp.maxHealth);
             }
-        }
+      
     }
 
     public void updateSprites()
@@ -66,14 +67,6 @@ public class PlayerStats : NetworkBehaviour {
         }
     }
 
-    private void respawn()
-    {
-        if (pHp.died)
-        {
-            transform.position = spawn.transform.position;
-        }
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -90,5 +83,52 @@ public class PlayerStats : NetworkBehaviour {
             Destroy(collision.gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GetComponent<Rigidbody2D>().isKinematic = false;
+        }
+    }
+
+    [Server]
+    public void MoveTo(Vector3 position)
+    {
+        
+        transform.position = position;
+        RpcMoveTo(position);
+
+    }
+
+    [ClientRpc]
+    public void RpcMoveTo(Vector3 position)
+    {
+        transform.position = position;
+    }
+
+    [Server]
+    public void setLocation(string name)
+    {
+        startPoint = name;
+        RpcsetLocation(name);
+    }
+
+    [ClientRpc]
+    public void RpcsetLocation(string name)
+    {
+        startPoint = name;
+    }
+
+
 
 }

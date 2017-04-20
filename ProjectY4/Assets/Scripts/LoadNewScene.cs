@@ -5,30 +5,36 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
 public class LoadNewScene : NetworkBehaviour {
+    private List<GameObject> players;
+    private PlayerStats player;
 
     public string level;
     public string exitPoint;
-    private PlayerStats player;
-	// Use this for initialization
-	void Start () {
- 
-    }
-
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if(collision.gameObject.tag == "Player")
+        if (!isServer)
         {
-            player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerStats>();
-            SceneManager.LoadSceneAsync("Loading Screen");
-            player.startPoint = exitPoint;
-            SceneManager.LoadSceneAsync(level);
+            return;
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            players = new List<GameObject>();
+
+            players.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+            int i = 1;
+            foreach(GameObject p in players)
+            {
+               player = p.GetComponentInParent<PlayerStats>();
+                player.setLocation(exitPoint);
+                //Move Players far away first so they dont get damaged in the next scene
+                player.MoveTo(new Vector3(-1000 + i, 1000, 0));
+                i++;
+                
+
+            }
+
             LoadLevel(level);
 
         }
@@ -38,6 +44,8 @@ public class LoadNewScene : NetworkBehaviour {
     [ServerCallback]
     public void LoadLevel(string name)
     {
+        NetworkManager.singleton.ServerChangeScene("Loading Screen");
+
         NetworkManager.singleton.ServerChangeScene(name);
     }
 

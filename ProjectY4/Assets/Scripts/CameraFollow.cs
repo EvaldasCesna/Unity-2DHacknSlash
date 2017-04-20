@@ -46,7 +46,15 @@ public class CameraFollow : MonoBehaviour
         mycam.orthographicSize = (Screen.height / 25f) / 2f;
         if (playerTransform != null)
         {
-            transform.position = Vector3.Lerp(transform.position, playerTransform.position, 0.1f) + new Vector3(x, y, depth);
+            //If Camera too far away dont smoothen the movement
+            if (playerTransform.position.x < transform.position.x + 10)
+            {
+                transform.position = Vector3.Lerp(transform.position, playerTransform.position, 0.1f) + new Vector3(x, y, depth);
+            }
+            else
+            {
+                transform.position = playerTransform.position + new Vector3(x, y, depth);
+            }
            // transform.position = playerTransform.position + new Vector3(x, y, depth);
         }
 

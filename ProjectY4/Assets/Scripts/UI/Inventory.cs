@@ -138,8 +138,6 @@ public class Inventory : MonoBehaviour
         Item itemToAdd = items.GetItemByID(id);
 
 
-    //    if (inventory[slot].ID == -1) // IF Empty
-     //   {
             // Adds to inventory at certain location/amount of
             inventory[slot] = itemToAdd;
             GameObject itemObj = Instantiate(invItem);
@@ -151,8 +149,6 @@ public class Inventory : MonoBehaviour
             itemObj.transform.position = slots[slot].transform.position;
             itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
             itemObj.name = itemToAdd.Title;
-
-     //   }
     }
 
 

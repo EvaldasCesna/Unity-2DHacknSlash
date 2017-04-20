@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class EnemyHealth : NetworkBehaviour
 {
+    private float invicibilityCounter;
+
+    public Slider hpBar;
     public const int maxHealth = 100;
     [SyncVar(hook = "OnChangeHealth")] public int currentHealth = maxHealth;
-    public RectTransform healthbar;
     public bool destroyOnDeath;
     [SyncVar]
     public bool isDamaged;
@@ -17,14 +19,17 @@ public class EnemyHealth : NetworkBehaviour
     public GameObject goldPrefab;
     public GameObject itemPrefab;
     public float invincibility;
-    private float invicibilityCounter;
-
     public int expToGive;
     public int dropRate;
+    public int level;
+    public Text levelText;
 
     private void Start()
     {
-
+   
+        hpBar.maxValue = maxHealth;
+        hpBar.value = currentHealth;
+        levelText.text = level.ToString();
     }
 
     public void FixedUpdate()
@@ -95,7 +100,6 @@ public class EnemyHealth : NetworkBehaviour
     public void TakeDamage(int amount, Vector3 dir)
     {
    
-
         if (!isServer)
         {
             return;
@@ -103,24 +107,18 @@ public class EnemyHealth : NetworkBehaviour
       
         CmdTakeDamage(amount,dir);
     
-    //       RpcTakeDamage(amount,dir);
     }
 
     public void TakeDamage(int amount)
     {
         TakeDamage(amount, Vector3.zero);
 
-         //   RpcTakeDamage(amount, Vector3.zero);
     }
 
     [Command]
     public void CmdGiveXp(int xp, int amount)
     {
-
-     //   if (currentHealth - amount <= 0)
-   //     {
             RpcGiveXp(xp);
-    //    }
     }
 
     [ClientRpc]
@@ -131,7 +129,9 @@ public class EnemyHealth : NetworkBehaviour
     //Sync healthbar to damage by server
     void OnChangeHealth(int health)
     {
-        healthbar.sizeDelta = new Vector2(health, healthbar.sizeDelta.y);
+        hpBar.value = health;
+    //    healthbar.sizeDelta = new Vector2(health, healthbar.sizeDelta.y);
+      
     }
 
     private void invincibilityCounter()

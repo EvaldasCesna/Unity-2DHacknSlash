@@ -6,30 +6,32 @@ using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
-    public static Stats pStats;
-    CanvasGroup canvasGroup;
-    private Equipment equipment; 
+    private CanvasGroup canvasGroup;
+    private Equipment equipment;
     private GameObject stats;
     private string data;
-    public int currentLevel;
-    public int currentXp;
-    public int[] levels;
     private Slider hpBar;
     private Text hpText;
     private Slider xpBar;
     private Text xpText;
     private Text level;
+    private Item melee;
+    private Item ranged;
+    private Item magic;
+
+    public static Stats pStats;
+    public int currentLevel;
+    public int currentXp;
+    public int[] levels;
     public Text gold;
     public bool leveledUp;
-    Item melee;
-    Item ranged;
-    Item magic;
+
 
     // Use this for initialization
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-        gold = GameObject.Find("Gold").GetComponent<Text>();
+      //  gold = GameObject.Find("Gold").GetComponent<Text>();
         level = GameObject.Find("Level").GetComponent<Text>();
         hpBar = GameObject.Find("HealthBar").GetComponent<Slider>();
         hpText = hpBar.GetComponentInChildren<Text>();
@@ -44,15 +46,8 @@ public class Stats : MonoBehaviour
 
     private void Update()
     {
-        //  UpdateHealthbar();
-        //if (!Network.isServer)
-        //    CmdUpdateStats();
-        //else
-        //    RpcUpdateStats();
-        //Later only update if something changes but works for now
         UpdateXpBar();
         levelUp();
-       // UpdateGold();
     }
 
     private void Awake()
@@ -82,14 +77,7 @@ public class Stats : MonoBehaviour
     {
         gold.text = goldIn.ToString();
     }
-    //[Command]
-    //public void CmdUpdateStats()
-    //{
-    //    RpcUpdateStats();
-    //}
 
-  //  [ClientRpc]
-  //Call this when something in equipment changes
     public void UpdateStats()
     {
         int def = 0, str = 0, vit = 0;
@@ -100,6 +88,7 @@ public class Stats : MonoBehaviour
             str += equipment.equipment[i].Strength;
             vit += equipment.equipment[i].Vitality;
         }
+        
         data = "  Strenght: " + str + "\n\n  Defence: " + def + "\n\n  Vitality: " + vit;
         stats.GetComponent<Text>().text = data;
 

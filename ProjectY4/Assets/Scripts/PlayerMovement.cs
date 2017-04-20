@@ -18,27 +18,11 @@ public class PlayerMovement : NetworkBehaviour
         Camera.main.GetComponent<CameraFollow>().setTarget(gameObject.transform);
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(0, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(1, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(2, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(4, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(5, true);
     }
 
-    public override void PreStartClient()
-    {
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(0, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(1, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(2, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(4, true);
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(5, true);
-    }
-
-    // Use this for initialization
     void Start()
     {
+        //Initialize last movement to prevent any errors where last movement is needed
         lastMovement = new Vector2(1, 0);
     }
 

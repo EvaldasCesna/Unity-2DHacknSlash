@@ -4,47 +4,40 @@ using UnityEngine;
 using UnityEngine.Networking;
 public class PlayerStartPoint : NetworkBehaviour {
 
-    public string startPoint;
     private PlayerStats player;
+    private List<GameObject> players;
+    private List<Transform> points;
     private Camera cam;
-	// Use this for initialization
-	void Start () {
+
+    public string startPoint;
+
+    void Start () {
         if (GameObject.FindGameObjectWithTag("Player"))
         {
-            cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-            player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerStats>();
-            player.spawn = gameObject;
-
-
-            if (player.startPoint == startPoint)
+            if (!isServer)
             {
-                cam.transform.position = transform.position;
-                player.transform.position = transform.position;
+                return;
             }
-        }
 
-    }
+            points = new List<Transform>();
+            points.AddRange(GetComponentsInChildren<Transform>());
 
-    private void OnConnectedToServer()
-    {
-        if (GameObject.FindGameObjectWithTag("Player"))
-        {
-            cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-            player = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<PlayerStats>();
-            player.spawn = gameObject;
-
-
-            if (player.startPoint == startPoint)
-            {
-                cam.transform.position = transform.position;
-                player.transform.position = transform.position;
-            }
-        }
-    }
-
-    // Update is called once per frame
-    void Update () {
-
+            players = new List<GameObject>();
+            players.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+            int i = 1;
     
+            foreach (GameObject p in players)
+            {
+                player = p.GetComponentInParent<PlayerStats>();
+                if (player.startPoint == startPoint)
+                {      
+                    player.MoveTo(points[i].transform.position);
+                    i++;
+                }
+ 
+            }
+        }
+
     }
+
 }

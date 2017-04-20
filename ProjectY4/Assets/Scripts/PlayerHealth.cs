@@ -5,43 +5,42 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class PlayerHealth : NetworkBehaviour {
-     int maxHealth = 100;
-    // [SyncVar (hook = "OnChangeHealth")] public int currentHealth = maxHealth;
-    [SyncVar(hook = "OnHealthChanged")] int currentHealth;
-    public RectTransform healthbar;
+
+    [SyncVar(hook = "OnMaxHealthChanged")]
+    public int maxHealth = 100;
+    private NetworkStartPosition[] spawnPoints;
+    private Stats stats;
+
+    [SyncVar(hook = "OnHealthChanged")] public int currentHealth;
     public bool died = false;
-    //  private Stats stats;
-    //   private int lvl;
+    public int def;
+
     private void Start()
     {
-
-    //    stats = GameObject.FindGameObjectWithTag("UIGUI").GetComponent<Stats>();
-
-    //     lvl = stats.currentLevel;
-    currentHealth = currentHealth + maxHealth;
-      //  OnHealthChange();
-    }
-    private void Update()
-    {
-        //   OnHealthChange(); 
+        stats = Stats.pStats;
+        currentHealth = maxHealth;
     }
 
-    public void ChangeMaxHealth(int amount)
+    [Command]
+    public void CmdChangeMaxHealth(int amount)
     {
         maxHealth = 100;
+  
+        maxHealth += amount;
+
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
 
-        maxHealth += amount;
     }
     //Only the server should be responsivle for the player health
     [Server]
     public bool TakeDamage(int amount)
     {
-  
-        currentHealth -= amount;
+        //  Debug.Log(amount - (amount * stats.getBonusArmor() / maxHealth));
+        //Armor calculation and health take away
+        currentHealth -= amount - (amount * stats.getBonusArmor() / maxHealth);
         if (currentHealth <= 0)
         {
             died = true;
@@ -53,12 +52,22 @@ public class PlayerHealth : NetworkBehaviour {
         return died;
     }
 
-    [ClientRpc]
-    void RpcTakeDamage(int amount, bool died)
+    public void HealPlayer(int amount)
     {
+        if(!isServer)
+        {
+            return;
+        }
+        Heal(amount);
+    }
 
-        if (died)
-            RpcRespawn(died);
+    [Server]
+    public void Heal(int amount)
+    {
+        if (currentHealth != 0 || (currentHealth + amount) <= maxHealth)
+        {
+            currentHealth += amount;
+        }
     }
 
     void OnHealthChanged(int amount)
@@ -66,42 +75,39 @@ public class PlayerHealth : NetworkBehaviour {
         currentHealth = amount;
         if (isLocalPlayer)
         {
-            updateMaxHealth();
             Stats.pStats.UpdateHealthbar(maxHealth, currentHealth);
-       //     if (lvl != stats.currentLevel)
-       //     {
-      //          lvl = stats.currentLevel;
-              
-       //         currentHealth = maxHealth ;
-          //  }
         }
     }
 
-    public void updateMaxHealth()
+    void OnMaxHealthChanged(int amount)
     {
+        maxHealth = amount;
         if (isLocalPlayer)
         {
             Stats.pStats.UpdateHealthbar(maxHealth, currentHealth);
         }
     }
 
-
-
-
-    //Sync healthbar to damage by server
-    //void OnChangeHealth(int health)
-    //{
-    //    stats.UpdateHealthbar(maxHealth + stats.getBonusHealth(), currentHealth);
-    //    healthbar.sizeDelta = new Vector2(health, healthbar.sizeDelta.y);
-    //}
-
     [ClientRpc]
     void RpcRespawn(bool died)
     {
         if(isLocalPlayer && died)
         {
+            Vector3 spawnPoint = Vector3.zero;
+
+            if (spawnPoints == null)
+            {
+                spawnPoints = FindObjectsOfType<NetworkStartPosition>();
+            }
+
+            if (spawnPoints != null && spawnPoints.Length > 0)
+            {
+                spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)].transform.position;
+            }
+
+
             Stats.pStats.UpdateHealthbar(maxHealth, currentHealth);
-            transform.position = Vector3.zero;
+            transform.position = spawnPoint;
         }
     }
 }
