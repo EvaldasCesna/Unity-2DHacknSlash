@@ -40,7 +40,7 @@ public class LoggingIn : MonoBehaviour
             string LogText = LoginAccountWWW.text;
           //  Debug.Log(LogText);
             string[] LogTextSplit = LogText.Split(':');
-            if (LogTextSplit[0] == "0")
+            if (LogTextSplit[0] == Username.text)
             {
                 if(LogTextSplit[1] == "Success")
                 {
@@ -50,11 +50,11 @@ public class LoggingIn : MonoBehaviour
             }
             else
             {
-                if(LogTextSplit[1] == "Success")
-                {
-                    PlayerPrefs.SetString("Player Name", Username.text);
-                    SceneManager.LoadScene("Game");
-                }
+                //if(LogTextSplit[1] == "Success")
+                //{
+                //    PlayerPrefs.SetString("Player Name", Username.text);
+                //    SceneManager.LoadScene("Game");
+                //}
             }
         }
     }

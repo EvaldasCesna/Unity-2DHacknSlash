@@ -2,9 +2,12 @@ sceneSetups:
 - path: Assets/Loading Screen.unity
   isLoaded: 0
   isActive: 0
-- path: Assets/Game.unity
+- path: Assets/Login.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Game.unity
+  isLoaded: 0
+  isActive: 0
 - path: Assets/Grasslands.unity
   isLoaded: 0
   isActive: 0

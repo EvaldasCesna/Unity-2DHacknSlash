@@ -2,10 +2,10 @@ Mono path[0] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Managed'
 Mono path[1] = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono'
 Mono config path = 'C:/Users/PC/Documents/ProjectY4/Build/build_Data/Mono/etc'
 PlayerConnection initialized from C:/Users/PC/Documents/ProjectY4/Build/build_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55197
-Multi-casting "[IP] 192.168.0.44 [Port] 55197 [Flags] 2 [Guid] 2410612542 [EditorId] 4067398150 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
-Started listening to [0.0.0.0:55197]
-PlayerConnection already initialized - listening to [0.0.0.0:55197]
+PlayerConnection initialized network socket : 0.0.0.0 55140
+Multi-casting "[IP] 192.168.0.44 [Port] 55140 [Flags] 2 [Guid] 547135188 [EditorId] 186813507 [Version] 1048832 [Id] WindowsPlayer(PC-PC) [Debug] 0" to [225.0.0.222:54997]...
+Started listening to [0.0.0.0:55140]
+PlayerConnection already initialized - listening to [0.0.0.0:55140]
 Player data archive not found at `C:/Users/PC/Documents/ProjectY4/Build/build_Data/data.unity3d`, using local filesystemInitialize engine version: 5.6.0f3 (497a0f351392)
 GfxDevice: creating device client; threaded=1
 Direct3D:
@@ -27,1602 +27,322 @@ Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\Unit
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll (this message is harmless)
 Loading C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\LitJson.dll into Unity Child Domain
-- Completed reload, in  0.080 seconds
+- Completed reload, in  0.078 seconds
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\PC\Documents\ProjectY4\Build\build_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.890193 ms
+UnloadTime: 0.962979 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.829007 ms
+System memory in use before: 23.7 MB.
+System memory in use after: 23.7 MB.
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 1606.
+Total: 0.732905 ms (FindLiveObjects: 0.072501 ms CreateObjectMapping: 0.041220 ms MarkObjects: 0.603396 ms  DeleteObjects: 0.014617 ms)
+
+MatchMakingClient ListMatches :https://mm.unet.unity3d.com/json/reply/ListMatchRequest
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.Networking.Match.NetworkMatch:ListMatches(ListMatchRequest, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:327)
+UnityEngine.Networking.Match.NetworkMatch:ListMatches(Int32, Int32, String, Boolean, Int32, Int32, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:314)
+UnityEngine.Networking.NetworkManagerHUD:OnGUI() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\NetworkManagerHUD.cs:217)
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 327)
+
+MatchMakingClient Join :https://mm.unet.unity3d.com/json/reply/JoinMatchRequest
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.Networking.Match.NetworkMatch:JoinMatch(JoinMatchRequest, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:199)
+UnityEngine.Networking.Match.NetworkMatch:JoinMatch(NetworkID, String, String, String, Int32, Int32, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:186)
+UnityEngine.Networking.NetworkManagerHUD:OnGUI() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\NetworkManagerHUD.cs:229)
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 199)
+
+[Server] function 'System.Boolean PlayerHealth::TakeDamage(System.Int32)' called on client
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+PlayerHealth:TakeDamage(Int32)
+EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:14)
+ 
+(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 14)
+
+[Server] function 'System.Boolean PlayerHealth::TakeDamage(System.Int32)' called on client
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogWarning(Object)
+PlayerHealth:TakeDamage(Int32)
+EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:14)
+ 
+(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 14)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.105642 ms
+System memory in use before: 33.8 MB.
+System memory in use after: 29.2 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 1.450023 ms (FindLiveObjects: 0.088580 ms CreateObjectMapping: 0.044728 ms MarkObjects: 1.100965 ms  DeleteObjects: 0.215164 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.344380 ms
+System memory in use before: 30.9 MB.
+System memory in use after: 31.0 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.149786 ms (FindLiveObjects: 0.058468 ms CreateObjectMapping: 0.045897 ms MarkObjects: 1.034311 ms  DeleteObjects: 0.010816 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.718287 ms
+System memory in use before: 30.8 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.204455 ms (FindLiveObjects: 0.055252 ms CreateObjectMapping: 0.044143 ms MarkObjects: 0.980812 ms  DeleteObjects: 0.123661 ms)
+
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.124885 ms
-System memory in use before: 22.8 MB.
-System memory in use after: 22.9 MB.
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1923.
-Total: 0.977020 ms (FindLiveObjects: 0.075717 ms CreateObjectMapping: 0.061392 ms MarkObjects: 0.831139 ms  DeleteObjects: 0.008185 ms)
-
-MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-UnityEngine.Networking.Match.NetworkMatch:CreateMatch(CreateMatchRequest, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:152)
-UnityEngine.Networking.Match.NetworkMatch:CreateMatch(String, UInt32, Boolean, String, String, String, Int32, Int32, DataResponseDelegate`1) (at C:\buildslave\unity\build\Runtime\Networking\Managed\MatchMakingClient.cs:139)
-UnityEngine.Networking.NetworkManagerHUD:OnGUI() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\NetworkManagerHUD.cs:204)
- 
-(Filename: C:/buildslave/unity/build/Runtime/Networking/Managed/MatchMakingClient.cs Line: 152)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-Cannot Connect to DB
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:LogError(Object)
-<LoadItemsFromdb>c__Iterator0:MoveNext() (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\Saving\LoadData.cs:51)
-UnityEngine.SetupCoroutine:InvokeMoveNext(IEnumerator, IntPtr) (at C:\buildslave\unity\build\Runtime\Export\Coroutines.cs:17)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/Saving/LoadData.cs Line: 51)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
-
-hit
-UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
-UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
-UnityEngine.Logger:Log(LogType, Object)
-UnityEngine.Debug:Log(Object)
-EnemyProjectile:OnTriggerEnter2D(Collider2D) (at C:\Users\PC\Documents\ProjectY4\Assets\Scripts\EnemyProjectile.cs:15)
- 
-(Filename: C:/Users/PC/Documents/ProjectY4/Assets/Scripts/EnemyProjectile.cs Line: 15)
+UnloadTime: 0.346134 ms
+System memory in use before: 33.3 MB.
+System memory in use after: 33.5 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.512877 ms (FindLiveObjects: 0.114890 ms CreateObjectMapping: 0.061099 ms MarkObjects: 1.325192 ms  DeleteObjects: 0.010524 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.900417 ms
+System memory in use before: 34.1 MB.
+System memory in use after: 30.1 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.339225 ms (FindLiveObjects: 0.067238 ms CreateObjectMapping: 0.042682 ms MarkObjects: 1.069684 ms  DeleteObjects: 0.158742 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.340872 ms
+System memory in use before: 31.5 MB.
+System memory in use after: 31.5 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.125814 ms (FindLiveObjects: 0.059345 ms CreateObjectMapping: 0.041512 ms MarkObjects: 1.016770 ms  DeleteObjects: 0.007893 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.812130 ms
+System memory in use before: 31.6 MB.
+System memory in use after: 30.1 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.372552 ms (FindLiveObjects: 0.063146 ms CreateObjectMapping: 0.046482 ms MarkObjects: 1.113243 ms  DeleteObjects: 0.148802 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.371276 ms
+System memory in use before: 33.4 MB.
+System memory in use after: 33.5 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.494459 ms (FindLiveObjects: 0.118399 ms CreateObjectMapping: 0.081563 ms MarkObjects: 1.283680 ms  DeleteObjects: 0.010232 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.916496 ms
+System memory in use before: 33.4 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.371090 ms (FindLiveObjects: 0.054960 ms CreateObjectMapping: 0.042389 ms MarkObjects: 1.118213 ms  DeleteObjects: 0.155234 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.341164 ms
+System memory in use before: 31.7 MB.
+System memory in use after: 31.7 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.240998 ms (FindLiveObjects: 0.057884 ms CreateObjectMapping: 0.041805 ms MarkObjects: 1.130199 ms  DeleteObjects: 0.010816 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.769448 ms
+System memory in use before: 31.1 MB.
+System memory in use after: 29.2 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 1.469025 ms (FindLiveObjects: 0.086826 ms CreateObjectMapping: 0.043559 ms MarkObjects: 1.203285 ms  DeleteObjects: 0.135062 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.336779 ms
+System memory in use before: 33.4 MB.
+System memory in use after: 33.5 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.537434 ms (FindLiveObjects: 0.110213 ms CreateObjectMapping: 0.063730 ms MarkObjects: 1.352673 ms  DeleteObjects: 0.010232 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.933452 ms
+System memory in use before: 34.2 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 1.639169 ms (FindLiveObjects: 0.111090 ms CreateObjectMapping: 0.042097 ms MarkObjects: 1.295373 ms  DeleteObjects: 0.190315 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.347304 ms
+System memory in use before: 31.5 MB.
+System memory in use after: 31.6 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.197731 ms (FindLiveObjects: 0.061099 ms CreateObjectMapping: 0.041512 ms MarkObjects: 1.086640 ms  DeleteObjects: 0.007893 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.719457 ms
+System memory in use before: 30.9 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.362320 ms (FindLiveObjects: 0.049113 ms CreateObjectMapping: 0.043559 ms MarkObjects: 1.099211 ms  DeleteObjects: 0.169559 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.321870 ms
+System memory in use before: 33.4 MB.
+System memory in use after: 33.6 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.618413 ms (FindLiveObjects: 0.104366 ms CreateObjectMapping: 0.061099 ms MarkObjects: 1.442130 ms  DeleteObjects: 0.010524 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.863290 ms
+System memory in use before: 33.6 MB.
+System memory in use after: 29.6 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.365243 ms (FindLiveObjects: 0.054668 ms CreateObjectMapping: 0.044143 ms MarkObjects: 1.117629 ms  DeleteObjects: 0.148218 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.313976 ms
+System memory in use before: 31.0 MB.
+System memory in use after: 31.1 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.312622 ms (FindLiveObjects: 0.057299 ms CreateObjectMapping: 0.041512 ms MarkObjects: 1.205624 ms  DeleteObjects: 0.007893 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.738459 ms
+System memory in use before: 31.4 MB.
+System memory in use after: 29.9 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.596780 ms (FindLiveObjects: 0.059053 ms CreateObjectMapping: 0.042097 ms MarkObjects: 1.347995 ms  DeleteObjects: 0.147048 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.338826 ms
+System memory in use before: 33.4 MB.
+System memory in use after: 33.6 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.614612 ms (FindLiveObjects: 0.098519 ms CreateObjectMapping: 0.060807 ms MarkObjects: 1.443299 ms  DeleteObjects: 0.011401 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.939007 ms
+System memory in use before: 33.5 MB.
+System memory in use after: 29.4 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.473411 ms (FindLiveObjects: 0.052037 ms CreateObjectMapping: 0.044436 ms MarkObjects: 1.217902 ms  DeleteObjects: 0.158742 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.351689 ms
+System memory in use before: 30.9 MB.
+System memory in use after: 31.0 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.302390 ms (FindLiveObjects: 0.053791 ms CreateObjectMapping: 0.044143 ms MarkObjects: 1.195684 ms  DeleteObjects: 0.008185 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.758631 ms
+System memory in use before: 31.4 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 1.837963 ms (FindLiveObjects: 0.088287 ms CreateObjectMapping: 0.041512 ms MarkObjects: 1.557605 ms  DeleteObjects: 0.150264 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.372153 ms
+System memory in use before: 33.5 MB.
+System memory in use after: 33.6 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.655248 ms (FindLiveObjects: 0.117522 ms CreateObjectMapping: 0.060807 ms MarkObjects: 1.467564 ms  DeleteObjects: 0.009062 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.950408 ms
+System memory in use before: 33.7 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 2.056343 ms (FindLiveObjects: 0.088872 ms CreateObjectMapping: 0.042389 ms MarkObjects: 1.730965 ms  DeleteObjects: 0.193823 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.325085 ms
+System memory in use before: 31.0 MB.
+System memory in use after: 31.0 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.341856 ms (FindLiveObjects: 0.059053 ms CreateObjectMapping: 0.054083 ms MarkObjects: 1.220241 ms  DeleteObjects: 0.007308 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.792543 ms
+System memory in use before: 31.4 MB.
+System memory in use after: 29.3 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 1.766923 ms (FindLiveObjects: 0.092088 ms CreateObjectMapping: 0.041220 ms MarkObjects: 1.484227 ms  DeleteObjects: 0.149095 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.339118 ms
+System memory in use before: 33.5 MB.
+System memory in use after: 33.6 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.668111 ms (FindLiveObjects: 0.097642 ms CreateObjectMapping: 0.063438 ms MarkObjects: 1.496506 ms  DeleteObjects: 0.009647 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.967364 ms
+System memory in use before: 34.0 MB.
+System memory in use after: 29.4 MB.
+
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 2148.
+Total: 1.983842 ms (FindLiveObjects: 0.103489 ms CreateObjectMapping: 0.042097 ms MarkObjects: 1.651155 ms  DeleteObjects: 0.186515 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.305498 ms
+System memory in use before: 31.4 MB.
+System memory in use after: 31.4 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2259.
+Total: 1.352380 ms (FindLiveObjects: 0.053791 ms CreateObjectMapping: 0.041805 ms MarkObjects: 1.248598 ms  DeleteObjects: 0.007600 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.727350 ms
+System memory in use before: 31.2 MB.
+System memory in use after: 29.7 MB.
+
+Unloading 17 unused Assets to reduce memory usage. Loaded Objects now: 2141.
+Total: 1.480134 ms (FindLiveObjects: 0.054960 ms CreateObjectMapping: 0.043851 ms MarkObjects: 1.255030 ms  DeleteObjects: 0.125415 ms)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.321870 ms
+System memory in use before: 33.5 MB.
+System memory in use after: 33.7 MB.
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2527.
+Total: 1.803174 ms (FindLiveObjects: 0.119568 ms CreateObjectMapping: 0.060807 ms MarkObjects: 1.611689 ms  DeleteObjects: 0.010816 ms)
 
 Setting up 4 worker threads for Enlighten.
-  Thread -> id: 2ee0 -> priority: 1 
-  Thread -> id: 2cec -> priority: 1 
-  Thread -> id: 2120 -> priority: 1 
-  Thread -> id: 1cc0 -> priority: 1 
+  Thread -> id: 23b4 -> priority: 1 
+  Thread -> id: 2ca0 -> priority: 1 
+  Thread -> id: 1f54 -> priority: 1 
+  Thread -> id: 21fc -> priority: 1 

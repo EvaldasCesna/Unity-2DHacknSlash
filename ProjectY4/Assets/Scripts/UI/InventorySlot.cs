@@ -15,7 +15,6 @@ public class InventorySlot : MonoBehaviour, IDropHandler
 
     void Start()
     {
-
         inventory = Inventory.pInventory;
         save = inventory.GetComponent<SaveData>();
         equipment = Equipment.pEquipment;
@@ -89,12 +88,18 @@ public class InventorySlot : MonoBehaviour, IDropHandler
         else if (location == "Equipment")
         {
             // Add something here to not fill the same spot
-            if (equipment.equipment[id].ID == -1)
+            if (equipment.equipment[id].ID == -1 && droppedItem != null)
             {
-
-                inventory.inventory[droppedItem.slot] = new Item();
+                if (droppedItem.location == "Equipment")
+                {
+                    equipment.equipment[droppedItem.slot] = new Item();
+                }
+                else
+                {
+                    inventory.inventory[droppedItem.slot] = new Item();
+                }
                 // Make this into check what type of equipment it is 
-                for(int i = 0; i < EquipType.Length; i++)
+                for (int i = 0; i < EquipType.Length; i++)
                 {
                     if (droppedItem.item.Type == EquipType[i] && equipment.equipment[i].ID == -1)
                     {
@@ -104,13 +109,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         droppedItem.location = "Equipment";
                         Stats.pStats.UpdateStats();
                     }
-
-                }
-
-
-              
-
-
+                }          
             }
 
             else if (droppedItem.slot != id)
@@ -132,10 +131,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
                         equipment.equipment[i] = item.GetComponent<ItemData>().item;
                     }
 
-                }
-           
-
-
+                }      
                 droppedItem.slot = id;
                 droppedItem.location = location;
 

@@ -8,16 +8,21 @@ public class Stats : MonoBehaviour
 {
     private CanvasGroup canvasGroup;
     private Equipment equipment;
-    private GameObject stats;
     private string data;
-    private Slider hpBar;
-    private Text hpText;
-    private Slider xpBar;
-    private Text xpText;
-    private Text level;
     private Item melee;
     private Item ranged;
     private Item magic;
+    private SaveData save;
+    //UI
+    public Text stats;
+    public Slider hpBar;
+    public Text hpText;
+    public Slider xpBar;
+    public Text xpText;
+    public Text level;
+
+    public int enemiesKilled;
+    public int bossesKilled;
 
     public static Stats pStats;
     public int currentLevel;
@@ -31,14 +36,8 @@ public class Stats : MonoBehaviour
     void Start()
     {
         canvasGroup = GetComponent<CanvasGroup>();
-      //  gold = GameObject.Find("Gold").GetComponent<Text>();
-        level = GameObject.Find("Level").GetComponent<Text>();
-        hpBar = GameObject.Find("HealthBar").GetComponent<Slider>();
-        hpText = hpBar.GetComponentInChildren<Text>();
-        xpBar = GameObject.Find("XpBar").GetComponent<Slider>();
-        xpText = xpBar.GetComponentInChildren<Text>();
-        stats = GameObject.FindGameObjectWithTag("Stats");
         equipment = Equipment.pEquipment;
+        save = equipment.GetComponent<SaveData>();
         UpdateStats();
         Hide();
         DontDestroyOnLoad(transform.gameObject);
@@ -64,6 +63,7 @@ public class Stats : MonoBehaviour
         xpBar.value = currentXp;
         xpText.text = currentXp + "/" + levels[currentLevel];
         level.text = "Level: " + currentLevel;
+
     }  
 
     public void UpdateHealthbar(int max, int health)
@@ -75,7 +75,12 @@ public class Stats : MonoBehaviour
 
     public void UpdateGold(int goldIn)
     {
-        gold.text = goldIn.ToString();
+        int temp = 0;
+        int.TryParse(gold.text, out temp);
+    
+        temp = temp + goldIn;
+
+        gold.text = (temp).ToString();
     }
 
     public void UpdateStats()
@@ -89,8 +94,8 @@ public class Stats : MonoBehaviour
             vit += equipment.equipment[i].Vitality;
         }
         
-        data = "  Strenght: " + str + "\n\n  Defence: " + def + "\n\n  Vitality: " + vit;
-        stats.GetComponent<Text>().text = data;
+        data = "  Strenght: " + str + "\n\n  Defence: " + def + "\n\n  Vitality: " + vit + "\n\n\n  Mob Kills: " + enemiesKilled + "\n\n  Boss Kills: " + bossesKilled;
+        stats.text = data;
 
     }
 
@@ -123,9 +128,16 @@ public class Stats : MonoBehaviour
         }
     }
 
+    public void setLevel(int lvl, int xp)
+    {
+        currentLevel = lvl;
+        currentXp = xp;
+    }
+
     public void addXp(int xp)
     {
         currentXp += xp;
+        Invoke("Isave", 0.1f);
     }
 
     public Item getMelee()
@@ -138,6 +150,22 @@ public class Stats : MonoBehaviour
     {
         magic = equipment.equipment[1];
         return magic;
+    }
+
+    public void initialiseKills(int enemy, int boss)
+    {
+        enemiesKilled = enemy;
+        bossesKilled = boss;
+    }
+
+    public void addEnemyKill()
+    {
+        enemiesKilled++;
+    }
+
+    public void addBossKill()
+    {
+        bossesKilled++;
     }
 
     public Item getRanged()
@@ -157,5 +185,10 @@ public class Stats : MonoBehaviour
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+    }
+
+    void Isave()
+    {
+        save.SaveItems();
     }
 }

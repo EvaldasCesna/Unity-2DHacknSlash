@@ -5,7 +5,7 @@ public class CameraFollow : MonoBehaviour
 {
     Camera mycam;
     public Transform playerTransform;
-    public int depth = -10;
+    public int depth = 0;
     public int x = 0;
     public int y = 0;
 
@@ -35,8 +35,6 @@ public class CameraFollow : MonoBehaviour
             Destroy(gameObject);
         }
 
-        halfHeight = mycam.orthographicSize;
-        halfWidth = halfHeight * Screen.width / Screen.height;
       
 
     } 
@@ -44,6 +42,9 @@ public class CameraFollow : MonoBehaviour
     void FixedUpdate()
     {
         mycam.orthographicSize = (Screen.height / 25f) / 2f;
+
+        halfHeight = mycam.orthographicSize;
+        halfWidth = (halfHeight * Screen.width) / Screen.height;
         if (playerTransform != null)
         {
             //If Camera too far away dont smoothen the movement

@@ -72,7 +72,7 @@ public class EnemyHealth : NetworkBehaviour
 
                 if (currentHealth <= 0)
                 {
-           
+                    
                     int rate = Random.Range(0, dropRate);
                     if (rate == 0 || rate > dropRate/2)
                     {
@@ -124,7 +124,10 @@ public class EnemyHealth : NetworkBehaviour
     [ClientRpc]
     public void RpcGiveXp(int xp)
     {
-            Stats.pStats.addXp(xp);
+
+        Stats.pStats.addEnemyKill();
+        Stats.pStats.UpdateStats();
+        Stats.pStats.addXp(xp);
     }
     //Sync healthbar to damage by server
     void OnChangeHealth(int health)

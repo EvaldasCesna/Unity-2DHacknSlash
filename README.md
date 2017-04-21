@@ -3,27 +3,27 @@
 
 Feature List:
 Multiplayer (Works But Some DeSync)
-Online Database for storing user progress/login(hosted on my own computer) (Working)
-Micro Transactions(TODO)
+Online Database for storing user Progress/Login(hosted on my own computer) (Working)
+Micro Transactions(Abandoned) *Out of time
 Android Functionality(Works)
 Making the game fun(Getting There)
 
 Player:
-Animations (Basic Working (Might switch to another spritesheet later))
+Animations (Working)
 Inventory (Working)
 Leveling Up (Working)
-Skills (INPROGGRESS)
+Skills (Abandoned) *Out of time
 Attacking (Working)
 
-Enemies: (Basic enemy Working, add more later)
-Animations (Attack Particles Working)
-Boss (TODO)
-Loot (INPROGGRESS)
-Different Attacks(INPROGGRESS)
+Enemies:
+Animations (Working)
+Boss (INPROGGRESS)
+Loot (Working)
+Different Attacks(Working)
 
-World: (Basic sprite map shown)
-Dungeons (TODO)
-Moving to different places (TODO)
+World:
+Dungeons/Different Locations (Working)
+Moving to different places (Working)
 
 *Using free art assets found online
 *Using Unity Standard Assets for some small things like Mobile Controls

@@ -20,7 +20,7 @@ else
     $Result = @mysql_query($SQL) or die("Error");
     $Total = mysql_num_rows($Result);
     if($Total == 0){
-        $insert = "INSERT INTO `accounts` (`Username`, `Email`, `Password`, `Characters`) VALUES ('" . $Username . "','" . $Email . "', MD5('" . $Password . "'), 0)";
+        $insert = "INSERT INTO `accounts` (`Username`, `Email`, `Password`, `Gold`, `Level`, `Xp`, `Mobs`, `Bosses`) VALUES ('" . $Username . "','" . $Email . "', MD5('" . $Password . "'), 10, 0, 0, 0, 0)";
         $SQL1 = mysql_query($insert);
         echo"Success";
     }

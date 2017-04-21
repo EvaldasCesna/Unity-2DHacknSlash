@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    // public Character player;
     GameObject slotPanel;
 
     private List<SaveItems> save = new List<SaveItems>();
@@ -16,6 +15,13 @@ public class SaveData : MonoBehaviour
     private Equipment equipment;
     string InvLoc;
     string EquipLoc;
+    int gold;
+    int level;
+    int xp;
+    int mobs;
+    int bosses;
+    Stats stats;
+
     static readonly string SAVEIN = "Inventory.json";
     static readonly string SAVEEQ = "Equipment.json";
     private string SaveInventoryUrl = "http://188.141.5.218/Save.php";
@@ -23,15 +29,21 @@ public class SaveData : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        stats = GetComponentInParent<Stats>();
+
+
         save.Clear();
         inventory = Inventory.pInventory;
         equipment = Equipment.pEquipment;
-     //   InvokeRepeating("SaveItems", 10.0f, 10.0f);
-
     }
 
     public void SaveItems()
     {
+        gold = int.Parse(stats.gold.text);
+        level = stats.currentLevel;
+        xp = stats.currentXp;
+        mobs = stats.enemiesKilled;
+        bosses = stats.bossesKilled;
         //Get items from inventory/equipment
         List<ItemData> tempInv = inventory.getAllitems();
         List<ItemData> tempEquip = equipment.getAllitems();
@@ -77,6 +89,12 @@ public class SaveData : MonoBehaviour
             Form.AddField("Username", PlayerPrefs.GetString("Player Name"));
             Form.AddField("Inventory", File.ReadAllText(InvLoc));
             Form.AddField("Equipment", File.ReadAllText(EquipLoc));
+            Form.AddField("Gold", gold);
+            Form.AddField("Level", level);
+            Form.AddField("Xp", xp);
+            Form.AddField("Mobs", mobs);
+            Form.AddField("Bosses", bosses);
+
 
             WWW SaveWWW = new WWW(SaveInventoryUrl, Form);
 

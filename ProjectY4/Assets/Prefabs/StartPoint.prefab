@@ -187,7 +187,7 @@ MonoBehaviour:
     i13: 13
     i14: 147
     i15: 123
-  m_ServerOnly: 0
+  m_ServerOnly: 1
   m_LocalPlayerAuthority: 0
 --- !u!114 &114829389843046824
 MonoBehaviour:
@@ -201,4 +201,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPoint: CityIn
-  cam: {fileID: 0}

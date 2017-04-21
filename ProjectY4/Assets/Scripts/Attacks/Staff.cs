@@ -16,6 +16,7 @@ public class Staff : MonoBehaviour {
         GameObject clone = Instantiate(fireAoe, transform.position, transform.rotation);
         foreach (GameObject e in target)
         {
+            if(e != null)
             e.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
 

@@ -12,5 +12,5 @@ public class CameraBounds : MonoBehaviour {
         mycam = FindObjectOfType<CameraFollow>();
         mycam.SetBounds(camBounds);
 	}
-	
+
 }

@@ -18,8 +18,6 @@ public class PlayerStats : NetworkBehaviour {
         pa = GetComponent<PlayerAttack>();
         pHp = GetComponent<PlayerHealth>();
         DontDestroyOnLoad(transform.gameObject);
-
-
     }
 	
 	void Update () {

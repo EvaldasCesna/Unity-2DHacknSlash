@@ -21,11 +21,11 @@ else
     if($Total){
         $data = @mysql_fetch_array($Result_id);
         if(strcmp($Password,$data["Password"])) {
-            $SQL2 = "SELECT Characters FROM accounts WHERE Username = '" . $Username . "'";
+            $SQL2 = "SELECT Username FROM accounts WHERE Username = '" . $Username . "'";
             $Result_id2 = @mysql_query($SQL2) or die ("Error");
             while($row = mysql_fetch_array($Result_id2))
             {
-                echo $row['Characters'];
+                echo $row['Username'];
                 echo":";
                 echo"Success";
             }
