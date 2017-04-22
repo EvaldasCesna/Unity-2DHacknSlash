@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: 6eeea8a6ceb34e94ca38a9316db1d23a
-timeCreated: 1492646248
+timeCreated: 1492804492
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mage-2-122x110_0
+    21300002: mage-2-122x110_1
+    21300004: mage-2-122x110_2
+    21300006: mage-2-122x110_3
+    21300008: mage-2-122x110_4
+    21300010: mage-2-122x110_5
+    21300012: mage-2-122x110_6
+    21300014: mage-2-122x110_7
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,13 +42,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -58,9 +66,137 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mage-2-122x110_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 117
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57578635, y: 0.45840335}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 117
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57630247, y: 0.45563278}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 117
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57768977, y: 0.45398957}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_3
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 117
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57630247, y: 0.45398957}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57768977, y: 0.4556328}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 7
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57630247, y: 0.45234632}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_6
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 7
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57768977, y: 0.45398957}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mage-2-122x110_7
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 7
+        width: 122
+        height: 103
+      alignment: 9
+      pivot: {x: 0.57630247, y: 0.44905987}
+      border: {x: 0, y: 0, z: 1, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

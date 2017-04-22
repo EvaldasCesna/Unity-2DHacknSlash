@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 199066517936257662}
   - component: {fileID: 114362727444671504}
   - component: {fileID: 114361917915694692}
+  - component: {fileID: 58915883249613400}
+  - component: {fileID: 114352999687263336}
   m_Layer: 0
   m_Name: bossAttack
   m_TagString: Untagged
@@ -43,6 +45,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58915883249613400
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426663574772332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
+--- !u!114 &114352999687263336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1426663574772332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a0734da94799b4a9d3709926d0cf12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
 --- !u!114 &114361917915694692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +171,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -36181799
+  randomSeed: -1445869498
   InitialModule:
     serializedVersion: 3
     enabled: 1

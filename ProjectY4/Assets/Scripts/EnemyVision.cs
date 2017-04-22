@@ -22,16 +22,42 @@ public class EnemyVision : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            GetComponentInParent<EnemyScript>().enemyProjectile(collision.gameObject);
-            player = collision.gameObject;
-            foreach (GameObject p in list)
+            if (GetComponentInParent<EnemyScript>() != null)
             {
-                if (Vector3.Distance(p.transform.position, transform.position) < Vector3.Distance(player.transform.position, transform.position))
+                GetComponentInParent<EnemyScript>().enemyProjectile(collision.gameObject);
+
+                player = collision.gameObject;
+                foreach (GameObject p in list)
                 {
-                    player = p.gameObject;
+                    if (Vector3.Distance(p.transform.position, transform.position) < Vector3.Distance(player.transform.position, transform.position))
+                    {
+                        player = p.gameObject;
+                    }
                 }
+                GetComponentInParent<EnemyScript>().transform.position = Vector2.MoveTowards(transform.position, player.transform.position, GetComponentInParent<EnemyScript>().speed * Time.deltaTime);
             }
-            GetComponentInParent<EnemyScript>().transform.position = Vector2.MoveTowards(transform.position, player.transform.position, GetComponentInParent<EnemyScript>().speed * Time.deltaTime);
+
+            if (GetComponentInParent<BossScript>() != null)
+            {
+
+
+                GetComponentInParent<BossScript>().enemyProjectile(collision.gameObject);
+
+                player = collision.gameObject;
+                foreach (GameObject p in list)
+                {
+                    if (Vector3.Distance(p.transform.position, transform.position) < Vector3.Distance(player.transform.position, transform.position))
+                    {
+                        player = p.gameObject;
+                    }
+                }
+
+                if (Vector3.Distance(transform.position, player.transform.position) > 3.5f )
+                GetComponentInParent<BossScript>().transform.position = Vector2.MoveTowards(transform.position, player.transform.position, (GetComponentInParent<BossScript>().speed - 0.2f) * Time.deltaTime);
+
+
+            }
+
         }
      
     }

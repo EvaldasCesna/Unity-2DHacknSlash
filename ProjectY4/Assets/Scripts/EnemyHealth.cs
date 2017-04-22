@@ -9,11 +9,12 @@ public class EnemyHealth : NetworkBehaviour
     private float invicibilityCounter;
 
     public Slider hpBar;
-    public const int maxHealth = 100;
-    [SyncVar(hook = "OnChangeHealth")] public int currentHealth = maxHealth;
+    public int maxHealth = 100;
+    [SyncVar(hook = "OnChangeHealth")] public int currentHealth;
     public bool destroyOnDeath;
     [SyncVar]
     public bool isDamaged;
+    public bool isBoss;
     public GameObject dmgPrefab;
     public GameObject dmgNumPrefab;
     public GameObject goldPrefab;
@@ -26,7 +27,7 @@ public class EnemyHealth : NetworkBehaviour
 
     private void Start()
     {
-   
+        currentHealth = maxHealth;
         hpBar.maxValue = maxHealth;
         hpBar.value = currentHealth;
         levelText.text = level.ToString();
@@ -72,18 +73,15 @@ public class EnemyHealth : NetworkBehaviour
 
                 if (currentHealth <= 0)
                 {
-                    
-                    int rate = Random.Range(0, dropRate);
-                    if (rate == 0 || rate > dropRate/2)
+                    DropItem();
+                    if (isBoss)
                     {
-                        GameObject clone = Instantiate(goldPrefab, transform.position, transform.rotation);
-                        NetworkServer.Spawn(clone);
+                        for (int i = 0; i < 10; i++)
+                        {
+                            DropItem();
+                        }
                     }
-                    if (rate == 1)
-                    {
-                        GameObject clone = Instantiate(itemPrefab, transform.position, transform.rotation);
-                        NetworkServer.Spawn(clone);
-                    }
+           
                     //Stats.pStats.addXp(expToGive);
                     if (destroyOnDeath)
                     {
@@ -93,6 +91,23 @@ public class EnemyHealth : NetworkBehaviour
                 }
             }
            
+        }
+    }
+
+    public void DropItem()
+    {
+
+
+        int rate = Random.Range(0, dropRate);
+        if (rate == 0 || rate > dropRate / 2)
+        {
+            GameObject clone = Instantiate(goldPrefab, new Vector3(transform.position.x + Random.Range(-2.1f, 2.1f),transform.position.y + Random.Range(-2.1f, 2.1f), transform.position.z), transform.rotation);
+            NetworkServer.Spawn(clone);
+        }
+        if (rate == 1)
+        {
+            GameObject clone = Instantiate(itemPrefab, new Vector3(transform.position.x + Random.Range(-2.1f, 2.1f), transform.position.y + Random.Range(-2.1f, 2.1f), transform.position.z), transform.rotation);
+            NetworkServer.Spawn(clone);
         }
     }
 

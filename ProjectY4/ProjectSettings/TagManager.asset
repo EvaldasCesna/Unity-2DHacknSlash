@@ -15,6 +15,7 @@ TagManager:
   - HealthBar
   - DroppedItem
   - EnemyProjectile
+  - Boss
   layers:
   - Default
   - TransparentFX

@@ -39,7 +39,8 @@ public class SaveData : MonoBehaviour
 
     public void SaveItems()
     {
-        gold = int.Parse(stats.gold.text);
+        int.TryParse(stats.gold.text,out gold);
+       // gold = int.Parse(stats.gold.text);
         level = stats.currentLevel;
         xp = stats.currentXp;
         mobs = stats.enemiesKilled;

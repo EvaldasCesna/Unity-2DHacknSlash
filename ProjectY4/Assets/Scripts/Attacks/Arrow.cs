@@ -21,7 +21,7 @@ public class Arrow : NetworkBehaviour {
         //   {
             GameObject objectColided = collision.gameObject;
             hp = collision.GetComponent<EnemyHealth>();
-            if (collision.gameObject.tag == "Enemy" && hp.isDamaged == false)
+            if ((collision.gameObject.tag == "Enemy" || collision.tag == "Boss") && hp.isDamaged == false)
             {
       
                 Vector3 direction = collision.transform.position - transform.position;

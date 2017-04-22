@@ -89,14 +89,14 @@ GameObject:
   - component: {fileID: 4837540118255612}
   - component: {fileID: 212302429015216714}
   - component: {fileID: 50945305283591912}
-  - component: {fileID: 114829828505049428}
+  - component: {fileID: 114148200154554902}
   - component: {fileID: 114954080911833826}
   - component: {fileID: 114632772107221800}
   - component: {fileID: 114971446377696930}
   - component: {fileID: 58384768347130318}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Enemy
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -294,7 +294,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.03
+  m_Radius: 5
 --- !u!58 &58384768347130318
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -324,7 +324,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.61
+  m_Radius: 2
 --- !u!114 &114014929059220404
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,6 +385,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54eb7cbcc52536c49ab00036c6240f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114148200154554902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510624083019008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c5c137d636c34428d39abbe99f2325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canShoot: 1
+  numberOfShots: 7
+  trackMelee: 1
+  canMelee: 1
+  speed: 1
+  projectileSpeed: 0.5
+  damage: 3
+  timeBetweenMoves: 4
+  timeToMove: 1
+  attackPrefab: {fileID: 1426663574772332, guid: c4359a8c4a152544a8524ca581d547f0,
+    type: 2}
+  projectilePrefab: {fileID: 1373231072694200, guid: c781255c333de3746b703f8b71cf2f1c,
+    type: 2}
+  attackTime: 1
+  shootTime: 2
 --- !u!114 &114374684427147484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -477,29 +503,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114829828505049428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1510624083019008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1f84aa977438f2449d4829e4f7d7765, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canShoot: 1
-  canMelee: 1
-  speed: 1
-  projectileSpeed: 3
-  damage: 5
-  timeBetweenMoves: 1
-  timeToMove: 1
-  attackPrefab: {fileID: 1426663574772332, guid: c4359a8c4a152544a8524ca581d547f0,
-    type: 2}
-  projectilePrefab: {fileID: 1373231072694200, guid: c781255c333de3746b703f8b71cf2f1c,
-    type: 2}
-  attackTime: 1
 --- !u!114 &114842752354154894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -681,9 +684,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 114959668544994240}
+  maxHealth: 1000
   currentHealth: 100
   destroyOnDeath: 1
   isDamaged: 0
+  isBoss: 1
   dmgPrefab: {fileID: 1623874012818694, guid: 4658a29851d925f448973203acec6216, type: 2}
   dmgNumPrefab: {fileID: 1278622242651352, guid: f8dafa8bc4cceae4d9094413ff8b2285,
     type: 2}
@@ -928,7 +933,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1940850528679292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 224236419962470684}

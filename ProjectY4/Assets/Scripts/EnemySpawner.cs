@@ -50,7 +50,7 @@ public class EnemySpawner : NetworkBehaviour {
 
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Vector3 spawnPosition = new Vector3(Random.Range(transform.position.x -10.0f, transform.position.x + 10.0f), Random.Range(transform.position.y - 10.0f, transform.position.y +10.0f), 0.0f);
+            Vector3 spawnPosition = new Vector3(Random.Range(transform.position.x -10.0f, transform.position.x + 10.0f), Random.Range(transform.position.y - 10.0f, transform.position.y +10.0f), -1f);
             Quaternion spawnRotation = Quaternion.Euler(0.0f, 0.0f, 0);
 
 

@@ -100,21 +100,6 @@ public class PlayerStats : NetworkBehaviour {
     }
 
     [Server]
-    public void MoveTo(Vector3 position)
-    {
-        
-        transform.position = position;
-        RpcMoveTo(position);
-
-    }
-
-    [ClientRpc]
-    public void RpcMoveTo(Vector3 position)
-    {
-        transform.position = position;
-    }
-
-    [Server]
     public void setLocation(string name)
     {
         startPoint = name;
