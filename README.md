@@ -1,14 +1,14 @@
 # Unity-2DHacknSlash
 4th Year Project - Multiplayer Hack n Slash Game by Evaldas Cesna
 
-###### Feature List:
+#### Feature List:
 * Multiplayer (Works with Some DeSyncs)
 * Online Database for storing user Progress/Login(hosted on my own computer) (Working)
 * Micro Transactions(Abandoned) *Out of time
 * Android Functionality(Works)
 * Making the game fun(Getting There)
 
-1. Player:
+##### Player:
 * Animations (Working)
 * Inventory (Working)
 * Leveling Up (Working)
@@ -16,13 +16,13 @@
 * Attacking (Working)
 * Different Attacks(Working) (Eg Swing Sword, Shoot bow, AoE Fire)
 
-2. Enemies:
+##### Enemies:
 * Animations (Working)
 * Boss (Working)
 * Loot (Working)
 * Different Attacks(Working) (Eg Projectiles, Delayed Attacks)
 
-3. World:
+##### World:
 * Dungeons/Different Locations (Working)
 * Moving to different places (Working)
 
