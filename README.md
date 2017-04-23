@@ -27,4 +27,5 @@
 * Moving to different places (Working)
 
 *Using free art assets found online*
+*Using free music found online*
 *Using Unity Standard Assets for some small things like Mobile Controls*
