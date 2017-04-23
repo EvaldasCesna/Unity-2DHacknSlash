@@ -16,7 +16,7 @@ if(!$Email || !$Password || !$Username) {
 }
 else
 {
-    $SQL = "SELECT * FROM accounts WHERE Email = '" . $Email . "'";
+    $SQL = "SELECT * FROM accounts WHERE Username = '" . $Username . "'";
     $Result = @mysql_query($SQL) or die("Error");
     $Total = mysql_num_rows($Result);
     if($Total == 0){

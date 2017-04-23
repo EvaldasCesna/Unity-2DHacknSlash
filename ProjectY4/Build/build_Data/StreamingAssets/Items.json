@@ -13,11 +13,10 @@
     "stackable": false,
     "rarity": 1,
     "slug": "bronze_sword"
-
   },
   {
     "id": 1,
-    "title": "Gold Sword",
+    "title": "Iron Sword",
     "type": "Melee",
     "value": 10,
     "stats": {
@@ -25,10 +24,10 @@
       "defence": 3,
       "vitality": 5
     },
-    "description": "A gold sword",
+    "description": "A iron sword",
     "stackable": false,
     "rarity": 4,
-    "slug": "gold_sword"
+    "slug": "iron_sword"
   },
   {
     "id": 2,
@@ -51,7 +50,7 @@
     "type": "Magic",
     "value": 16,
     "stats": {
-      "attack": 8,
+      "attack": 6,
       "defence": 3,
       "vitality": 5
     },
@@ -62,47 +61,558 @@
   },
   {
     "id": 4,
-    "title": "Bronze Helmet",
-    "type": "Top",
-    "value": 44,
-    "stats": {
-      "attack": 1,
-      "defence": 3,
-      "vitality": 5
-    },
-    "description": "A helmet",
-    "stackable": false,
-    "rarity": 4,
-    "slug": "bronze_helmet"
-  },
-  {
-    "id": 5,
-    "title": "Bronze Armor",
+    "title": "Green Shirt",
     "type": "Mid",
     "value": 44,
     "stats": {
-      "attack": 1,
+      "attack": 0,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A green shirt",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "shirt_armor"
+  },
+  {
+    "id": 5,
+    "title": "Blue Pants",
+    "type": "Bot",
+    "value": 44,
+    "stats": {
+      "attack": 0,
       "defence": 4,
       "vitality": 5
     },
-    "description": "A armor",
+    "description": "Some pants",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "pants_legging"
+  },
+  {
+    "id": 6,
+    "title": "Iron Bow",
+    "type": "Ranged",
+    "value": 23,
+    "stats": {
+      "attack": 4,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A iron bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "iron_bow"
+  },
+  {
+    "id": 7,
+    "title": "Wood Staff",
+    "type": "Magic",
+    "value": 40,
+    "stats": {
+      "attack": 5,
+      "defence": 5,
+      "vitality": 8
+    },
+    "description": "A wood staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "wood_staff2"
+  },
+  {
+    "id": 8,
+    "title": "Leather Hood",
+    "type": "Top",
+    "value": 52,
+    "stats": {
+      "attack": 0,
+      "defence": 8,
+      "vitality": 7
+    },
+    "description": "A Leather Hood",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "leather_helmet"
+  },
+  {
+    "id": 9,
+    "title": "Leather Armor",
+    "type": "Mid",
+    "value": 66,
+    "stats": {
+      "attack": 0,
+      "defence": 8,
+      "vitality": 5
+    },
+    "description": "a leather jacket",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "leather_armor"
+  },
+  {
+    "id": 10,
+    "title": "Leather Pants",
+    "type": "Bot",
+    "value": 44,
+    "stats": {
+      "attack": 0,
+      "defence": 9,
+      "vitality": 6
+    },
+    "description": "Leather pair",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "leather_legging"
+  },
+  {
+    "id": 11,
+    "title": "Emerald Sword",
+    "type": "Melee",
+    "value": 44,
+    "stats": {
+      "attack": 16,
+      "defence": 4,
+      "vitality": 3
+    },
+    "description": "Emerald",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "emerald_sword"
+  },
+  {
+    "id": 12,
+    "title": "Red Bow",
+    "type": "Ranged",
+    "value": 33,
+    "stats": {
+      "attack": 7,
+      "defence": 3,
+      "vitality": 5
+    },
+    "description": "A red bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "red_bow"
+  },
+  {
+    "id": 13,
+    "title": "Blue Bow",
+    "type": "Ranged",
+    "value": 33,
+    "stats": {
+      "attack": 14,
+      "defence": 5,
+      "vitality": 5
+    },
+    "description": "A blue bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "blue_bow"
+  },
+  {
+    "id": 14,
+    "title": "Blue Staff",
+    "type": "Magic",
+    "value": 73,
+    "stats": {
+      "attack": 7,
+      "defence": 9,
+      "vitality": 9
+    },
+    "description": "A blue staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "blue_staff"
+  },
+  {
+    "id": 15,
+    "title": "Blue Sword",
+    "type": "Melee",
+    "value": 36,
+    "stats": {
+      "attack": 18,
+      "defence": 4,
+      "vitality": 5
+    },
+    "description": "A blue sword",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "blue_sword"
+  },
+  {
+    "id": 16,
+    "title": "Hard Leather Armor",
+    "type": "Mid",
+    "value": 23,
+    "stats": {
+      "attack": 0,
+      "defence": 16,
+      "vitality": 10
+    },
+    "description": "A hard leather armor",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "leather2_armor"
+  },
+  {
+    "id": 17,
+    "title": "Hard Leather Hood",
+    "type": "Top",
+    "value": 37,
+    "stats": {
+      "attack": 0,
+      "defence": 11,
+      "vitality": 9
+    },
+    "description": "A hood",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "leather2_helmet"
+  },
+  {
+    "id": 18,
+    "title": "Hard Leather Legging",
+    "type": "Bot",
+    "value": 33,
+    "stats": {
+      "attack": 0,
+      "defence": 10,
+      "vitality": 9
+    },
+    "description": "A leather pants",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "leather2_legging"
+  },
+  {
+    "id": 19,
+    "title": "Iron Staff",
+    "type": "Magic",
+    "value": 83,
+    "stats": {
+      "attack": 8,
+      "defence": 20,
+      "vitality": 5
+    },
+    "description": "A iron staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "iron_staff"
+  },
+  {
+    "id": 20,
+    "title": "Orange Bow",
+    "type": "Ranged",
+    "value": 83,
+    "stats": {
+      "attack": 13,
+      "defence": 21,
+      "vitality": 6
+    },
+    "description": "A orange bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "orange_bow"
+  },
+  {
+    "id": 21,
+    "title": "Chainmail",
+    "type": "Mid",
+    "value": 183,
+    "stats": {
+      "attack": 0,
+      "defence": 21,
+      "vitality": 16
+    },
+    "description": "A chainmail",
     "stackable": false,
     "rarity": 4,
     "slug": "bronze_armor"
   },
   {
-    "id": 6,
-    "title": "Bronze Leggings",
-    "type": "Bot",
-    "value": 33,
+    "id": 22,
+    "title": "Chainmail helm",
+    "type": "Top",
+    "value": 183,
     "stats": {
-      "attack": 1,
-      "defence": 3,
-      "vitality": 5
+      "attack": 0,
+      "defence": 19,
+      "vitality": 18
     },
-    "description": "A Legging",
+    "description": "A chainmail",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "bronze2_helmet"
+  },
+  {
+    "id": 23,
+    "title": "Chainmail legging",
+    "type": "Bot",
+    "value": 183,
+    "stats": {
+      "attack": 0,
+      "defence": 18,
+      "vitality": 28
+    },
+    "description": "A chainmail",
     "stackable": false,
     "rarity": 4,
     "slug": "bronze_legging"
+  },
+  {
+    "id": 24,
+    "title": "Bronze Helm",
+    "type": "Top",
+    "value": 83,
+    "stats": {
+      "attack": 0,
+      "defence": 44,
+      "vitality": 66
+    },
+    "description": "A healthy helm",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "bronze_helmet"
+  },
+  {
+    "id": 25,
+    "title": "Grand Chest",
+    "type": "Mid",
+    "value": 283,
+    "stats": {
+      "attack": 0,
+      "defence": 36,
+      "vitality": 38
+    },
+    "description": "A grand armor",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "iron_armor"
+  },
+  {
+    "id": 26,
+    "title": "Grand Helm",
+    "type": "Mid",
+    "value": 223,
+    "stats": {
+      "attack": 0,
+      "defence": 38,
+      "vitality": 36
+    },
+    "description": "A grand helm",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "iron_helmet"
+  },
+  {
+    "id": 27,
+    "title": "Grand Legging",
+    "type": "Bot",
+    "value": 283,
+    "stats": {
+      "attack": 0,
+      "defence": 34,
+      "vitality": 39
+    },
+    "description": "A grand legging",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "iron_legging"
+  },
+  {
+    "id": 28,
+    "title": "Moon Staff",
+    "type": "Magic",
+    "value": 383,
+    "stats": {
+      "attack": 43,
+      "defence": 8,
+      "vitality": 15
+    },
+    "description": "A moon staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "moon_staff"
+  },
+  {
+    "id": 29,
+    "title": "Gold Staff",
+    "type": "Magic",
+    "value": 483,
+    "stats": {
+      "attack": 22,
+      "defence": 22,
+      "vitality": 26
+    },
+    "description": "A golden staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "gold_staff"
+  },
+  {
+    "id": 30,
+    "title": "Red Staff",
+    "type": "Magic",
+    "value": 283,
+    "stats": {
+      "attack": 20,
+      "defence": 12,
+      "vitality": 99
+    },
+    "description": "A healthy staff",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "red_staff"
+  },
+  {
+    "id": 31,
+    "title": "Golden Sword",
+    "type": "Melee",
+    "value": 383,
+    "stats": {
+      "attack": 24,
+      "defence": 25,
+      "vitality": 26
+    },
+    "description": "A good sword",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "gold_sword2"
+  },
+  {
+    "id": 32,
+    "title": "Grand Sword",
+    "type": "Melee",
+    "value": 383,
+    "stats": {
+      "attack": 42,
+      "defence": 15,
+      "vitality": 25
+    },
+    "description": "A good sword",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "grand_sword"
+  },
+  {
+    "id": 33,
+    "title": "Grand Sword",
+    "type": "Melee",
+    "value": 483,
+    "stats": {
+      "attack": 32,
+      "defence": 15,
+      "vitality": 56
+    },
+    "description": "A healthy sword",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "grand_sword2"
+  },
+  {
+    "id": 34,
+    "title": "Grand Bow",
+    "type": "Ranged",
+    "value": 483,
+    "stats": {
+      "attack": 29,
+      "defence": 25,
+      "vitality": 46
+    },
+    "description": "A healthy bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "iron_bow2"
+  },
+  {
+    "id": 35,
+    "title": "Dark Bow",
+    "type": "Ranged",
+    "value": 433,
+    "stats": {
+      "attack": 35,
+      "defence": 35,
+      "vitality": 36
+    },
+    "description": "A strong bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "dark_bow"
+  },
+  {
+    "id": 36,
+    "title": "Purple Bow",
+    "type": "Ranged",
+    "value": 483,
+    "stats": {
+      "attack": 49,
+      "defence": 15,
+      "vitality": 33
+    },
+    "description": "A good bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "purple_bow"
+  },
+  {
+    "id": 37,
+    "title": "Bone Bow",
+    "type": "Ranged",
+    "value": 483,
+    "stats": {
+      "attack": 29,
+      "defence": 55,
+      "vitality": 33
+    },
+    "description": "A strong bow",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "bone_bow"
+  },
+  {
+    "id": 38,
+    "title": "G?oD 3w0rd",
+    "type": "Melee",
+    "value": 999,
+    "stats": {
+      "attack": 99,
+      "defence": 99,
+      "vitality": 99
+    },
+    "description": "How Did you get this Sword?",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "gold_bow"
+  },
+  {
+    "id": 39,
+    "title": "G?oD 3t4wf",
+    "type": "Magic",
+    "value": 999,
+    "stats": {
+      "attack": 99,
+      "defence": 99,
+      "vitality": 99
+    },
+    "description": "How Did you get this Staff?",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "gold_sword"
+  },
+  {
+    "id": 40,
+    "title": "G?oD 3t4wf",
+    "type": "Ranged",
+    "value": 999,
+    "stats": {
+      "attack": 99,
+      "defence": 99,
+      "vitality": 99
+    },
+    "description": "How Did you get this Bow?",
+    "stackable": false,
+    "rarity": 4,
+    "slug": "gold_staff"
   }
+  
 ]

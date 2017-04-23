@@ -4,7 +4,6 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerMovement : NetworkBehaviour
 {
-
     public float speed;
     private Rigidbody2D rig;
     private Animator anim;
@@ -26,7 +25,6 @@ public class PlayerMovement : NetworkBehaviour
         lastMovement = new Vector2(1, 0);
     }
 
-
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -34,18 +32,17 @@ public class PlayerMovement : NetworkBehaviour
         {
             return;
         }
-
-     updateMovement();
-
-     moving(movHorizontal , movVertical);
+        updateMovement();
+        moving(movHorizontal, movVertical);
     }
 
     private void updateMovement()
     {
+        //changes between android and pc controls on compile
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
-         //Move depending on direction player clicks
-         movHorizontal = Input.GetAxisRaw("Horizontal");
-         movVertical = Input.GetAxisRaw("Vertical");
+        //Move depending on direction player clicks
+        movHorizontal = Input.GetAxisRaw("Horizontal");
+        movVertical = Input.GetAxisRaw("Vertical");
 #else
          //Move where the direction the joystic is pointing
          movHorizontal = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -70,12 +67,9 @@ public class PlayerMovement : NetworkBehaviour
             rig.velocity = movement * speed;
 
             lastMovement = new Vector2(x, y);
-
         }
-
         anim.SetFloat("lastx", lastMovement.x);
         anim.SetFloat("lasty", lastMovement.y);
-
     }
 
 }

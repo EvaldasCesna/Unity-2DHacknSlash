@@ -190,7 +190,6 @@ GameObject:
   - component: {fileID: 222091434844329758}
   - component: {fileID: 114071804615429532}
   - component: {fileID: 114773273227393888}
-  - component: {fileID: 114613358408564014}
   m_Layer: 5
   m_Name: EquipmentPanel
   m_TagString: Untagged
@@ -613,7 +612,6 @@ GameObject:
   - component: {fileID: 222540905539305574}
   - component: {fileID: 114282041844152704}
   - component: {fileID: 114765850542811250}
-  - component: {fileID: 114082839906567928}
   - component: {fileID: 114627443446690246}
   m_Layer: 5
   m_Name: SlotPanel
@@ -807,19 +805,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114082839906567928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1783308916798358}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78b53120f625d3c4d99956e27428ad2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  col: 7
-  row: 6
 --- !u!114 &114140640013136308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1943,19 +1928,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114613358408564014
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1213448439448174}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78b53120f625d3c4d99956e27428ad2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  col: 4
-  row: 4
 --- !u!114 &114625098610652658
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2203,6 +2175,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59550d8b9e808284380c9862f798e09a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 0}
+  hpBar: {fileID: 0}
+  hpText: {fileID: 0}
+  xpBar: {fileID: 0}
+  xpText: {fileID: 0}
+  level: {fileID: 0}
+  enemiesKilled: 0
+  bossesKilled: 0
   currentLevel: 0
   currentXp: 0
   levels: 00000000190000003200000064000000fa0000000d020000e8030000e2040000dc050000d0070000

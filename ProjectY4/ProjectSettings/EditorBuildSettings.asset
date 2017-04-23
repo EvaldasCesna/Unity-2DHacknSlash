@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Login.unity
     guid: 761734f02710ed248937d702d53169a6
   - enabled: 1
+    path: Assets/MainMenu.unity
+    guid: 217238d3e88cc9340b1d528ff04d944e
+  - enabled: 1
     path: Assets/Loading Screen.unity
     guid: a1d39751215ac9b4ebff6fa2002b3ff1
   - enabled: 1
@@ -26,6 +29,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Magma.unity
     guid: 47f742b098b519848a3331cf65ffe424
-  - enabled: 1
-    path: Assets/MainMenu.unity
-    guid: 217238d3e88cc9340b1d528ff04d944e

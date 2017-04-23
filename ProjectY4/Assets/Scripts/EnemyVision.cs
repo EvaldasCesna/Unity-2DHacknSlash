@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyVision : MonoBehaviour {
+public class EnemyVision : MonoBehaviour
+{
     private List<GameObject> list;
     private GameObject player;
 
-    void Start () {
+    void Start()
+    {
         list = new List<GameObject>();
     }
-	
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player" && list != null)
@@ -39,8 +41,6 @@ public class EnemyVision : MonoBehaviour {
 
             if (GetComponentInParent<BossScript>() != null)
             {
-
-
                 GetComponentInParent<BossScript>().enemyProjectile(collision.gameObject);
 
                 player = collision.gameObject;
@@ -52,21 +52,22 @@ public class EnemyVision : MonoBehaviour {
                     }
                 }
 
-                if (Vector3.Distance(transform.position, player.transform.position) > 3.5f )
-                GetComponentInParent<BossScript>().transform.position = Vector2.MoveTowards(transform.position, player.transform.position, (GetComponentInParent<BossScript>().speed - 0.2f) * Time.deltaTime);
-
-
+                if (Vector3.Distance(transform.position, player.transform.position) > 3.5f)
+                    GetComponentInParent<BossScript>().transform.position = Vector2.MoveTowards(transform.position, player.transform.position, (GetComponentInParent<BossScript>().speed - 0.2f) * Time.deltaTime);
             }
-
         }
-     
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject == player)
+        if (collision.gameObject == player)
         {
             list = new List<GameObject>();
+        }
+        if (collision.tag == "Player")
+        {
+            if (GetComponentInParent<EnemyHealth>().isBoss)
+                gameObject.GetComponentInParent<EnemyHealth>().CmdHeal(gameObject.GetComponentInParent<EnemyHealth>().maxHealth / 2);
         }
     }
 }

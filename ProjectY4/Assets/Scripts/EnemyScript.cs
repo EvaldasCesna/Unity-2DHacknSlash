@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class EnemyScript : NetworkBehaviour {
+public class EnemyScript : NetworkBehaviour
+{
     private Rigidbody2D rig;
     private bool moving;
     private float timeBetweenMovesCount;
@@ -23,29 +24,28 @@ public class EnemyScript : NetworkBehaviour {
     public GameObject attackPrefab;
     public GameObject projectilePrefab;
     public float attackTime;
- 
+
 
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
-
         timeBetweenMovesCount = Random.Range(timeBetweenMoves * 0.75f, timeBetweenMoves * 1.25f);
         timeToMoveCount = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
+    }
 
-    } 
-
-    void FixedUpdate () {
-
+    void FixedUpdate()
+    {
         if (moving)
         {
             timeToMoveCount -= Time.fixedDeltaTime;
             rig.velocity = moveDirection;
-            if(timeToMoveCount < 0f)
+            if (timeToMoveCount < 0f)
             {
                 moving = false;
                 timeBetweenMovesCount = Random.Range(timeBetweenMoves * 0.75f, timeBetweenMoves * 1.25f);
             }
-        }else
+        }
+        else
         {
             timeBetweenMovesCount -= Time.fixedDeltaTime;
             rig.velocity = Vector2.zero;
@@ -54,20 +54,18 @@ public class EnemyScript : NetworkBehaviour {
             {
                 moving = true;
                 timeToMoveCount = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
-                moveDirection = new Vector3(Random.Range(-1f,1f) * speed, Random.Range(-1f, 1f) * speed, 0);
+                moveDirection = new Vector3(Random.Range(-1f, 1f) * speed, Random.Range(-1f, 1f) * speed, 0);
             }
         }
-
     }
 
     public void enemyAttack(GameObject player)
     {
-    if (!isServer)
-    {
-        return;
-    }
-
-    CmdenemyAttack(player);
+        if (!isServer)
+        {
+            return;
+        }
+        CmdenemyAttack(player);
     }
 
     public void enemyProjectile(GameObject player)
@@ -76,7 +74,6 @@ public class EnemyScript : NetworkBehaviour {
         {
             return;
         }
-
         CmdenemyProjectile(player);
     }
 
@@ -91,13 +88,11 @@ public class EnemyScript : NetworkBehaviour {
             if (canMelee)
             {
                 Instantiate(attackPrefab, new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z - 1f), transform.rotation);
-                //NetworkServer.Spawn(clone);
                 isAttacking = true;
                 attackTimeCounter = attackTime;
                 hp.TakeDamage(damage);
             }
         }
-
     }
 
 
@@ -117,11 +112,8 @@ public class EnemyScript : NetworkBehaviour {
                 projectile.GetComponent<EnemyProjectile>().damage = damage;
                 Destroy(projectile.gameObject, 5);
                 NetworkServer.Spawn(projectile);
-
             }
-
         }
-
     }
 
     private void attackCounter()
@@ -134,8 +126,6 @@ public class EnemyScript : NetworkBehaviour {
         {
             isAttacking = false;
         }
-
     }
-
 
 }

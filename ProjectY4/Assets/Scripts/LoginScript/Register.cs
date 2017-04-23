@@ -3,27 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Register : MonoBehaviour {
+public class Register : MonoBehaviour
+{
+    private string CreateAccountUrl = "http://188.141.5.218/Register.php";
+    private string check;
 
     public InputField Username;
     public InputField Password;
     public InputField cPassword;
     public InputField Email;
-   // string name;
-   // string pass;
-  //  string email;
+    public Text status;
     public Button Reg;
-    private string CreateAccountUrl = "http://188.141.5.218/Register.php";
 
     // Use this for initialization
     void Start()
     {
-
+        check = "";
         // var password = gameObject.GetComponent<InputField>();
         Reg = GetComponent<Button>();
-        Reg.onClick.AddListener(() => { if (Password.text == cPassword.text) { Debug.Log("Success0"); StartCoroutine("CreateAccount"); } else { cPassword.text = ""; } });
+        Reg.onClick.AddListener(() =>
+        {
+            if (Password.text == cPassword.text) { Debug.Log("Success0"); StartCoroutine("CreateAccount"); }
+            else { check = "Wrong password"; cPassword.text = ""; }
+        });
 
 
+    }
+
+    public void CheckSucces()
+    {
+        status.text = check;
     }
 
     IEnumerator CreateAccount()
@@ -39,21 +48,31 @@ public class Register : MonoBehaviour {
 
         yield return CreateAccountWWW;
 
-        if(CreateAccountWWW.error != null)
+        if (CreateAccountWWW.error != null)
         {
+            check = "Cant Connect To Account Creation";
             Debug.LogError("Cannot Connect to acc creation");
         }
         else
         {
             Debug.Log(CreateAccountWWW.text);
             string CreateAccountReturn = CreateAccountWWW.text;
-            if(CreateAccountReturn == "Success")
+            if (CreateAccountReturn == "Success")
             {
+                check = "Success";
+                Username.text = " ";
+                Email.text = " ";
+                Password.text = " ";
+                cPassword.text = " ";
                 Debug.Log("Success: Account created");
             }
+            else
+            {
+                check = "Username Exists";
+            }
         }
-
+        CheckSucces();
     }
-
+ 
 
 }

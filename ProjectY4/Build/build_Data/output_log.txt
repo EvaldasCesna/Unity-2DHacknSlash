@@ -1,0 +1,172 @@
+Initialize engine version: 5.6.0f3 (497a0f351392)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 980 (ID=0x13c0)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+    Driver:   22.21.13.8165
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\LitJson.dll (this message is harmless)
+Loading C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\LitJson.dll into Unity Child Domain
+- Completed reload, in  0.136 seconds
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\PC\Documents\Unity-2DHacknSlash\ProjectY4\Build\build_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.805225 ms
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.466983 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1688.
+Total: 0.791083 ms (FindLiveObjects: 0.035081 ms CreateObjectMapping: 0.048821 ms MarkObjects: 0.696363 ms  DeleteObjects: 0.010816 ms)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.601644 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 2.035300 ms (FindLiveObjects: 0.111967 ms CreateObjectMapping: 0.070162 ms MarkObjects: 1.650283 ms  DeleteObjects: 0.202886 ms)
+
+MatchMakingClient Destroy :https://mm.unet.unity3d.com/json/reply/DestroyMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.769157 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 1903.
+Total: 4.646811 ms (FindLiveObjects: 0.085072 ms CreateObjectMapping: 0.084779 ms MarkObjects: 1.557902 ms  DeleteObjects: 2.918472 ms)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.602229 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 4.251854 ms (FindLiveObjects: 0.184469 ms CreateObjectMapping: 0.189439 ms MarkObjects: 3.851342 ms  DeleteObjects: 0.026018 ms)
+
+MatchMakingClient Destroy :https://mm.unet.unity3d.com/json/reply/DestroyMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.980814 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 1903.
+Total: 3.819185 ms (FindLiveObjects: 0.071916 ms CreateObjectMapping: 0.061099 ms MarkObjects: 1.216152 ms  DeleteObjects: 2.469431 ms)
+
+MatchMakingClient Create :https://mm.unet.unity3d.com/json/reply/CreateMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+ 
+(Filename:  Line: 462)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.296729 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3113.
+Total: 1.702320 ms (FindLiveObjects: 0.099689 ms CreateObjectMapping: 0.070454 ms MarkObjects: 1.523698 ms  DeleteObjects: 0.008185 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.796638 ms
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3582.
+Total: 8.287083 ms (FindLiveObjects: 0.190023 ms CreateObjectMapping: 0.160496 ms MarkObjects: 3.828247 ms  DeleteObjects: 4.107728 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.295560 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3798.
+Total: 1.859309 ms (FindLiveObjects: 0.077178 ms CreateObjectMapping: 0.074840 ms MarkObjects: 1.698520 ms  DeleteObjects: 0.008477 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 8.128923 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3582.
+Total: 12.543906 ms (FindLiveObjects: 0.240891 ms CreateObjectMapping: 0.188854 ms MarkObjects: 4.481052 ms  DeleteObjects: 7.632230 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.367769 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3883.
+Total: 2.146391 ms (FindLiveObjects: 0.142371 ms CreateObjectMapping: 0.075424 ms MarkObjects: 1.918947 ms  DeleteObjects: 0.009355 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.098921 ms
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 3582.
+Total: 9.307071 ms (FindLiveObjects: 0.267202 ms CreateObjectMapping: 0.199086 ms MarkObjects: 4.618161 ms  DeleteObjects: 4.222327 ms)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.390279 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3798.
+Total: 1.893221 ms (FindLiveObjects: 0.098812 ms CreateObjectMapping: 0.071039 ms MarkObjects: 1.714598 ms  DeleteObjects: 0.008770 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 7.566745 ms
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 3582.
+Total: 10.499542 ms (FindLiveObjects: 0.308130 ms CreateObjectMapping: 0.215750 ms MarkObjects: 4.457664 ms  DeleteObjects: 5.517705 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.431207 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 3883.
+Total: 2.162177 ms (FindLiveObjects: 0.143541 ms CreateObjectMapping: 0.075424 ms MarkObjects: 1.932980 ms  DeleteObjects: 0.009647 ms)
+
+MatchMakingClient Destroy :https://mm.unet.unity3d.com/json/reply/DestroyMatchRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+MatchMakingClient DropConnection :https://mm.unet.unity3d.com/json/reply/DropConnectionRequest
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.071149 ms
+
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 1903.
+Total: 7.131445 ms (FindLiveObjects: 0.106997 ms CreateObjectMapping: 0.178914 ms MarkObjects: 2.902101 ms  DeleteObjects: 3.942846 ms)
+
+Setting up 4 worker threads for Enlighten.
+  Thread -> id: 1754 -> priority: 1 
+  Thread -> id: 2f58 -> priority: 1 
+  Thread -> id: 1e70 -> priority: 1 
+  Thread -> id: 1b90 -> priority: 1 

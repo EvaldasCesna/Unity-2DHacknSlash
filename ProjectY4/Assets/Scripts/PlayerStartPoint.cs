@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-public class PlayerStartPoint : NetworkBehaviour {
-
+public class PlayerStartPoint : NetworkBehaviour
+{
     private PlayerStats player;
     private List<GameObject> players;
     private List<Transform> points;
@@ -11,8 +11,8 @@ public class PlayerStartPoint : NetworkBehaviour {
 
     public string startPoint;
 
-
-    void Start () {
+    void Start()
+    {
         CmdmovePlayers();
     }
 

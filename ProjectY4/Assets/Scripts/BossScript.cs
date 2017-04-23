@@ -31,19 +31,17 @@ public class BossScript : NetworkBehaviour
     public GameObject attackPrefab;
     public GameObject projectilePrefab;
 
-
     private void Start()
     {
         rig = GetComponent<Rigidbody2D>();
 
         timeBetweenMovesCount = Random.Range(timeBetweenMoves * 0.75f, timeBetweenMoves * 1.25f);
         timeToMoveCount = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
-
     }
 
     void FixedUpdate()
     {
-
+        //Movement
         if (moving)
         {
             timeToMoveCount -= Time.fixedDeltaTime;
@@ -68,7 +66,7 @@ public class BossScript : NetworkBehaviour
         }
 
     }
-
+    //Makes sure the right thing is calling commands
     public void enemyAttack(GameObject player)
     {
         if (!isServer)
@@ -93,13 +91,13 @@ public class BossScript : NetworkBehaviour
     public void CmdenemyAttack(GameObject player)
     {
         attackCounter();
-     //   PlayerHealth hp = player.GetComponent<PlayerHealth>();
 
         if (isAttacking == false)
         {
             if (canMelee)
             {
-                if (trackMelee)   {
+                if (trackMelee)
+                {
                     if (!doubleMelee)
                     {
                         GameObject attack = (GameObject)Instantiate(attackPrefab, new Vector3(player.transform.position.x + Random.Range(-1, 1), player.transform.position.y + Random.Range(-1, 1), transform.position.z - 1f), transform.rotation);
@@ -107,35 +105,31 @@ public class BossScript : NetworkBehaviour
                         NetworkServer.Spawn(attack);
                     }
 
-                    if(doubleMelee)
+                    if (doubleMelee)
                     {
                         GameObject attack = (GameObject)Instantiate(attackPrefab, new Vector3(player.transform.position.x + Random.Range(-1, 1), player.transform.position.y + Random.Range(-1, 1), transform.position.z - 1f), transform.rotation);
                         attack.GetComponent<BossAttack>().damage = damage / 2;
                         NetworkServer.Spawn(attack);
 
-                        GameObject attack2 = (GameObject)Instantiate(attackPrefab, new Vector3((transform.position.x -player.transform.position.x) + Random.Range(-1, 1),(transform.position.y-player.transform.position.y)+ Random.Range(-1, 1), transform.position.z - 1f), transform.rotation);
+                        GameObject attack2 = (GameObject)Instantiate(attackPrefab, new Vector3((transform.position.x - player.transform.position.x) + Random.Range(-1, 1), (transform.position.y - player.transform.position.y) + Random.Range(-1, 1), transform.position.z - 1f), transform.rotation);
                         attack2.GetComponent<BossAttack>().damage = damage / 2;
                         NetworkServer.Spawn(attack2);
                     }
                 }
 
-                if(!trackMelee)
+                if (!trackMelee)
                 {
-                        GameObject attack = (GameObject)Instantiate(attackPrefab, transform.position, transform.rotation);
-                        attack.GetComponent<BossAttack>().damage = damage / 2;
-                        NetworkServer.Spawn(attack);
+                    GameObject attack = (GameObject)Instantiate(attackPrefab, transform.position, transform.rotation);
+                    attack.GetComponent<BossAttack>().damage = damage / 2;
+                    NetworkServer.Spawn(attack);
                 }
-
-
 
                 isAttacking = true;
                 attackTimeCounter = attackTime;
-               // hp.TakeDamage(damage);
             }
         }
 
     }
-
 
     [Command]
     public void CmdenemyProjectile(GameObject player)
@@ -163,7 +157,7 @@ public class BossScript : NetworkBehaviour
                 {
                     for (int i = 0; i < numberOfShots; i++)
                     {
-                        GameObject projectile = (GameObject)Instantiate(projectilePrefab, new Vector3(transform.position.x -1,transform.position.y, transform.position.z), transform.rotation);
+                        GameObject projectile = (GameObject)Instantiate(projectilePrefab, new Vector3(transform.position.x - 1, transform.position.y, transform.position.z), transform.rotation);
                         isShooting = true;
                         shootTimeCounter = shootTime;
                         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10)) * projectileSpeed;
@@ -183,9 +177,7 @@ public class BossScript : NetworkBehaviour
                     }
                 }
             }
-
         }
-
     }
 
     private void attackCounter()
@@ -198,7 +190,6 @@ public class BossScript : NetworkBehaviour
         {
             isAttacking = false;
         }
-
     }
 
 
@@ -212,7 +203,5 @@ public class BossScript : NetworkBehaviour
         {
             isShooting = false;
         }
-
     }
-
 }

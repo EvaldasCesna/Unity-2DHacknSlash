@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryTooltip : MonoBehaviour {
+public class InventoryTooltip : MonoBehaviour
+{
     private Item item;
     private string data;
     private GameObject tooltip;
@@ -12,7 +13,6 @@ public class InventoryTooltip : MonoBehaviour {
     {
         tooltip = GameObject.Find("Tooltip");
         tooltip.SetActive(false);
-      
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class InventoryTooltip : MonoBehaviour {
     public void ConstructDataString()
     {
         //More to add here for different item types
-        data = "<color=blue><b>" + item.Title + "</b></color>\n\n" + item.Description + "\n Strength:" + item.Strength +"\n Defence:" + item.Defence + "\n Vitality:" + item.Vitality + "\n Cost:" + item.Value;
+        data = "<color=blue><b>" + item.Title + "</b></color>\n\n" + item.Description + "\n Strength:" + item.Strength + "\n Defence:" + item.Defence + "\n Vitality:" + item.Vitality + "\n Cost:" + item.Value;
         tooltip.transform.GetChild(0).GetComponent<Text>().text = data;
     }
 

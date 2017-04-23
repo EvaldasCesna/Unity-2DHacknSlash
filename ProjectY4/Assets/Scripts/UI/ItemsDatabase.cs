@@ -4,32 +4,31 @@ using UnityEngine;
 using LitJson;
 using System.IO;
 
-public class ItemsDatabase : MonoBehaviour {
+public class ItemsDatabase : MonoBehaviour
+{
     private List<Item> items = new List<Item>();
     private JsonData itemData;
 
     void Start()
     {
-
+        //Android uses Different streamingAssets Location for the .json list of items
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
         itemData = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/StreamingAssets/Items.json"));
-         ConstructItems();
+        ConstructItems();
 #else
-
         string jsonPath =  Application.streamingAssetsPath + "/Items.json";
         StartCoroutine(GetJsonData(jsonPath));
 #endif
 
-      
     }
 
-    //Could use binary search
+    //Could use binary search if gets too big
     public Item GetItemByID(int id)
     {
         for (int i = 0; i < items.Count; i++)
             if (items[i].ID == id)
                 return items[i];
-            return null; 
+        return null;
     }
 
     void ConstructItems()
@@ -39,7 +38,6 @@ public class ItemsDatabase : MonoBehaviour {
             items.Add(new Item((int)itemData[i]["id"], itemData[i]["title"].ToString(), itemData[i]["type"].ToString(), (int)itemData[i]["value"],
                 (int)itemData[i]["stats"]["attack"], (int)itemData[i]["stats"]["defence"], (int)itemData[i]["stats"]["vitality"],
                 itemData[i]["description"].ToString(), (bool)itemData[i]["stackable"], (int)itemData[i]["rarity"], itemData[i]["slug"].ToString()));
-
         }
     }
 
@@ -70,7 +68,7 @@ public class Item
     public int Rarity { get; set; }
     public string Slug { get; set; }
     public Sprite Sprite { get; set; }
-  
+
     public Item(int id, string title, string type, int value, int strength, int defence, int vitality, string description, bool stackable, int rarity, string slug)
     {
         this.ID = id;

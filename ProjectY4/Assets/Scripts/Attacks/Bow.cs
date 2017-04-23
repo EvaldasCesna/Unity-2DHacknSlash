@@ -7,7 +7,7 @@ public class Bow : MonoBehaviour
 {
     public GameObject arrowPrefab;
     public float arrowSpeed;
-
+    //Here is where I would implement Different Skills
     public GameObject shootArrow(int damage, Vector3 rotation, Vector2 direction)
     {
         GameObject arrow = (GameObject)Instantiate(arrowPrefab, transform.position, Quaternion.Euler(rotation));

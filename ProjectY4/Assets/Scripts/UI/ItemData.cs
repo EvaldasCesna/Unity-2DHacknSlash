@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler {
+public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
+{
     public Item item;
     public int amount;
     public int slot;
     public string location;
-
 
     private Equipment equipment;
     private Inventory inventory;
@@ -18,7 +18,6 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         equipment = Equipment.pEquipment;
         inventory = Inventory.pInventory;
         tooltip = inventory.GetComponent<InventoryTooltip>();
-
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -42,14 +41,10 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
     public void OnDrag(PointerEventData eventData)
     {
-
-      
         if (item != null)
         {
             this.transform.position = eventData.position - offset;
         }
-
-
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -67,7 +62,6 @@ public class ItemData : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         }
 
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)

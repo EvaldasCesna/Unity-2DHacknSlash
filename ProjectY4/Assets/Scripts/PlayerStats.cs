@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 
-public class PlayerStats : NetworkBehaviour {
+public class PlayerStats : NetworkBehaviour
+{
     private Stats stats;
     private PlayerAttack pa;
     private PlayerHealth pHp;
@@ -11,17 +12,17 @@ public class PlayerStats : NetworkBehaviour {
     public string startPoint;
     public int Gold;
 
-    void Start () {
-
+    void Start()
+    {
         stats = Stats.pStats;
         stats.Show();
         pa = GetComponent<PlayerAttack>();
         pHp = GetComponent<PlayerHealth>();
         DontDestroyOnLoad(transform.gameObject);
     }
-	
-	void Update () {
 
+    void Update()
+    {
         updateSprites();
         updateHealth();
     }
@@ -37,15 +38,13 @@ public class PlayerStats : NetworkBehaviour {
         if (!isLocalPlayer)
         {
             return;
-
         }
-            pHp.CmdChangeMaxHealth(stats.getBonusHealth() + stats.currentLevel);
+        pHp.CmdChangeMaxHealth(stats.getBonusHealth() + stats.currentLevel);
 
-            if (stats.leveledUp)
-            {
-                pHp.HealPlayer(pHp.maxHealth);
-            }
-      
+        if (stats.leveledUp)
+        {
+            pHp.HealPlayer(pHp.maxHealth);
+        }
     }
 
     public void updateSprites()
@@ -84,7 +83,7 @@ public class PlayerStats : NetworkBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
             GetComponent<Rigidbody2D>().velocity = Vector3.zero;

@@ -11,52 +11,56 @@ public class LoggingIn : MonoBehaviour
     public InputField Username;
     public InputField Password;
     public Button Login;
+    public Text status;
+    string check;
     // Use this for initialization
     void Start()
     {
-
-        // var password = gameObject.GetComponent<InputField>();
         Login = GetComponent<Button>();
-        Login.onClick.AddListener(() => { StartCoroutine("LoginAccount");} );
-
-
+        Login.onClick.AddListener(() => { StartCoroutine("LoginAccount"); });
     }
 
+    public void updateText()
+    {
+        status.text = check;
+    }
 
     IEnumerator LoginAccount()
     {
-     //   Debug.Log("Attempting Log in");
+        //   Debug.Log("Attempting Log in");
         WWWForm Form = new WWWForm();
         Form.AddField("Username", Username.text);
         Form.AddField("Password", Password.text);
         WWW LoginAccountWWW = new WWW(LoginUrl, Form);
         yield return LoginAccountWWW;
-        if(LoginAccountWWW.error != null)
+        if (LoginAccountWWW.error != null)
         {
-            Debug.LogError("Cannot Connect to Login");
+            check = "Cannot Connect(Server Offline ?)";
+            updateText();
         }
         else
         {
             string LogText = LoginAccountWWW.text;
-          //  Debug.Log(LogText);
             string[] LogTextSplit = LogText.Split(':');
             if (LogTextSplit[0] == Username.text)
             {
-                if(LogTextSplit[1] == "Success")
+                if (LogTextSplit[1] == "Success")
                 {
-                   PlayerPrefs.SetString("Player Name", Username.text);
-                   SceneManager.LoadScene("Game");
+                    PlayerPrefs.SetString("Player Name", Username.text);
+                    SceneManager.LoadScene("MainMenu");
                 }
             }
-            else
+
+            if (LogText == "WrongPassword")
             {
-                //if(LogTextSplit[1] == "Success")
-                //{
-                //    PlayerPrefs.SetString("Player Name", Username.text);
-                //    SceneManager.LoadScene("Game");
-                //}
+                check = "Wrong Password";
+                updateText();
+            }
+            if (LogText == "NameDoesNotExist")
+            {
+                check = "Wrong Name";
+                updateText();
             }
         }
     }
-
 }

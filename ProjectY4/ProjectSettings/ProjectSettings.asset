@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 11
   productGUID: d803595cf47644935b27c21dfb0e786a
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 2
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -144,7 +144,7 @@ PlayerSettings:
   buildNumber:
     iOS: 0
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 16
+  AndroidMinSdkVersion: 17
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -218,7 +218,7 @@ PlayerSettings:
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
-  AndroidTVCompatibility: 1
+  AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
   m_AndroidBanners:
@@ -226,7 +226,8 @@ PlayerSettings:
     height: 180
     banner: {fileID: 0}
   androidGamepadSupportLevel: 0
-  resolutionDialogBanner: {fileID: 0}
+  resolutionDialogBanner: {fileID: 2800000, guid: 90cf515a1decb754899fb255b01a3209,
+    type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
@@ -234,6 +235,62 @@ PlayerSettings:
       m_Icon: {fileID: 0}
       m_Width: 128
       m_Height: 128
+  - m_BuildTarget: Android
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6f5c974ce1938e049b1872c39fbffcdb, type: 3}
+      m_Width: 192
+      m_Height: 192
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6f5c974ce1938e049b1872c39fbffcdb, type: 3}
+      m_Width: 144
+      m_Height: 144
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6f5c974ce1938e049b1872c39fbffcdb, type: 3}
+      m_Width: 96
+      m_Height: 96
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6f5c974ce1938e049b1872c39fbffcdb, type: 3}
+      m_Width: 72
+      m_Height: 72
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6f5c974ce1938e049b1872c39fbffcdb, type: 3}
+      m_Width: 48
+      m_Height: 48
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 6f5c974ce1938e049b1872c39fbffcdb, type: 3}
+      m_Width: 36
+      m_Height: 36
+  - m_BuildTarget: Standalone
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 2c18f62a2adec794bad22a6b988129e0, type: 3}
+      m_Width: 1024
+      m_Height: 1024
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 512
+      m_Height: 512
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 256
+      m_Height: 256
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 128
+      m_Height: 128
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 48
+      m_Height: 48
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 32
+      m_Height: 32
+    - serializedVersion: 2
+      m_Icon: {fileID: 0}
+      m_Width: 16
+      m_Height: 16
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer

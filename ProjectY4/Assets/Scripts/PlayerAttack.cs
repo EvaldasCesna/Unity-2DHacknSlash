@@ -56,7 +56,6 @@ public class PlayerAttack : NetworkBehaviour
             canAttack = true;
     }
 
-
     void FixedUpdate()
     {
         attackCounter();
@@ -74,21 +73,22 @@ public class PlayerAttack : NetworkBehaviour
 
     private void userInput()
     {
+        //Switches between android and pc controls
 #if UNITY_STANDALONE || UNITY_WEBPLAYER
-        if (Input.GetKeyDown(KeyCode.Space) && isAttacking == false && meleeEquipped)
+        if (Input.GetButtonDown("Fire1") && isAttacking == false && meleeEquipped)
         {
             isAttacking = true;
             attackTimeCounter = attackTime;
             CmdMelee(isAttacking);
         }
-        if (Input.GetKeyDown(KeyCode.F) && isAttacking == false && rangedEquipped)
+        if (Input.GetButtonDown("Fire2") && isAttacking == false && rangedEquipped)
         {
             isAttacking = true;
             float angle = (Mathf.Atan2(lastMovement().y, lastMovement().x) * Mathf.Rad2Deg) - 90;
             attackTimeCounter = attackTime;
             CmdRanged(transform.position, new Vector3(lastMovement().y, lastMovement().x, angle), lastMovement().normalized);
         }
-        if (Input.GetKeyDown(KeyCode.G) && isAttacking == false && magicEquipped)
+        if (Input.GetButtonDown("Fire3") && isAttacking == false && magicEquipped)
         {
             isAttacking = true;
             attackTimeCounter = attackTime;
@@ -116,7 +116,6 @@ public class PlayerAttack : NetworkBehaviour
             CmdMagic();
         }
 #endif
-
     }
     [Command]
     public void CmdSetEquipment(int inSword, int inBow, int inStaff)
@@ -124,10 +123,10 @@ public class PlayerAttack : NetworkBehaviour
         RpcSetEquipment(inSword, inBow, inStaff);
     }
 
-
     [ClientRpc]
     public void RpcSetEquipment(int inSword, int inBow, int inStaff)
     {
+        //Makes sure you cannot attack without anything equipped
         if (inSword != -1)
         {
             meleeEquipped = true;
@@ -184,7 +183,6 @@ public class PlayerAttack : NetworkBehaviour
     private void CmdRanged(Vector3 position, Vector3 rotation, Vector2 direction)
     {
         RpcRanged();
-
         NetworkServer.Spawn(bow.shootArrow(rangedDamage, rotation, direction));
     }
 
@@ -192,7 +190,6 @@ public class PlayerAttack : NetworkBehaviour
     private void CmdMagic()
     {
         RpcMagic();
-
         NetworkServer.Spawn(staff.FireAoe(magicDamage));
     }
 

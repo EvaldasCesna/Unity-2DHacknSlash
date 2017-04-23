@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -13,8 +12,6 @@ public class EnemyAttack : MonoBehaviour
                 GetComponentInParent<EnemyScript>().enemyAttack(collision.gameObject);
             if (GetComponentInParent<BossScript>() != null)
                 GetComponentInParent<BossScript>().enemyAttack(collision.gameObject);
-
         }
     }
-
 }

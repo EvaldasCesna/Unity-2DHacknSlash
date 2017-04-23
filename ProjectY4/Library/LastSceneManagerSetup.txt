@@ -3,8 +3,8 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
 - path: Assets/Login.unity
-  isLoaded: 0
-  isActive: 0
+  isLoaded: 1
+  isActive: 1
 - path: Assets/Game.unity
   isLoaded: 0
   isActive: 0
@@ -21,5 +21,5 @@ sceneSetups:
   isLoaded: 0
   isActive: 0
 - path: Assets/MainMenu.unity
-  isLoaded: 1
-  isActive: 1
+  isLoaded: 0
+  isActive: 0

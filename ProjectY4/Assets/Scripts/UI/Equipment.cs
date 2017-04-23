@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Equipment : MonoBehaviour {
+public class Equipment : MonoBehaviour
+{
     private GameObject charPanel;
     private GameObject slotPanel;
     private ItemsDatabase items;
@@ -18,16 +19,16 @@ public class Equipment : MonoBehaviour {
 
     private void Awake()
     {
+        //Used for the singleton
         if (pEquipment == null)
             pEquipment = this;
         else if (pEquipment != this)
             Destroy(gameObject);
     }
 
-    void Start ()
+    void Start()
     {
         //Grabs the item List
-      
         items = GetComponent<ItemsDatabase>();
 
         slotAmount = 6;
@@ -43,13 +44,11 @@ public class Equipment : MonoBehaviour {
             slots[i].GetComponent<RectTransform>().localScale = Vector3.one;
         }
 
-        //PopulateEquip(0, 1, 3);
         charPanel.SetActive(false);
     }
 
     public void PopulateEquip(int id, int amount, int slot)
     {
-       
         Item itemToAdd = items.GetItemByID(id);
 
         // Adds to equip at certain location/amount of
@@ -61,6 +60,7 @@ public class Equipment : MonoBehaviour {
         itemObj.GetComponent<ItemData>().location = "Equipment";
         itemObj.transform.SetParent(slots[slot].transform);
         itemObj.transform.position = slots[slot].transform.position;
+        itemObj.transform.localScale = Vector3.one;
         itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
         itemObj.name = itemToAdd.Title;
 
@@ -76,8 +76,7 @@ public class Equipment : MonoBehaviour {
                 temp.Add(slots[i].transform.GetChild(0).GetComponent<ItemData>());
             }
         }
-
         return temp;
-    }    
+    }
 
 }

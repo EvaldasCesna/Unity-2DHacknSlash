@@ -7,31 +7,28 @@ using UnityEngine;
 
 public class SaveData : MonoBehaviour
 {
-    GameObject slotPanel;
-
+    private string SaveInventoryUrl = "http://188.141.5.218/Save.php";
     private List<SaveItems> save = new List<SaveItems>();
     private JsonData saveData;
     private Inventory inventory;
     private Equipment equipment;
-    string InvLoc;
-    string EquipLoc;
-    int gold;
-    int level;
-    int xp;
-    int mobs;
-    int bosses;
-    Stats stats;
+    private string InvLoc;
+    private string EquipLoc;
+    private int gold;
+    private int level;
+    private int xp;
+    private int mobs;
+    private int bosses;
+    private Stats stats;
 
     static readonly string SAVEIN = "Inventory.json";
     static readonly string SAVEEQ = "Equipment.json";
-    private string SaveInventoryUrl = "http://188.141.5.218/Save.php";
+
 
     // Use this for initialization
     void Start()
     {
         stats = GetComponentInParent<Stats>();
-
-
         save.Clear();
         inventory = Inventory.pInventory;
         equipment = Equipment.pEquipment;
@@ -39,8 +36,8 @@ public class SaveData : MonoBehaviour
 
     public void SaveItems()
     {
-        int.TryParse(stats.gold.text,out gold);
-       // gold = int.Parse(stats.gold.text);
+        //Get all the information to store in the database
+        int.TryParse(stats.gold.text, out gold);
         level = stats.currentLevel;
         xp = stats.currentXp;
         mobs = stats.enemiesKilled;
@@ -79,10 +76,8 @@ public class SaveData : MonoBehaviour
 
     IEnumerator SaveItemsTodb()
     {
-
         while (true)
         {
-            //  Debug.Log("Success1");
             WWWForm Form = new WWWForm();
             InvLoc = Path.Combine(Application.persistentDataPath, SAVEIN);
             EquipLoc = Path.Combine(Application.persistentDataPath, SAVEEQ);
@@ -96,7 +91,6 @@ public class SaveData : MonoBehaviour
             Form.AddField("Mobs", mobs);
             Form.AddField("Bosses", bosses);
 
-
             WWW SaveWWW = new WWW(SaveInventoryUrl, Form);
 
             yield return SaveWWW;
@@ -107,17 +101,11 @@ public class SaveData : MonoBehaviour
             }
             else
             {
-                //   Debug.Log(SaveWWW.text);
                 string SaveReturn = SaveWWW.text;
-
             }
             yield return new WaitForSeconds(10f);
         }
-
-
     }
-
-
 }
 
 public class SaveItems

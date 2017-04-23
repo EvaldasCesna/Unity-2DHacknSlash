@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 
-public class LoadNewScene : NetworkBehaviour {
+public class LoadNewScene : NetworkBehaviour
+{
     private List<GameObject> players;
     private PlayerStats player;
     private List<Transform> points;
@@ -21,10 +22,8 @@ public class LoadNewScene : NetworkBehaviour {
         if (collision.gameObject.tag == "Player")
         {
             CmdmovePlayers();
-
             LoadLevel(level);
         }
-
     }
 
     [Command]
@@ -41,26 +40,22 @@ public class LoadNewScene : NetworkBehaviour {
             player = p.GetComponentInParent<PlayerStats>();
             player.setLocation(exitPoint);
             //Move Players to the next areas starting Position
-            RpcmovePlayers(p, points[i].transform.position);
+            if (p != null)
+                RpcmovePlayers(p, points[i].transform.position);
             i++;
-
         }
-        
     }
 
     [ClientRpc]
     void RpcmovePlayers(GameObject player, Vector3 position)
     {
-            player.transform.position = position;
+        player.transform.position = position;
     }
-
-
 
     [ServerCallback]
     public void LoadLevel(string name)
     {
         NetworkManager.singleton.ServerChangeScene("Loading Screen");
-
         NetworkManager.singleton.ServerChangeScene(name);
     }
 

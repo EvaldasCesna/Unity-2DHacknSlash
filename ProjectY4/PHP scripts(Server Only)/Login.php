@@ -7,8 +7,8 @@ $DBName = "accounts";
 $User = "root";
 $PasswordP = "";
 
-mysql_connect($Hostname, $User, $PasswordP) or die("Cant Connct");
-mysql_select_db($DBName) or die ("Cant conncet to db");
+mysql_connect($Hostname, $User, $PasswordP) or die("Cant Connect");
+mysql_select_db($DBName) or die ("Cant connect to db");
 
 if(!$Password || !$Username) {
     echo "Empty";
@@ -20,7 +20,7 @@ else
     $Total = mysql_num_rows($Result_id);
     if($Total){
         $data = @mysql_fetch_array($Result_id);
-        if(strcmp($Password,$data["Password"])) {
+        if(strcmp(md5($Password),$data["Password"]) == 0) {
             $SQL2 = "SELECT Username FROM accounts WHERE Username = '" . $Username . "'";
             $Result_id2 = @mysql_query($SQL2) or die ("Error");
             while($row = mysql_fetch_array($Result_id2))

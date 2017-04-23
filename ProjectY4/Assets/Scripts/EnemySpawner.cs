@@ -3,39 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class EnemySpawner : NetworkBehaviour {
+public class EnemySpawner : NetworkBehaviour
+{
 
     bool isEmpty;
 
     public GameObject enemyPrefab;
+    public bool infiniteSpawn;
     public int numberOfEnemies;
-  //  public int minEnemies;
+    public bool CustomSpawn;
+    public int level;
+    public int maxHealth;
+    public int damage;
+    public float attackTime;
+    public float projectileSpeed;
+    public int firstId;
+    public int lastId;
 
-    public void Awake()
+    private void Start()
     {
-   //     CmdSpawn();
-    }
-
-    public void Start()
-    {
-
-    }
-
-    public void Update()
-    {
-
-
+        if(!infiniteSpawn)
+        {
+            CmdSpawn();
+        }
     }
 
     void FixedUpdate()
     {
-        if(!isServer)
+        if (!isServer)
         {
             return;
         }
 
 
-        if (isEmpty)
+        if (isEmpty && infiniteSpawn)
         {
             CmdSpawn();
         }
@@ -50,12 +51,21 @@ public class EnemySpawner : NetworkBehaviour {
 
         for (int i = 0; i < numberOfEnemies; i++)
         {
-            Vector3 spawnPosition = new Vector3(Random.Range(transform.position.x -10.0f, transform.position.x + 10.0f), Random.Range(transform.position.y - 10.0f, transform.position.y +10.0f), -1f);
+            Vector3 spawnPosition = new Vector3(Random.Range(transform.position.x - 10.0f, transform.position.x + 10.0f), Random.Range(transform.position.y - 10.0f, transform.position.y + 10.0f), -1f);
             Quaternion spawnRotation = Quaternion.Euler(0.0f, 0.0f, 0);
-
-
             GameObject enemy = (GameObject)Instantiate(enemyPrefab, spawnPosition, spawnRotation);
 
+            //Overrides any default enemy info
+            if (CustomSpawn)
+            {
+                enemy.GetComponent<EnemyHealth>().level = level;
+                enemy.GetComponent<EnemyHealth>().maxHealth = maxHealth;
+                enemy.GetComponent<EnemyHealth>().firstId = firstId;
+                enemy.GetComponent<EnemyHealth>().lastId = lastId;
+                enemy.GetComponent<EnemyScript>().damage = damage;
+                enemy.GetComponent<EnemyScript>().attackTime = attackTime;
+                enemy.GetComponent<EnemyScript>().projectileSpeed = projectileSpeed;
+            }
             NetworkServer.Spawn(enemy);
 
         }
@@ -63,12 +73,9 @@ public class EnemySpawner : NetworkBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.tag == "Enemy")
+        if (collision.tag == "Enemy")
         {
-            isEmpty = false;
+                isEmpty = false;
         }
-        
     }
-
-
 }

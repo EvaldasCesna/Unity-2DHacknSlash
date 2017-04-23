@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 //using UnityEngine.Networking;
 
@@ -20,10 +21,9 @@ public class Stats : MonoBehaviour
     public Slider xpBar;
     public Text xpText;
     public Text level;
-
+    public GameObject Mobiles;
     public int enemiesKilled;
     public int bossesKilled;
-
     public static Stats pStats;
     public int currentLevel;
     public int currentXp;
@@ -40,6 +40,13 @@ public class Stats : MonoBehaviour
         save = equipment.GetComponent<SaveData>();
         UpdateStats();
         Hide();
+
+#if UNITY_STANDALONE || UNITY_WEBPLAYER
+
+#else
+        Instantiate(Mobiles);
+#endif
+
         DontDestroyOnLoad(transform.gameObject);
     }
 
@@ -47,6 +54,11 @@ public class Stats : MonoBehaviour
     {
         UpdateXpBar();
         levelUp();
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Awake()
@@ -64,20 +76,20 @@ public class Stats : MonoBehaviour
         xpText.text = currentXp + "/" + levels[currentLevel];
         level.text = "Level: " + currentLevel;
 
-    }  
+    }
 
     public void UpdateHealthbar(int max, int health)
     {
         hpBar.maxValue = max;
         hpBar.value = health;
         hpText.text = health + "/" + max;
-    } 
+    }
 
     public void UpdateGold(int goldIn)
     {
         int temp = 0;
         int.TryParse(gold.text, out temp);
-    
+
         temp = temp + goldIn;
 
         gold.text = (temp).ToString();
@@ -86,17 +98,16 @@ public class Stats : MonoBehaviour
     public void UpdateStats()
     {
         int def = 0, str = 0, vit = 0;
-        
+
         for (int i = 0; i < equipment.equipment.Count; i++)
         {
             def += equipment.equipment[i].Defence;
             str += equipment.equipment[i].Strength;
             vit += equipment.equipment[i].Vitality;
         }
-        
+
         data = "  Strenght: " + str + "\n\n  Defence: " + def + "\n\n  Vitality: " + vit + "\n\n\n  Mob Kills: " + enemiesKilled + "\n\n  Boss Kills: " + bossesKilled;
         stats.text = data;
-
     }
 
     public int getBonusHealth()

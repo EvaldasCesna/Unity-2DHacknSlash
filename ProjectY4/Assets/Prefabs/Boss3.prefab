@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 114090090144981900}
   - component: {fileID: 114689233625084802}
   - component: {fileID: 58461297076375448}
+  - component: {fileID: 82536778980786200}
   m_Layer: 0
   m_Name: Boss3
   m_TagString: Boss
@@ -445,6 +446,86 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.8
+--- !u!82 &82536778980786200
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905826540480346}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5cd5664db910d1748b8b3394b72f86ee, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.51
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114056460983238174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,7 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.1
+  m_SendInterval: 0.09090909
   m_SyncRotationAxis: 3
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -651,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpBar: {fileID: 114689011627899678}
-  maxHealth: 1000
+  maxHealth: 3000
   currentHealth: 100
   destroyOnDeath: 1
   isDamaged: 0
@@ -662,9 +743,11 @@ MonoBehaviour:
   goldPrefab: {fileID: 1279873191871126, guid: 4cfa3b13d7001f44a8510100a2fcd4bf, type: 2}
   itemPrefab: {fileID: 1398599655203730, guid: d23c0f73e8b55d1488a6b87bf240cf24, type: 2}
   invincibility: 0.2
-  expToGive: 25
+  expToGive: 2000
   dropRate: 4
-  level: 10
+  firstId: 21
+  lastId: 37
+  level: 30
   levelText: {fileID: 114996541899191616}
 --- !u!114 &114796615149401834
 MonoBehaviour:

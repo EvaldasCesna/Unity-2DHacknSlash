@@ -3,13 +3,15 @@ using System;
 using UnityEditor;
 #endif
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets.CrossPlatformInput
 {
     [ExecuteInEditMode]
     public class MobileControlRig : MonoBehaviour
     {
+
+        private static bool controlsExist;
         // this script enables or disables the child objects of a control rig
         // depending on whether the USE_MOBILE_INPUT define is declared.
 
@@ -21,10 +23,19 @@ namespace UnityStandardAssets.CrossPlatformInput
 	{
 		CheckEnableControlRig();
 	}
-	#endif
+#endif
 
         private void Start()
         {
+            if (!controlsExist)
+            {
+                controlsExist = true;
+                DontDestroyOnLoad(transform.gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
 #if UNITY_EDITOR
             if (Application.isPlaying) //if in the editor, need to check if we are playing, as start is also called just after exiting play
 #endif
@@ -60,6 +71,11 @@ namespace UnityStandardAssets.CrossPlatformInput
         private void Update()
         {
             CheckEnableControlRig();
+            if (SceneManager.GetActiveScene().name == "MainMenu")
+            {
+                Destroy(gameObject);
+            }
+
         }
 #endif
 

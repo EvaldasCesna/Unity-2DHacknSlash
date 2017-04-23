@@ -7,7 +7,6 @@ using UnityEngine;
 public class LoadData : MonoBehaviour
 {
     private string LoadUrl = "http://188.141.5.218/Load.php";
-
     private Inventory inventory;
     private Equipment equipment;
     private Stats stats;
@@ -18,9 +17,10 @@ public class LoadData : MonoBehaviour
     private int xp;
     private int mobs;
     private int bosses;
-
+    //Json Files
     static readonly string SAVEIN = "Inventory.json";
     static readonly string SAVEEQ = "Equipment.json";
+
     void Start()
     {
         inventory = Inventory.pInventory;
@@ -31,6 +31,7 @@ public class LoadData : MonoBehaviour
 
     void ConstructItems()
     {
+        //Populates the Inventory and Equipment from the database
         for (int i = 0; i < invData.Count; i++)
         {
             inventory.PopulateInv((int)invData[i]["id"], (int)invData[i]["amount"], (int)invData[i]["slot"]);
@@ -39,14 +40,12 @@ public class LoadData : MonoBehaviour
         {
             equipment.PopulateEquip((int)equipData[i]["id"], (int)equipData[i]["amount"], (int)equipData[i]["slot"]);
         }
-
+        //Sets Other Stats that are stored in the database
         stats.setLevel(level, xp);
         stats.initialiseKills(mobs, bosses);
         stats.UpdateGold(gold);
-
         stats.UpdateStats();
     }
-
 
     IEnumerator LoadItemsFromdb()
     {
@@ -62,14 +61,11 @@ public class LoadData : MonoBehaviour
             invData = JsonMapper.ToObject(File.ReadAllText(invLoc));
             string equipLoc = Path.Combine(Application.persistentDataPath, SAVEEQ);
             equipData = JsonMapper.ToObject(File.ReadAllText(equipLoc));
-
-            //ConstructItems();
         }
         else
         {
             string LogText = LoadWWW.text;
             string[] LogTextSplit = LogText.Split('*');
-          //  Debug.Log(LogTextSplit[0]  +" 0  1 " +  LogTextSplit[1]);
             invData = JsonMapper.ToObject(LogTextSplit[0]);
             equipData = JsonMapper.ToObject(LogTextSplit[1]);
             gold = int.Parse(LogTextSplit[2]);
