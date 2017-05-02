@@ -3,7 +3,7 @@
 
 ### Feature List:
 * Multiplayer (Works with Some DeSyncs)
-* Online Database for storing user Progress/Login(hosted on my own computer) (Working)
+* Online Database for storing user Progress/Login(hosted on my own computer, Test Account Login: abc Password: abc) (Working)
 * Micro Transactions(Abandoned) *Out of time
 * Android Functionality(Works)
 * Making the game fun(Getting There)
